@@ -1,0 +1,49 @@
+model,method,n,data_seed,steps_completed,rmse,loglik,kalman_mean_rmse,kalman_loglik_error,error
+linear,multinomial,128,0,30,0.4772753042319846,-49.8103141784668,0.10527306650235406,0.5448472138196365,
+linear,multinomial,128,1,30,0.3913416310855385,-53.42692947387695,0.08494880367350982,0.7380671663696674,
+linear,multinomial,128,2,30,0.5943495731171052,-42.10060501098633,0.08026515440714017,-0.01093810872864509,
+linear,systematic,128,0,30,0.46321624233229686,-49.93208312988281,0.09675869159446493,0.4230782624036209,
+linear,systematic,128,1,30,0.34715375910229085,-54.4510383605957,0.0780112864572757,-0.2860417203490826,
+linear,systematic,128,2,30,0.6012955091061384,-42.257911682128906,0.08342964765585877,-0.16824477987122322,
+linear,stratified,128,0,30,0.45494142824294703,-49.853851318359375,0.09639676877049701,0.5013100739270584,
+linear,stratified,128,1,30,0.3343620722754546,-54.254520416259766,0.05674770922579607,-0.0895237760131451,
+linear,stratified,128,2,30,0.5963600027648094,-42.36024475097656,0.08483797107163744,-0.27057784871887947,
+linear,ot,32,0,30,0.5304756588031937,-50.624168395996094,0.1565441720697082,-0.26900700370966035,
+linear,ot,32,1,30,0.36658020222875953,-56.38423538208008,0.19353702075990756,-2.2192387418334576,
+linear,ot,32,2,30,0.5956732530494275,-41.390281677246094,0.10460825896913753,0.6993852250115893,
+linear,corrected_ot,32,0,30,0.5324657734973579,-50.589969635009766,0.15597372322039654,-0.23480824272333223,
+linear,corrected_ot,32,1,30,0.36101093767503106,-56.21458053588867,0.171863301594478,-2.0495838956420513,
+linear,corrected_ot,32,2,30,0.5826282383155735,-41.339698791503906,0.11284793459943526,0.7499681107537768,
+volatility,multinomial,128,0,30,0.28788118506598004,-66.23554229736328,nan,nan,
+volatility,multinomial,128,1,30,0.3955269389318065,-60.120887756347656,nan,nan,
+volatility,multinomial,128,2,30,0.5128256417044604,-61.21708679199219,nan,nan,
+volatility,systematic,128,0,30,0.28928233632926176,-66.21049499511719,nan,nan,
+volatility,systematic,128,1,30,0.38667721045126097,-60.18162536621094,nan,nan,
+volatility,systematic,128,2,30,0.5226218152472928,-61.62114334106445,nan,nan,
+volatility,stratified,128,0,30,0.28915185516374736,-66.16527557373047,nan,nan,
+volatility,stratified,128,1,30,0.39362715780302837,-60.07391357421875,nan,nan,
+volatility,stratified,128,2,30,0.5129003626519829,-61.60513687133789,nan,nan,
+volatility,ot,32,0,30,0.30063968336335367,-65.833251953125,nan,nan,
+volatility,ot,32,1,30,0.41443581703798493,-59.94245529174805,nan,nan,
+volatility,ot,32,2,30,0.5050235098545454,-62.16531753540039,nan,nan,
+volatility,corrected_ot,32,0,3,nan,nan,nan,nan,"InvalidArgumentError: Graph execution error:
+
+Detected at node MatrixSolve defined at (most recent call last):
+  File ""/home/user/resampler/scripts/native_task_checks.py"", line 275, in <module>
+
+  File ""/home/user/resampler/scripts/native_task_checks.py"", line 187, in filterflow_tasks
+
+  File ""/home/user/resampler/vendor/filterflow/filterflow/smc.py"", line 59, in update
+
+  File ""/home/user/resampler/vendor/filterflow/filterflow/resampling/differentiable/corrected.py"", line 73, in apply
+
+  File ""/home/user/resampler/vendor/filterflow/filterflow/resampling/differentiable/ricatti/solver.py"", line 375, in __call__
+
+  File ""/home/user/resampler/vendor/filterflow/filterflow/resampling/differentiable/ricatti/solver.py"", line 359, in _call
+
+  File ""/home/user/resampler/vendor/filterflow/filterflow/resampling/differentiable/ricatti/solver.py"", line 334, in _solve_petkov
+
+Input matrix is not invertible.
+	 [[{{node MatrixSolve}}]] [Op:__inference_update_36954]"
+volatility,corrected_ot,32,1,30,0.4126791144156658,-60.01116943359375,nan,nan,
+volatility,corrected_ot,32,2,30,0.5126220454757171,-62.147247314453125,nan,nan,

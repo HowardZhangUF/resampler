@@ -1,0 +1,4 @@
+{"provider": "torchfilter", "method": "multinomial", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "torchfilter", "method": "multinomial", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "torchfilter", "method": "soft", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "torchfilter", "method": "soft", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}

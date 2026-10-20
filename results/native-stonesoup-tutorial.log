@@ -1,0 +1,18 @@
+---- State vector of resampled particles ----
+[[4 1 1 0 2]]
+------ Weights of resampled particles -------
+[Probability(0.2) Probability(0.2) Probability(0.2) Probability(0.2)
+ Probability(0.2)]
+---- State vector of upsampled particles ----
+[[2 3 2 1 2 2 4 2 1 2]]
+------ Weights of upsampled particles -------
+[Probability(0.10000000000000002) Probability(0.10000000000000002)
+ Probability(0.10000000000000002) Probability(0.10000000000000002)
+ Probability(0.10000000000000002) Probability(0.10000000000000002)
+ Probability(0.10000000000000002) Probability(0.10000000000000002)
+ Probability(0.10000000000000002) Probability(0.10000000000000002)]
+{
+  "source": "vendor/Stone-Soup/docs/tutorials/sampling/ResamplingTutorial.py",
+  "passed": true,
+  "assertions": "native multinomial sizes/weights/support and ESS retention"
+}

@@ -1,0 +1,37 @@
+WARNING:tensorflow:From /home/user/resampler/.venv-tf/lib/python3.11/site-packages/tensorflow/python/util/dispatch.py:1260: calling gather (from tensorflow.python.ops.array_ops) with validate_indices is deprecated and will be removed in a future version.
+Instructions for updating:
+The `validate_indices` argument has no effect. Indices are always validated on CPU and never validated on GPU.
+{"provider": "filterflow", "method": "multinomial", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "multinomial", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "multinomial", "stage": "filter", "case": "lorenz63/N128", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "multinomial", "stage": "filter", "case": "lorenz96/N128", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "multinomial", "stage": "filter", "case": "lorenz63/N512", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "multinomial", "stage": "filter", "case": "lorenz96/N512", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "multinomial", "stage": "filter", "case": "lorenz63/N2048", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "multinomial", "stage": "filter", "case": "lorenz96/N2048", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "systematic", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "systematic", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "systematic", "stage": "filter", "case": "lorenz63/N128", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "systematic", "stage": "filter", "case": "lorenz96/N128", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "systematic", "stage": "filter", "case": "lorenz63/N512", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "systematic", "stage": "filter", "case": "lorenz96/N512", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "systematic", "stage": "filter", "case": "lorenz63/N2048", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "systematic", "stage": "filter", "case": "lorenz96/N2048", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "stratified", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "stratified", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "stratified", "stage": "filter", "case": "lorenz63/N128", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "stratified", "stage": "filter", "case": "lorenz96/N128", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "stratified", "stage": "filter", "case": "lorenz63/N512", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "stratified", "stage": "filter", "case": "lorenz96/N512", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "stratified", "stage": "filter", "case": "lorenz63/N2048", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "stratified", "stage": "filter", "case": "lorenz96/N2048", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "ot", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "ot", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "ot", "stage": "filter", "case": "lorenz63/N128", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "ot", "stage": "filter", "case": "lorenz96/N128", "status": "complete", "error": ""}
+WARNING:tensorflow:`_X` is not a valid node name. Accepted names conform to Regex /re.compile('^[A-Za-z0-9.][A-Za-z0-9_.\\\\/>-]*$')/
+{"provider": "filterflow", "method": "corrected_ot", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "corrected_ot", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+WARNING:tensorflow:`_X` is not a valid node name. Accepted names conform to Regex /re.compile('^[A-Za-z0-9.][A-Za-z0-9_.\\\\/>-]*$')/
+{"provider": "filterflow", "method": "corrected_ot", "stage": "filter", "case": "lorenz63/N128", "status": "complete", "error": ""}
+{"provider": "filterflow", "method": "corrected_ot", "stage": "filter", "case": "lorenz96/N128", "status": "complete", "error": ""}

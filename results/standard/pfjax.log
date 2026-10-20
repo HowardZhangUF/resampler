@@ -1,0 +1,253 @@
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N32/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N32/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N32/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N32/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N128/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N128/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N128/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N128/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N128/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N128/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N128/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N128/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N128/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N128/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N128/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N128/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N512/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N512/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N512/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N512/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N512/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N512/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N512/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N512/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N512/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N512/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N512/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N512/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N2048/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N2048/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N2048/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N2048/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N2048/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N2048/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N2048/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N2048/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N2048/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N2048/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N2048/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N2048/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "linear/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "ungm/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "volatility/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "bearing/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "linear/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "ungm/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "volatility/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "bearing/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "linear/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "ungm/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "volatility/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "bearing/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "linear/N2048", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "ungm/N2048", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "volatility/N2048", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "bearing/N2048", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "gaussian/x2/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "gaussian/sin/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "mixture/x2/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "mixture/sin/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "gaussian/x2/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "gaussian/sin/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "mixture/x2/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "mixture/sin/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "gaussian/x2/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "gaussian/sin/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "mixture/x2/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "mixture/sin/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N32/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N32/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N32/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N32/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N128/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N128/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N128/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N128/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N128/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N128/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N128/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N128/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N128/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N128/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N128/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N128/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N512/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N512/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N512/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N512/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N512/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N512/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N512/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N512/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N512/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N512/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N512/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N512/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N2048/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N2048/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N2048/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N2048/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N2048/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N2048/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N2048/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N2048/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N2048/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N2048/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N2048/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N2048/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "linear/N32", "status": "complete", "error": ""}
+Traceback (most recent call last):
+  File "/home/user/resampler/resampler_bench/run.py", line 126, in filtering
+    rows=[filter_once(adapter,kind,n,seed*10 if adapter.expensive and args.profile!='smoke' else seed,12 if args.profile=='smoke' else 50) for seed in range(repetitions(adapter,n,args))]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/resampler/resampler_bench/run.py", line 97, in filter_once
+    x,w=adapter(x,w,seed*10000+i+900); resamples+=1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/resampler/resampler_bench/adapters.py", line 150, in __call__
+    if not np.isfinite(y).all() or not np.isfinite(out_lw).all(): raise FloatingPointError('Non-finite resampler output')
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FloatingPointError: Non-finite resampler output
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "ungm/N32", "status": "failed", "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "volatility/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "bearing/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "linear/N128", "status": "complete", "error": ""}
+Traceback (most recent call last):
+  File "/home/user/resampler/resampler_bench/run.py", line 126, in filtering
+    rows=[filter_once(adapter,kind,n,seed*10 if adapter.expensive and args.profile!='smoke' else seed,12 if args.profile=='smoke' else 50) for seed in range(repetitions(adapter,n,args))]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/resampler/resampler_bench/run.py", line 97, in filter_once
+    x,w=adapter(x,w,seed*10000+i+900); resamples+=1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/resampler/resampler_bench/adapters.py", line 150, in __call__
+    if not np.isfinite(y).all() or not np.isfinite(out_lw).all(): raise FloatingPointError('Non-finite resampler output')
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FloatingPointError: Non-finite resampler output
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "ungm/N128", "status": "failed", "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "volatility/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "bearing/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "linear/N512", "status": "complete", "error": ""}
+Traceback (most recent call last):
+  File "/home/user/resampler/resampler_bench/run.py", line 126, in filtering
+    rows=[filter_once(adapter,kind,n,seed*10 if adapter.expensive and args.profile!='smoke' else seed,12 if args.profile=='smoke' else 50) for seed in range(repetitions(adapter,n,args))]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/resampler/resampler_bench/run.py", line 97, in filter_once
+    x,w=adapter(x,w,seed*10000+i+900); resamples+=1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/resampler/resampler_bench/adapters.py", line 150, in __call__
+    if not np.isfinite(y).all() or not np.isfinite(out_lw).all(): raise FloatingPointError('Non-finite resampler output')
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FloatingPointError: Non-finite resampler output
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "ungm/N512", "status": "failed", "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "volatility/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "bearing/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "linear/N2048", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "ungm/N2048", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "volatility/N2048", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "bearing/N2048", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "gaussian/x2/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "gaussian/sin/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "mixture/x2/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "mixture/sin/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "gaussian/x2/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "gaussian/sin/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "mixture/x2/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "mixture/sin/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "gaussian/x2/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "gaussian/sin/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "mixture/x2/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "mixture/sin/N512", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N32/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N32/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N32/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N32/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N128/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N128/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N128/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N128/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N128/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N128/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N128/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N128/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N128/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N128/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N128/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N128/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N512/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N512/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N512/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N512/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N512/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N512/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N512/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N512/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N512/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N512/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N512/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N512/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N2048/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N2048/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N2048/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N2048/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N2048/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N2048/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N2048/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N2048/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N2048/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N2048/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N2048/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N2048/D4", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "filter", "case": "linear/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "filter", "case": "ungm/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "filter", "case": "volatility/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "filter", "case": "bearing/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "filter", "case": "linear/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "filter", "case": "ungm/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "filter", "case": "volatility/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "filter", "case": "bearing/N128", "status": "complete", "error": ""}
+/home/user/resampler/.venv/lib/python3.12/site-packages/ott/solvers/linear/lineax_implicit.py:34: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  input_structure: _FlatPyTree[jax.ShapeDtypeStruct] = eqx.static_field()
+/home/user/resampler/.venv/lib/python3.12/site-packages/ott/solvers/linear/lineax_implicit.py:35: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  input_structure_t: _FlatPyTree[jax.ShapeDtypeStruct] = eqx.static_field()
+{"provider": "pfjax", "method": "ot", "stage": "gradient", "case": "gaussian/x2/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "gradient", "case": "gaussian/sin/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "gradient", "case": "mixture/x2/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "gradient", "case": "mixture/sin/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "gradient", "case": "gaussian/x2/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "gradient", "case": "gaussian/sin/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "gradient", "case": "mixture/x2/N128", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "gradient", "case": "mixture/sin/N128", "status": "complete", "error": ""}

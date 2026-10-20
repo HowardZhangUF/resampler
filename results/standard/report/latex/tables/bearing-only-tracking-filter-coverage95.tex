@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Bearing-only tracking filter ($N=128$): 95\% coverage. Best = closest to 95\% is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:bearing-only-tracking-filter-coverage95}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & 95\% coverage \\
+\midrule
+1 & custom & \textbf{eigen} & 100/100 & $\mathbf{0.7776 \pm 0.1978}$ \\
+2 & pfjax & mvn & 100/100 & $0.7414 \pm 0.1762$ \\
+3 & custom & gaussian & 100/100 & $0.724 \pm 0.1915$ \\
+4 & filterflow & corrected\_ot & 10/10 & $0.72 \pm 0.1564$ \\
+5 & julia & ssp & 100/100 & $0.6614 \pm 0.2063$ \\
+6 & julia & stratified & 100/100 & $0.6586 \pm 0.1988$ \\
+7 & julia & systematic & 100/100 & $0.6522 \pm 0.2128$ \\
+8 & filterflow & systematic & 100/100 & $0.6508 \pm 0.2106$ \\
+9 & pydpf & systematic & 100/100 & $0.6492 \pm 0.1938$ \\
+9 & pydpf & systematic\_stop & 100/100 & $0.6492 \pm 0.1938$ \\
+11 & cuthbert & systematic & 100/100 & $0.6478 \pm 0.2098$ \\
+11 & cuthbert & systematic\_stop & 100/100 & $0.6478 \pm 0.2098$ \\
+13 & particles & systematic & 100/100 & $0.6364 \pm 0.2056$ \\
+14 & particles & ssp & 100/100 & $0.633 \pm 0.2233$ \\
+15 & variational & kl & 100/100 & $0.6326 \pm 0.1913$ \\
+16 & stonesoup & systematic & 100/100 & $0.6286 \pm 0.2024$ \\
+17 & julia & killing & 100/100 & $0.6212 \pm 0.1858$ \\
+18 & particles & residual & 100/100 & $0.62 \pm 0.2207$ \\
+19 & filterflow & stratified & 100/100 & $0.6176 \pm 0.2069$ \\
+20 & particles & stratified & 100/100 & $0.6112 \pm 0.1851$ \\
+21 & stonesoup & residual & 100/100 & $0.6078 \pm 0.2107$ \\
+22 & stonesoup & stratified & 100/100 & $0.6044 \pm 0.1925$ \\
+23 & julia & residual & 100/100 & $0.6006 \pm 0.2023$ \\
+24 & variational & tv & 100/100 & $0.5896 \pm 0.1898$ \\
+25 & cuthbert & multinomial & 100/100 & $0.5798 \pm 0.2044$ \\
+26 & pfjax & multinomial & 100/100 & $0.5742 \pm 0.2113$ \\
+27 & pydpf & multinomial & 100/100 & $0.5696 \pm 0.2071$ \\
+27 & torchfilter & multinomial & 100/100 & $0.5696 \pm 0.2071$ \\
+29 & stonesoup & multinomial & 100/100 & $0.5648 \pm 0.1863$ \\
+30 & filterflow & multinomial & 100/100 & $0.56 \pm 0.1744$ \\
+31 & julia & multinomial & 100/100 & $0.5588 \pm 0.2031$ \\
+32 & particles & multinomial & 100/100 & $0.5396 \pm 0.2098$ \\
+33 & pydpf & soft & 100/100 & $0.5192 \pm 0.1963$ \\
+33 & torchfilter & soft & 100/100 & $0.5192 \pm 0.1963$ \\
+35 & custom & gumbel & 10/10 & $0.216 \pm 0.1761$ \\
+36 & filterflow & ot & 10/10 & $0.052 \pm 0.06546$ \\
+37 & pfjax & ot & 10/10 & $0.042 \pm 0.02564$ \\
+38 & pydpf & ot & 10/10 & $0.04 \pm 0.02612$ \\
+\bottomrule
+\end{tabular}
+\end{table}

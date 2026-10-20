@@ -1,0 +1,24 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{SV observation-scale learning ($N=128$): $|\hat{s}-\hat{s}_{\mathrm{ref}}|$. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:sv-observation-scale-learning-mle-reference-error}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & $|\hat{s}-\hat{s}_{\mathrm{ref}}|$ \\
+\midrule
+1 & cuthbert & \textbf{systematic\_stop} & 10/10 & $\mathbf{0.02 \pm 0.04524}$ \\
+1 & particles & \textbf{systematic} & 10/10 & $\mathbf{0.02 \pm 0.04524}$ \\
+3 & variational & kl & 10/10 & $0.04 \pm 0.06032$ \\
+4 & custom & eigen & 10/10 & $0.06 \pm 0.06911$ \\
+4 & custom & gaussian & 10/10 & $0.06 \pm 0.06911$ \\
+4 & pfjax & ot & 10/10 & $0.06 \pm 0.06911$ \\
+4 & pydpf & ot & 10/10 & $0.06 \pm 0.06911$ \\
+8 & filterflow & ot & 10/10 & $0.08 \pm 0.07388$ \\
+8 & stonesoup & systematic & 10/10 & $0.08 \pm 0.07388$ \\
+8 & torchfilter & soft & 10/10 & $0.08 \pm 0.07388$ \\
+11 & custom & gumbel & 10/10 & $0.1 \pm 0.07541$ \\
+12 & julia & systematic & 10/10 & $0.12 \pm 0.07388$ \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,9 @@
+Torch PF gradient complete custom eigen 32
+Torch PF gradient complete custom gaussian 32
+Torch PF gradient complete custom gumbel 32
+PyDPF: PyTorch was unable to find a CUDA-enabled GPU. The package will run on CPU, but performance will be significantly degraded. If you have a CUDA-capable GPU, install a CUDA build of PyTorch from https://pytorch.org/get-started/locally/.
+Torch PF gradient complete pydpf systematic 32
+Torch PF gradient complete pydpf systematic_stop 32
+Torch PF gradient complete pydpf soft 32
+Torch PF gradient complete pydpf ot 32
+Torch PF gradient complete torchfilter soft 32

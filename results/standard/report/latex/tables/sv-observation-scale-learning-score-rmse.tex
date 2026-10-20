@@ -1,0 +1,24 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{SV observation-scale learning ($N=128$): likelihood-score RMSE. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:sv-observation-scale-learning-score-rmse}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & likelihood-score RMSE \\
+\midrule
+1 & pydpf & \textbf{ot} & 10/10 & $\mathbf{1.146}$ \\
+2 & pfjax & ot & 10/10 & $1.179$ \\
+3 & filterflow & ot & 10/10 & $1.307$ \\
+4 & custom & eigen & 10/10 & $2.112$ \\
+5 & custom & gumbel & 10/10 & $4.606$ \\
+6 & custom & gaussian & 10/10 & $5.252$ \\
+7 & variational & kl & 10/10 & $6.566$ \\
+8 & julia & systematic & 10/10 & $7.394$ \\
+9 & cuthbert & systematic\_stop & 10/10 & $7.468$ \\
+10 & particles & systematic & 10/10 & $8.793$ \\
+11 & torchfilter & soft & 10/10 & $10.14$ \\
+12 & stonesoup & systematic & 10/10 & $10.19$ \\
+\bottomrule
+\end{tabular}
+\end{table}

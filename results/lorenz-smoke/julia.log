@@ -1,0 +1,12 @@
+{"provider": "julia", "method": "multinomial", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "julia", "method": "multinomial", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "julia", "method": "systematic", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "julia", "method": "systematic", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "julia", "method": "stratified", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "julia", "method": "stratified", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "julia", "method": "residual", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "julia", "method": "residual", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "julia", "method": "ssp", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "julia", "method": "ssp", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "julia", "method": "killing", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "julia", "method": "killing", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}

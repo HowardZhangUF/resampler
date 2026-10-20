@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Variational vs classical · Stochastic volatility filter ($N=128$): RMSE. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:variational-vs-classical-stochastic-volatility-filter-rmse}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & RMSE \\
+\midrule
+1 & particles & \textbf{ssp} & 100/100 & $\mathbf{0.4164 \pm 0.06348}$ \\
+2 & particles & systematic & 100/100 & $0.4173 \pm 0.0634$ \\
+3 & particles & multinomial & 100/100 & $0.4174 \pm 0.06486$ \\
+4 & variational & kl & 100/100 & $0.4174 \pm 0.06379$ \\
+5 & variational & tv & 100/100 & $0.4181 \pm 0.06438$ \\
+\bottomrule
+\end{tabular}
+\end{table}

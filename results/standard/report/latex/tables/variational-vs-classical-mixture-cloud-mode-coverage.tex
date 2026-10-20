@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Variational vs classical · mixture cloud ($N=128$, $d=2$): trials keeping both modes. Best = higher is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:variational-vs-classical-mixture-cloud-mode-coverage}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & trials keeping both modes \\
+\midrule
+1 & variational & \textbf{kl} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & variational & \textbf{tv} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & particles & \textbf{ssp} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & particles & \textbf{multinomial} & 100/100 & $\mathbf{1 \pm 0}$ \\
+5 & particles & systematic & 100/100 & $0.865 \pm 0.04427$ \\
+\bottomrule
+\end{tabular}
+\end{table}

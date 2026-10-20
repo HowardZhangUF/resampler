@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "trials": 2880,
+  "datasets": 40,
+  "models": [
+    "linear",
+    "ungm",
+    "volatility",
+    "bearing"
+  ],
+  "methods": [
+    "multinomial",
+    "systematic",
+    "stratified",
+    "residual",
+    "ssp",
+    "eigen"
+  ],
+  "particle_counts": [
+    32,
+    128,
+    512,
+    2048
+  ],
+  "settings": "upstream defaults; T=50; ten datasets x three PF seeds; ESS=0.5N"
+}

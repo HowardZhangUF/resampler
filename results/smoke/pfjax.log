@@ -1,0 +1,52 @@
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "fixed/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "gaussian/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "mixture/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "static", "case": "skewed/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "linear/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "ungm/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "volatility/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "filter", "case": "bearing/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "gaussian/x2/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "gaussian/sin/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "mixture/x2/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "multinomial", "stage": "gradient", "case": "mixture/sin/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "fixed/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "gaussian/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "mixture/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "static", "case": "skewed/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "linear/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "ungm/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "volatility/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "bearing/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "gaussian/x2/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "gaussian/sin/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "mixture/x2/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "mvn", "stage": "gradient", "case": "mixture/sin/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N32/D1", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "fixed/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "gaussian/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "mixture/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "static", "case": "skewed/N32/D2", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "filter", "case": "linear/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "filter", "case": "ungm/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "filter", "case": "volatility/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "filter", "case": "bearing/N32", "status": "complete", "error": ""}
+/home/user/resampler/.venv/lib/python3.12/site-packages/ott/solvers/linear/lineax_implicit.py:34: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  input_structure: _FlatPyTree[jax.ShapeDtypeStruct] = eqx.static_field()
+/home/user/resampler/.venv/lib/python3.12/site-packages/ott/solvers/linear/lineax_implicit.py:35: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  input_structure_t: _FlatPyTree[jax.ShapeDtypeStruct] = eqx.static_field()
+{"provider": "pfjax", "method": "ot", "stage": "gradient", "case": "gaussian/x2/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "gradient", "case": "gaussian/sin/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "gradient", "case": "mixture/x2/N32", "status": "complete", "error": ""}
+{"provider": "pfjax", "method": "ot", "stage": "gradient", "case": "mixture/sin/N32", "status": "complete", "error": ""}

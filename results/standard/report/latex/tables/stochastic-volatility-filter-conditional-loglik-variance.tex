@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Stochastic volatility filter ($N=128$): conditional log-likelihood variance. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:stochastic-volatility-filter-conditional-loglik-variance}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & conditional log-likelihood variance \\
+\midrule
+1 & stonesoup & \textbf{stratified} & 100/100 & $\mathbf{0.07439}$ \\
+2 & custom & eigen & 100/100 & $0.07457$ \\
+3 & julia & multinomial & 100/100 & $0.07481$ \\
+4 & cuthbert & systematic & 100/100 & $0.07696$ \\
+4 & cuthbert & systematic\_stop & 100/100 & $0.07696$ \\
+6 & custom & gaussian & 100/100 & $0.07859$ \\
+7 & stonesoup & systematic & 100/100 & $0.07898$ \\
+8 & julia & ssp & 100/100 & $0.07956$ \\
+9 & pydpf & systematic & 100/100 & $0.08059$ \\
+9 & pydpf & systematic\_stop & 100/100 & $0.08059$ \\
+11 & stonesoup & residual & 100/100 & $0.08088$ \\
+12 & particles & systematic & 100/100 & $0.08285$ \\
+13 & julia & systematic & 100/100 & $0.08305$ \\
+14 & particles & ssp & 100/100 & $0.08356$ \\
+15 & pydpf & multinomial & 100/100 & $0.08358$ \\
+15 & torchfilter & multinomial & 100/100 & $0.08358$ \\
+17 & variational & tv & 100/100 & $0.08647$ \\
+18 & julia & stratified & 100/100 & $0.08726$ \\
+19 & pfjax & mvn & 100/100 & $0.08799$ \\
+20 & julia & residual & 100/100 & $0.08983$ \\
+21 & particles & residual & 100/100 & $0.09107$ \\
+22 & filterflow & stratified & 100/100 & $0.09186$ \\
+23 & pfjax & multinomial & 100/100 & $0.09211$ \\
+24 & variational & kl & 100/100 & $0.09313$ \\
+25 & particles & stratified & 100/100 & $0.0933$ \\
+26 & julia & killing & 100/100 & $0.09429$ \\
+27 & filterflow & multinomial & 100/100 & $0.09982$ \\
+28 & filterflow & systematic & 100/100 & $0.1003$ \\
+29 & stonesoup & multinomial & 100/100 & $0.1031$ \\
+30 & cuthbert & multinomial & 100/100 & $0.1066$ \\
+31 & particles & multinomial & 100/100 & $0.107$ \\
+32 & pydpf & soft & 100/100 & $0.1155$ \\
+32 & torchfilter & soft & 100/100 & $0.1155$ \\
+-- & custom & gumbel & 10/10 & $\text{--}$ \\
+-- & filterflow & corrected\_ot & 10/10 & $\text{--}$ \\
+-- & filterflow & ot & 10/10 & $\text{--}$ \\
+-- & pfjax & ot & 10/10 & $\text{--}$ \\
+-- & pydpf & ot & 10/10 & $\text{--}$ \\
+\bottomrule
+\end{tabular}
+\end{table}

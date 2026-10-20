@@ -1,0 +1,10 @@
+{"provider": "dsr", "method": "dsr", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr_unsorted", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr_unsorted", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr_noclip", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr_noclip", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr_tau0.5", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr_tau0.5", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr_scaled", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr_scaled", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}

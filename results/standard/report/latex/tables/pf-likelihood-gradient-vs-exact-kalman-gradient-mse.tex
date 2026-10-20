@@ -1,0 +1,22 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{PF likelihood gradient vs exact Kalman ($N=128$): gradient MSE. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:pf-likelihood-gradient-vs-exact-kalman-gradient-mse}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & gradient MSE \\
+\midrule
+1 & custom & \textbf{eigen} & 100 & $\mathbf{5.433}$ \\
+2 & custom & gaussian & 100 & $6.223$ \\
+3 & custom & gumbel & 10 & $84.64$ \\
+4 & pydpf & soft & 100 & $95.5$ \\
+4 & torchfilter & soft & 100 & $95.5$ \\
+6 & pydpf & systematic\_stop & 100 & $152.2$ \\
+7 & pydpf & systematic & 100 & $168.4$ \\
+8 & cuthbert & systematic\_stop & 100 & $179.4$ \\
+9 & cuthbert & systematic & 100 & $212.5$ \\
+10 & pydpf & ot & 10 & $844.9$ \\
+\bottomrule
+\end{tabular}
+\end{table}

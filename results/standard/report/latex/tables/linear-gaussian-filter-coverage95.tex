@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Linear Gaussian filter ($N=128$): 95\% coverage. Best = closest to 95\% is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:linear-gaussian-filter-coverage95}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & 95\% coverage \\
+\midrule
+1 & filterflow & \textbf{corrected\_ot} & 10/10 & $\mathbf{0.932 \pm 0.02154}$ \\
+2 & stonesoup & residual & 100/100 & $0.9316 \pm 0.02163$ \\
+3 & julia & residual & 100/100 & $0.9308 \pm 0.02094$ \\
+3 & pydpf & systematic & 100/100 & $0.9308 \pm 0.02122$ \\
+3 & pydpf & systematic\_stop & 100/100 & $0.9308 \pm 0.02122$ \\
+6 & particles & stratified & 100/100 & $0.9306 \pm 0.02209$ \\
+6 & pydpf & multinomial & 100/100 & $0.9306 \pm 0.02266$ \\
+6 & torchfilter & multinomial & 100/100 & $0.9306 \pm 0.02266$ \\
+9 & cuthbert & multinomial & 100/100 & $0.9304 \pm 0.01987$ \\
+9 & particles & residual & 100/100 & $0.9304 \pm 0.01918$ \\
+11 & pfjax & ot & 10/10 & $0.93 \pm 0.02051$ \\
+12 & julia & killing & 100/100 & $0.9296 \pm 0.02241$ \\
+12 & julia & stratified & 100/100 & $0.9296 \pm 0.0213$ \\
+14 & julia & ssp & 100/100 & $0.9294 \pm 0.02137$ \\
+14 & variational & kl & 100/100 & $0.9294 \pm 0.01994$ \\
+16 & custom & gaussian & 100/100 & $0.9292 \pm 0.02216$ \\
+16 & particles & systematic & 100/100 & $0.9292 \pm 0.02184$ \\
+18 & particles & ssp & 100/100 & $0.929 \pm 0.02118$ \\
+19 & stonesoup & multinomial & 100/100 & $0.9288 \pm 0.0217$ \\
+19 & custom & eigen & 100/100 & $0.9288 \pm 0.02219$ \\
+21 & filterflow & multinomial & 100/100 & $0.9286 \pm 0.02167$ \\
+21 & pfjax & multinomial & 100/100 & $0.9286 \pm 0.02243$ \\
+21 & pfjax & mvn & 100/100 & $0.9286 \pm 0.02183$ \\
+24 & julia & multinomial & 100/100 & $0.9284 \pm 0.0214$ \\
+24 & variational & tv & 100/100 & $0.9284 \pm 0.02214$ \\
+26 & custom & gumbel & 10/10 & $0.928 \pm 0.02154$ \\
+26 & pydpf & ot & 10/10 & $0.928 \pm 0.02154$ \\
+28 & filterflow & stratified & 100/100 & $0.9278 \pm 0.02192$ \\
+28 & stonesoup & stratified & 100/100 & $0.9278 \pm 0.02262$ \\
+30 & cuthbert & systematic & 100/100 & $0.9276 \pm 0.02216$ \\
+30 & cuthbert & systematic\_stop & 100/100 & $0.9276 \pm 0.02216$ \\
+30 & particles & multinomial & 100/100 & $0.9276 \pm 0.02232$ \\
+33 & filterflow & systematic & 100/100 & $0.9274 \pm 0.0219$ \\
+33 & pydpf & soft & 100/100 & $0.9274 \pm 0.0228$ \\
+33 & torchfilter & soft & 100/100 & $0.9274 \pm 0.0228$ \\
+36 & julia & systematic & 100/100 & $0.9264 \pm 0.02278$ \\
+37 & stonesoup & systematic & 100/100 & $0.9262 \pm 0.02292$ \\
+38 & filterflow & ot & 10/10 & $0.924 \pm 0.02001$ \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,10 @@
+{
+  "nchopin/particles": true,
+  "dstl/Stone-Soup": true,
+  "JTT94/filterflow": true,
+  "state-space-models/cuthbert": true,
+  "mlysy/pfjax": true,
+  "John-JoB/pydpf": true,
+  "stanford-iprl-lab/torchfilter": true,
+  "skarppinen/Resamplings.jl": true
+}

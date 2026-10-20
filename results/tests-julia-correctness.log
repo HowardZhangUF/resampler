@@ -1,0 +1,32 @@
+Test Summary:                                                                                                                       | Pass  Total  Time
+Check that call to `resample!` works for all resamplings with any order and randomisation + weights are not modified in `resample!` |  102    102  5.2s
+Test Summary:                                                                                           | Pass  Total  Time
+Check that calls to default constructors (such as `MultinomialResampling(10)`) work for all resamplings |   14     14  0.0s
+Test Summary:                                                | Pass  Total  Time
+Check that `resample!` detects invalid arguments as promised |    3      3  0.1s
+Test Summary:                                                                                                     | Pass  Total  Time
+Check that `resample!` does not allocate for any order or randomisation (NOTE: currently excluding order = :sort) |   36     36  0.0s
+Test Summary:                    | Pass  Total  Time
+Function `has_conditional` works |   24     24  0.0s
+Test Summary:                                                                 | Pass  Total  Time
+Calls to `conditional_resample!` work for implemented conditional resamplings |    8      8  0.7s
+Test Summary:                                                            | Pass  Total  Time
+Check that `conditional_resample!` detects invalid arguments as promised |   10     10  0.0s
+Test Summary:                                                                                                                | Pass  Total  Time
+Check that `conditional_resample!` does not allocate for implemented conditional resamplings (NOTE: excluding order = :sort) |    6      6  0.0s
+Test Summary:                                                                                                                                                           | Pass  Total  Time
+100 random tests that `conditional_resample!` with SystematicResampling(N; randomisation = :circular, order = :none) preserves conditioning and does not modify weights |  200    200  0.0s
+Test Summary:                                                                                                                                                           | Pass  Total  Time
+100 random tests that `conditional_resample!` with SystematicResampling(N; randomisation = :circular, order = :sort) preserves conditioning and does not modify weights |  200    200  0.0s
+Test Summary:                                                                                                                                                                | Pass  Total  Time
+100 random tests that `conditional_resample!` with SystematicResampling(N; randomisation = :circular, order = :partition) preserves conditioning and does not modify weights |  200    200  0.0s
+Test Summary:                                                                                                                                                    | Pass  Total  Time
+100 random tests that `conditional_resample!` with SSSResampling(N; randomisation = :circular, order = :none) preserves conditioning and does not modify weights |  200    200  0.0s
+Test Summary:                                                                                                                                                    | Pass  Total  Time
+100 random tests that `conditional_resample!` with SSSResampling(N; randomisation = :circular, order = :sort) preserves conditioning and does not modify weights |  200    200  0.0s
+Test Summary:                                                                                                                                                         | Pass  Total  Time
+100 random tests that `conditional_resample!` with SSSResampling(N; randomisation = :circular, order = :partition) preserves conditioning and does not modify weights |  200    200  0.0s
+Test Summary:                                                                                                                                            | Pass  Total  Time
+100 random tests that `conditional_resample!` with MultinomialResampling(N; randomisation = :shuffle) preserves conditioning and does not modify weights |  200    200  0.0s
+Test Summary:                                                                                                                                         | Pass  Total  Time
+100 random tests that `conditional_resample!` with KillingResampling(N; randomisation = :circular) preserves conditioning and does not modify weights |  200    200  0.0s

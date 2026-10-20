@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Mixture cloud ($N=128$, $d=2$): covariance error (Frobenius). Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:mixture-cloud-covariance-error}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & covariance error (Frobenius) \\
+\midrule
+1 & custom & \textbf{eigen} & 100/100 & $\mathbf{1.311\times10^{-15} \pm 0}$ \\
+2 & stonesoup & systematic & 100/100 & $0.1629 \pm 0.01208$ \\
+3 & julia & systematic & 100/100 & $0.2301 \pm 0.01716$ \\
+4 & stonesoup & stratified & 100/100 & $0.2409 \pm 0.02174$ \\
+5 & filterflow & stratified & 100/100 & $0.3263 \pm 0.03138$ \\
+6 & julia & stratified & 100/100 & $0.3264 \pm 0.03411$ \\
+7 & particles & stratified & 100/100 & $0.3337 \pm 0.04024$ \\
+8 & particles & ssp & 100/100 & $0.3442 \pm 0.04689$ \\
+9 & julia & killing & 100/100 & $0.3478 \pm 0.04049$ \\
+10 & julia & ssp & 100/100 & $0.3662 \pm 0.04016$ \\
+11 & particles & residual & 100/100 & $0.405 \pm 0.03817$ \\
+12 & julia & residual & 100/100 & $0.4303 \pm 0.04155$ \\
+13 & cuthbert & multinomial & 100/100 & $0.4797 \pm 0.0496$ \\
+14 & stonesoup & residual & 100/100 & $0.4878 \pm 0.04743$ \\
+15 & pfjax & multinomial & 100/100 & $0.5114 \pm 0.05508$ \\
+16 & pydpf & soft & 100/100 & $0.5216 \pm 0.05562$ \\
+16 & torchfilter & soft & 100/100 & $0.5216 \pm 0.05562$ \\
+18 & julia & multinomial & 100/100 & $0.5409 \pm 0.05384$ \\
+19 & particles & multinomial & 100/100 & $0.5588 \pm 0.058$ \\
+20 & pydpf & multinomial & 100/100 & $0.5698 \pm 0.06163$ \\
+20 & torchfilter & multinomial & 100/100 & $0.5698 \pm 0.06163$ \\
+22 & stonesoup & multinomial & 100/100 & $0.5729 \pm 0.06508$ \\
+23 & filterflow & multinomial & 100/100 & $0.5978 \pm 0.0549$ \\
+24 & variational & kl & 100/100 & $0.833 \pm 0$ \\
+24 & variational & tv & 100/100 & $0.833 \pm 0$ \\
+26 & pfjax & mvn & 100/100 & $0.9077 \pm 0.1145$ \\
+27 & custom & gaussian & 100/100 & $0.9295 \pm 0.1319$ \\
+28 & pydpf & ot & 10/10 & $1.925 \pm 0$ \\
+29 & pfjax & ot & 10/10 & $2.134 \pm 0$ \\
+30 & filterflow & corrected\_ot & 10/10 & $2.857 \pm 0$ \\
+30 & filterflow & ot & 10/10 & $2.857 \pm 0$ \\
+32 & particles & systematic & 100/100 & $2.906 \pm 0.6798$ \\
+33 & filterflow & systematic & 100/100 & $3.29 \pm 0.7143$ \\
+34 & pydpf & systematic & 100/100 & $3.29 \pm 0.7143$ \\
+34 & pydpf & systematic\_stop & 100/100 & $3.29 \pm 0.7143$ \\
+34 & cuthbert & systematic & 100/100 & $3.29 \pm 0.7143$ \\
+34 & cuthbert & systematic\_stop & 100/100 & $3.29 \pm 0.7143$ \\
+38 & custom & gumbel & 10/10 & $4.487 \pm 0.3302$ \\
+\bottomrule
+\end{tabular}
+\end{table}

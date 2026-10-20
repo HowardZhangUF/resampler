@@ -1,0 +1,16 @@
+Torch PF gradient complete dsr dsr 32
+Torch PF gradient complete dsr dsr 128
+Torch PF gradient complete dsr dsr 512
+Torch PF gradient complete dsr dsr 2048
+Torch PF gradient complete dsr dsr_unsorted 32
+Torch PF gradient complete dsr dsr_unsorted 128
+Torch PF gradient complete dsr dsr_unsorted 512
+Torch PF gradient complete dsr dsr_unsorted 2048
+Torch PF gradient complete dsr dsr_noclip 32
+Torch PF gradient complete dsr dsr_noclip 128
+Torch PF gradient complete dsr dsr_noclip 512
+Torch PF gradient complete dsr dsr_noclip 2048
+Torch PF gradient complete dsr dsr_tau0.5 32
+Torch PF gradient complete dsr dsr_tau0.5 128
+Torch PF gradient complete dsr dsr_tau0.5 512
+Torch PF gradient complete dsr dsr_tau0.5 2048

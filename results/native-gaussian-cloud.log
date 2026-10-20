@@ -1,0 +1,9 @@
+/home/user/resampler/vendor/particles/book/resampling/compare_tv_distance_resampling.py:77: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+{
+  "passed": true,
+  "trials": 8400,
+  "source": "vendor/particles/book/resampling/compare_tv_distance_resampling.py",
+  "settings": "native book loop and TV metric; N=1024; 21 tau values in [0,10]; original 100 repetitions; fixed seed 20261011",
+  "notes": "only N and tau-grid assignments bounded; original source uses N=10000 and 500 tau values; original plot percentile conventions retained"
+}

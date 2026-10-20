@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Variational vs classical · mixture cloud ($N=128$, $d=2$): sliced W1. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:variational-vs-classical-mixture-cloud-sliced-w1}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & sliced W1 \\
+\midrule
+1 & particles & \textbf{ssp} & 100/100 & $\mathbf{0.1208 \pm 0.01435}$ \\
+2 & particles & multinomial & 100/100 & $0.1953 \pm 0.01885$ \\
+3 & variational & kl & 100/100 & $0.652 \pm 0$ \\
+3 & variational & tv & 100/100 & $0.652 \pm 0$ \\
+5 & particles & systematic & 100/100 & $0.8868 \pm 0.07697$ \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Variational vs classical · mixture cloud ($N=128$, $d=2$): forward time (ms). Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:variational-vs-classical-mixture-cloud-forward-ms}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & forward time (ms) \\
+\midrule
+1 & particles & \textbf{ssp} & 100/100 & $\mathbf{0.1907 \pm 0.005689}$ \\
+2 & particles & systematic & 100/100 & $0.2093 \pm 0.009762$ \\
+3 & particles & multinomial & 100/100 & $0.3192 \pm 0.02899$ \\
+4 & variational & tv & 100/100 & $1.109 \pm 0.1258$ \\
+5 & variational & kl & 100/100 & $2.227 \pm 0.1671$ \\
+\bottomrule
+\end{tabular}
+\end{table}

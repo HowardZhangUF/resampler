@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Mixture cloud ($N=128$, $d=2$): trials keeping both modes. Best = higher is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:mixture-cloud-mode-coverage}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & trials keeping both modes \\
+\midrule
+1 & custom & \textbf{eigen} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & custom & \textbf{gaussian} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & custom & \textbf{gumbel} & 10/10 & $\mathbf{1 \pm 0}$ \\
+1 & cuthbert & \textbf{multinomial} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & filterflow & \textbf{corrected\_ot} & 10/10 & $\mathbf{1 \pm 0}$ \\
+1 & filterflow & \textbf{multinomial} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & filterflow & \textbf{ot} & 10/10 & $\mathbf{1 \pm 0}$ \\
+1 & filterflow & \textbf{stratified} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & julia & \textbf{killing} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & julia & \textbf{multinomial} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & julia & \textbf{residual} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & julia & \textbf{ssp} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & julia & \textbf{stratified} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & julia & \textbf{systematic} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & particles & \textbf{multinomial} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & particles & \textbf{residual} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & particles & \textbf{ssp} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & particles & \textbf{stratified} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & pfjax & \textbf{multinomial} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & pfjax & \textbf{mvn} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & pfjax & \textbf{ot} & 10/10 & $\mathbf{1 \pm 0}$ \\
+1 & pydpf & \textbf{multinomial} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & pydpf & \textbf{ot} & 10/10 & $\mathbf{1 \pm 0}$ \\
+1 & pydpf & \textbf{soft} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & stonesoup & \textbf{multinomial} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & stonesoup & \textbf{residual} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & stonesoup & \textbf{stratified} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & stonesoup & \textbf{systematic} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & torchfilter & \textbf{multinomial} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & torchfilter & \textbf{soft} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & variational & \textbf{kl} & 100/100 & $\mathbf{1 \pm 0}$ \\
+1 & variational & \textbf{tv} & 100/100 & $\mathbf{1 \pm 0}$ \\
+33 & particles & systematic & 100/100 & $0.865 \pm 0.04427$ \\
+34 & cuthbert & systematic & 100/100 & $0.84 \pm 0.04651$ \\
+34 & cuthbert & systematic\_stop & 100/100 & $0.84 \pm 0.04651$ \\
+34 & filterflow & systematic & 100/100 & $0.84 \pm 0.04651$ \\
+34 & pydpf & systematic & 100/100 & $0.84 \pm 0.04651$ \\
+34 & pydpf & systematic\_stop & 100/100 & $0.84 \pm 0.04651$ \\
+\bottomrule
+\end{tabular}
+\end{table}

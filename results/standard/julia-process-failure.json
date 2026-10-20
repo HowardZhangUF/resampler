@@ -1,0 +1,6 @@
+{
+  "returncode": -15,
+  "resolved": true,
+  "reason": "Worker restarted to use binary IPC and seed both Julia RNG streams.",
+  "resolution": "All remaining cells and the superseded multinomial measurements completed; see results/resume-julia.log."
+}

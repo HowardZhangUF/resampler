@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Bearing-only tracking filter ($N=128$): conditional log-likelihood variance. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:bearing-only-tracking-filter-conditional-loglik-variance}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & conditional log-likelihood variance \\
+\midrule
+1 & custom & \textbf{eigen} & 100/100 & $\mathbf{0.586}$ \\
+2 & pfjax & mvn & 100/100 & $1.197$ \\
+3 & custom & gaussian & 100/100 & $1.992$ \\
+4 & particles & ssp & 100/100 & $2.019$ \\
+5 & julia & multinomial & 100/100 & $2.921$ \\
+6 & stonesoup & stratified & 100/100 & $2.93$ \\
+7 & particles & stratified & 100/100 & $3.091$ \\
+8 & cuthbert & systematic & 100/100 & $3.326$ \\
+8 & cuthbert & systematic\_stop & 100/100 & $3.326$ \\
+10 & stonesoup & systematic & 100/100 & $3.771$ \\
+11 & julia & stratified & 100/100 & $3.849$ \\
+12 & filterflow & multinomial & 100/100 & $3.972$ \\
+13 & pfjax & multinomial & 100/100 & $4.521$ \\
+14 & pydpf & multinomial & 100/100 & $4.556$ \\
+14 & torchfilter & multinomial & 100/100 & $4.556$ \\
+16 & julia & ssp & 100/100 & $4.573$ \\
+17 & pydpf & systematic & 100/100 & $4.651$ \\
+17 & pydpf & systematic\_stop & 100/100 & $4.651$ \\
+19 & julia & killing & 100/100 & $4.723$ \\
+20 & particles & systematic & 100/100 & $4.739$ \\
+21 & stonesoup & multinomial & 100/100 & $4.879$ \\
+22 & julia & systematic & 100/100 & $5.275$ \\
+23 & variational & tv & 100/100 & $6.066$ \\
+24 & cuthbert & multinomial & 100/100 & $6.607$ \\
+25 & filterflow & stratified & 100/100 & $7.085$ \\
+26 & filterflow & systematic & 100/100 & $7.311$ \\
+27 & variational & kl & 100/100 & $7.522$ \\
+28 & particles & residual & 100/100 & $7.577$ \\
+29 & julia & residual & 100/100 & $7.695$ \\
+30 & stonesoup & residual & 100/100 & $7.747$ \\
+31 & pydpf & soft & 100/100 & $9.433$ \\
+31 & torchfilter & soft & 100/100 & $9.433$ \\
+33 & particles & multinomial & 100/100 & $19.1$ \\
+-- & custom & gumbel & 10/10 & $\text{--}$ \\
+-- & filterflow & corrected\_ot & 10/10 & $\text{--}$ \\
+-- & filterflow & ot & 10/10 & $\text{--}$ \\
+-- & pfjax & ot & 10/10 & $\text{--}$ \\
+-- & pydpf & ot & 10/10 & $\text{--}$ \\
+\bottomrule
+\end{tabular}
+\end{table}

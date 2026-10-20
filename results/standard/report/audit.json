@@ -1,0 +1,463 @@
+{
+  "completed_cells": 2591,
+  "failures": [],
+  "numerical_trial_failures": [
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 5,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 7,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 15,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 38,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 44,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 50,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 60,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 61,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 62,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 65,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 66,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 67,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 70,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 71,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 72,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 74,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 77,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 78,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 79,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N32",
+      "seed": 80,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N128",
+      "seed": 49,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N128",
+      "seed": 62,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N128",
+      "seed": 67,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N128",
+      "seed": 75,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N128",
+      "seed": 77,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N128",
+      "seed": 78,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N128",
+      "seed": 79,
+      "error": "Non-finite resampler output"
+    },
+    {
+      "provider": "pfjax",
+      "method": "mvn",
+      "stage": "filter",
+      "case": "ungm/N512",
+      "seed": 76,
+      "error": "Non-finite resampler output"
+    }
+  ],
+  "skips": [
+    {
+      "provider": "pydpf",
+      "method": "ot",
+      "stage": "static",
+      "case": "mixture/N2048/D1",
+      "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."
+    },
+    {
+      "provider": "pydpf",
+      "method": "ot",
+      "stage": "static",
+      "case": "skewed/N2048/D1",
+      "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."
+    },
+    {
+      "provider": "pydpf",
+      "method": "ot",
+      "stage": "static",
+      "case": "fixed/N2048/D2",
+      "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."
+    },
+    {
+      "provider": "pydpf",
+      "method": "ot",
+      "stage": "static",
+      "case": "mixture/N2048/D2",
+      "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."
+    },
+    {
+      "provider": "pydpf",
+      "method": "ot",
+      "stage": "static",
+      "case": "skewed/N2048/D2",
+      "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."
+    },
+    {
+      "provider": "pydpf",
+      "method": "ot",
+      "stage": "static",
+      "case": "fixed/N2048/D4",
+      "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."
+    },
+    {
+      "provider": "pydpf",
+      "method": "ot",
+      "stage": "static",
+      "case": "gaussian/N2048/D4",
+      "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."
+    },
+    {
+      "provider": "pydpf",
+      "method": "ot",
+      "stage": "static",
+      "case": "mixture/N2048/D4",
+      "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."
+    },
+    {
+      "provider": "pydpf",
+      "method": "ot",
+      "stage": "static",
+      "case": "skewed/N2048/D4",
+      "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "fixed/N512/D1",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "gaussian/N512/D1",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "mixture/N512/D1",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "skewed/N512/D1",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "fixed/N512/D2",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "gaussian/N512/D2",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "mixture/N512/D2",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "skewed/N512/D2",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "fixed/N512/D4",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "gaussian/N512/D4",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "mixture/N512/D4",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "skewed/N512/D4",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "fixed/N2048/D1",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "gaussian/N2048/D1",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "mixture/N2048/D1",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "skewed/N2048/D1",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "fixed/N2048/D2",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "gaussian/N2048/D2",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "mixture/N2048/D2",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "skewed/N2048/D2",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "fixed/N2048/D4",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "gaussian/N2048/D4",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "mixture/N2048/D4",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    },
+    {
+      "provider": "filterflow",
+      "method": "corrected_ot",
+      "stage": "static",
+      "case": "skewed/N2048/D4",
+      "reason": "Covariance-corrected OT capped at N=128; cubic dense matrix solver."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Stochastic volatility filter ($N=128$): 95\% coverage. Best = closest to 95\% is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:stochastic-volatility-filter-coverage95}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & 95\% coverage \\
+\midrule
+1 & custom & \textbf{gumbel} & 10/10 & $\mathbf{0.946 \pm 0.03697}$ \\
+2 & variational & tv & 100/100 & $0.9562 \pm 0.02419$ \\
+3 & particles & residual & 100/100 & $0.9592 \pm 0.02316$ \\
+4 & pydpf & soft & 100/100 & $0.9594 \pm 0.02177$ \\
+4 & torchfilter & soft & 100/100 & $0.9594 \pm 0.02177$ \\
+6 & stonesoup & multinomial & 100/100 & $0.9598 \pm 0.02265$ \\
+7 & variational & kl & 100/100 & $0.9604 \pm 0.02065$ \\
+8 & pfjax & multinomial & 100/100 & $0.961 \pm 0.02148$ \\
+9 & stonesoup & residual & 100/100 & $0.9612 \pm 0.02046$ \\
+10 & particles & multinomial & 100/100 & $0.9614 \pm 0.0219$ \\
+11 & cuthbert & systematic & 100/100 & $0.9616 \pm 0.02213$ \\
+11 & cuthbert & systematic\_stop & 100/100 & $0.9616 \pm 0.02213$ \\
+13 & cuthbert & multinomial & 100/100 & $0.9622 \pm 0.02241$ \\
+14 & julia & killing & 100/100 & $0.9624 \pm 0.02087$ \\
+15 & julia & stratified & 100/100 & $0.9626 \pm 0.02047$ \\
+16 & filterflow & stratified & 100/100 & $0.9628 \pm 0.01923$ \\
+17 & pydpf & multinomial & 100/100 & $0.9632 \pm 0.01949$ \\
+17 & torchfilter & multinomial & 100/100 & $0.9632 \pm 0.01949$ \\
+19 & julia & multinomial & 100/100 & $0.9634 \pm 0.02093$ \\
+20 & filterflow & systematic & 100/100 & $0.9636 \pm 0.0214$ \\
+21 & julia & ssp & 100/100 & $0.9644 \pm 0.01968$ \\
+21 & stonesoup & stratified & 100/100 & $0.9644 \pm 0.0207$ \\
+23 & custom & gaussian & 100/100 & $0.9646 \pm 0.0197$ \\
+24 & filterflow & multinomial & 100/100 & $0.9648 \pm 0.01861$ \\
+24 & particles & stratified & 100/100 & $0.9648 \pm 0.02066$ \\
+26 & julia & residual & 100/100 & $0.965 \pm 0.01826$ \\
+26 & stonesoup & systematic & 100/100 & $0.965 \pm 0.02031$ \\
+28 & particles & ssp & 100/100 & $0.9656 \pm 0.02095$ \\
+29 & particles & systematic & 100/100 & $0.9658 \pm 0.01838$ \\
+30 & filterflow & corrected\_ot & 10/10 & $0.966 \pm 0.02138$ \\
+31 & custom & eigen & 100/100 & $0.9662 \pm 0.02032$ \\
+32 & pfjax & mvn & 100/100 & $0.9664 \pm 0.01985$ \\
+33 & julia & systematic & 100/100 & $0.9668 \pm 0.01836$ \\
+34 & pydpf & systematic & 100/100 & $0.967 \pm 0.01967$ \\
+34 & pydpf & systematic\_stop & 100/100 & $0.967 \pm 0.01967$ \\
+36 & filterflow & ot & 10/10 & $0.968 \pm 0.02046$ \\
+37 & pfjax & ot & 10/10 & $0.97 \pm 0.01937$ \\
+37 & pydpf & ot & 10/10 & $0.97 \pm 0.01937$ \\
+\bottomrule
+\end{tabular}
+\end{table}

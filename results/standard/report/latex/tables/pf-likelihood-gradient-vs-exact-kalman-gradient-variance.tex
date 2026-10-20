@@ -1,0 +1,22 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{PF likelihood gradient vs exact Kalman ($N=128$): gradient variance. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:pf-likelihood-gradient-vs-exact-kalman-gradient-variance}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & gradient variance \\
+\midrule
+1 & custom & \textbf{eigen} & 100 & $\mathbf{5.207}$ \\
+2 & custom & gaussian & 100 & $5.602$ \\
+3 & custom & gumbel & 10 & $20.28$ \\
+4 & pydpf & systematic & 100 & $41.82$ \\
+5 & cuthbert & systematic & 100 & $44.41$ \\
+6 & pydpf & soft & 100 & $51.45$ \\
+6 & torchfilter & soft & 100 & $51.45$ \\
+8 & pydpf & systematic\_stop & 100 & $150.6$ \\
+9 & cuthbert & systematic\_stop & 100 & $175.9$ \\
+10 & pydpf & ot & 10 & $714.6$ \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,64 @@
+Waiting for accuracy/native/learning pipeline PID 43040
+Finishing: scripts/retry_failed_cells.py
+Finishing: scripts/run_all.py --profile standard --jobs 1 --isolate-methods --stages timing gradient --output results/performance
+Running particles -> /home/user/resampler/results/performance/particles.log
+particles exit 0
+Running stonesoup -> /home/user/resampler/results/performance/stonesoup.log
+stonesoup exit 0
+Running cuthbert -> /home/user/resampler/results/performance/cuthbert.log
+cuthbert exit 0
+Running pfjax -> /home/user/resampler/results/performance/pfjax.log
+pfjax exit 0
+Running pydpf -> /home/user/resampler/results/performance/pydpf.log
+pydpf exit 0
+Running torchfilter -> /home/user/resampler/results/performance/torchfilter.log
+torchfilter exit 0
+Running filterflow -> /home/user/resampler/results/performance/filterflow.log
+filterflow exit 0
+Running julia -> /home/user/resampler/results/performance/julia.log
+julia exit 0
+Running custom -> /home/user/resampler/results/performance/custom.log
+custom exit 0
+Finishing: scripts/illustrate_moments.py
+Finishing: scripts/report.py
+{
+  "raw_static": 150261,
+  "raw_filter": 50000,
+  "raw_gradient": 19600,
+  "raw_learning": 110,
+  "completed": 2463,
+  "failed": 0,
+  "output": "/home/user/resampler/results/standard/report"
+}
+Finishing: scripts/validate_results.py
+{
+  "ok": true,
+  "problems": [],
+  "raw_counts": {
+    "particles/static": 24000,
+    "particles/filter": 8000,
+    "stonesoup/static": 19200,
+    "stonesoup/filter": 6400,
+    "cuthbert/static": 14400,
+    "cuthbert/filter": 4800,
+    "cuthbert/gradient": 3600,
+    "pfjax/static": 9912,
+    "pfjax/filter": 3280,
+    "pfjax/gradient": 2480,
+    "pydpf/static": 19485,
+    "pydpf/filter": 6480,
+    "pydpf/gradient": 4880,
+    "torchfilter/static": 9600,
+    "torchfilter/filter": 3200,
+    "torchfilter/gradient": 2400,
+    "filterflow/static": 14952,
+    "filterflow/filter": 4960,
+    "filterflow/gradient": 3760,
+    "julia/static": 28800,
+    "julia/filter": 9600,
+    "custom/static": 9912,
+    "custom/filter": 3280,
+    "custom/gradient": 2480
+  }
+}
+All experiments, reports, and validation complete.

@@ -1,0 +1,18 @@
+Running particles -> /home/user/resampler/results/smoke/particles.log
+particles exit 0
+Running stonesoup -> /home/user/resampler/results/smoke/stonesoup.log
+stonesoup exit 0
+Running cuthbert -> /home/user/resampler/results/smoke/cuthbert.log
+cuthbert exit 0
+Running pfjax -> /home/user/resampler/results/smoke/pfjax.log
+pfjax exit 0
+Running pydpf -> /home/user/resampler/results/smoke/pydpf.log
+pydpf exit 0
+Running torchfilter -> /home/user/resampler/results/smoke/torchfilter.log
+torchfilter exit 0
+Running filterflow -> /home/user/resampler/results/smoke/filterflow.log
+filterflow exit 0
+Running julia -> /home/user/resampler/results/smoke/julia.log
+julia exit 0
+Running custom -> /home/user/resampler/results/smoke/custom.log
+custom exit 0

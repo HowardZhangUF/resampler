@@ -1,0 +1,164 @@
+table,setting,method,stat,paper,ours,match,note
+6,f(x)=x,hard SR,bias,0.00023,0.00022945566816295803,True,chunked rerun; not bit-exact
+6,f(x)=x,hard SR,var,0.0012,0.0011571535595037707,True,chunked rerun; not bit-exact
+6,f(x)=x,hard SR,mse,0.0012,0.0011572062094074127,True,chunked rerun; not bit-exact
+6,f(x)=x,multinomial,bias,0.00049,0.0004938730346069779,True,chunked rerun; not bit-exact
+6,f(x)=x,multinomial,var,0.0055,0.005451460472983741,True,chunked rerun; not bit-exact
+6,f(x)=x,multinomial,mse,0.0055,0.005451704383558045,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=0.01,bias,0.0024,0.0023697565438104617,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=0.01,var,2.9e-05,2.8768621692112917e-05,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=0.01,mse,3.4e-05,3.4384367769036824e-05,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=0.05,bias,0.012,0.012384483482603893,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=0.05,var,8.6e-06,8.579853158746653e-06,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=0.05,mse,0.00016,0.00016195528428962255,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=0.1,bias,0.02,0.01956677887827592,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=0.1,var,4.7e-06,4.684391022503898e-06,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=0.1,mse,0.00039,0.00038754322669384914,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=0.5,bias,0.012,0.011641934228346789,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=0.5,var,1.6e-07,1.6199974624264701e-07,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=0.5,mse,0.00014,0.00013569663232338466,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=1.0,bias,0.0036,0.0035731295734820995,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=1.0,var,1.3e-08,1.3254490373315608e-08,True,chunked rerun; not bit-exact
+6,f(x)=x,DSR tau=1.0,mse,1.3e-05,1.2780509439257878e-05,True,chunked rerun; not bit-exact
+6,f(x)=x^2,hard SR,bias,0.00012,0.00011961109533223676,True,chunked rerun; not bit-exact
+6,f(x)=x^2,hard SR,var,0.0007,0.0007006518279748658,True,chunked rerun; not bit-exact
+6,f(x)=x^2,hard SR,mse,0.0007,0.000700666134788969,True,chunked rerun; not bit-exact
+6,f(x)=x^2,multinomial,bias,0.00028,0.0002837649823919368,True,chunked rerun; not bit-exact
+6,f(x)=x^2,multinomial,var,0.0026,0.0025682667779866747,True,chunked rerun; not bit-exact
+6,f(x)=x^2,multinomial,mse,0.0026,0.0025683473005519014,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=0.01,bias,0.12,0.1177177698945915,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=0.01,var,3.8e-07,3.813286600304333e-07,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=0.01,mse,0.014,0.013857854677616027,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=0.05,bias,0.23,0.22991861624054272,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=0.05,var,3.1e-07,3.089446034519605e-07,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=0.05,mse,0.053,0.05286287903856942,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=0.1,bias,0.27,0.27031714988645766,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=0.1,var,2e-07,1.9615503192658285e-07,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=0.1,mse,0.073,0.07307155767776956,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=0.5,bias,0.31,0.3145036803908689,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=0.5,var,2.2e-09,2.185115286412395e-09,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=0.5,mse,0.099,0.09891256716451709,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=1.0,bias,0.32,0.3163322798414897,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=1.0,var,2e-10,1.9534710296847252e-10,True,chunked rerun; not bit-exact
+6,f(x)=x^2,DSR tau=1.0,mse,0.1,0.1000661114650617,True,chunked rerun; not bit-exact
+13,d=1,hard,mass_mean,0.0,0.0,True,chunked rerun; not bit-exact
+13,d=2,hard,mass_mean,0.0,0.0,True,chunked rerun; not bit-exact
+13,d=3,hard,mass_mean,0.0,0.0,True,chunked rerun; not bit-exact
+13,d=5,hard,mass_mean,0.0,0.0,True,chunked rerun; not bit-exact
+13,d=10,hard,mass_mean,0.0,0.0,True,chunked rerun; not bit-exact
+13,d=1,soft,mass_mean,0.0,0.0,True,chunked rerun; not bit-exact
+13,d=2,soft,mass_mean,0.0,0.0,True,chunked rerun; not bit-exact
+13,d=3,soft,mass_mean,0.0,0.0,True,chunked rerun; not bit-exact
+13,d=5,soft,mass_mean,0.0,0.0,True,chunked rerun; not bit-exact
+13,d=10,soft,mass_mean,0.0,0.0,True,chunked rerun; not bit-exact
+13,d=1,erot,mass_mean,0.0,0.0,True,chunked rerun; not bit-exact
+13,d=2,erot,mass_mean,0.0,0.0,True,chunked rerun; not bit-exact
+13,d=3,erot,mass_mean,0.747,0.7473779559135437,True,chunked rerun; not bit-exact
+13,d=5,erot,mass_mean,1.0,1.0,True,chunked rerun; not bit-exact
+13,d=10,erot,mass_mean,1.0,1.0,True,chunked rerun; not bit-exact
+13,d=1,dsr_sorted,mass_mean,0.287,0.2867549568414688,True,chunked rerun; not bit-exact
+13,d=2,dsr_sorted,mass_mean,0.283,0.28301396369934084,True,chunked rerun; not bit-exact
+13,d=3,dsr_sorted,mass_mean,0.282,0.2824609696865082,True,chunked rerun; not bit-exact
+13,d=5,dsr_sorted,mass_mean,0.282,0.282374969124794,True,chunked rerun; not bit-exact
+13,d=10,dsr_sorted,mass_mean,0.282,0.2824049651622772,True,chunked rerun; not bit-exact
+13,d=1,dsr_unsorted,mass_mean,1.0,0.9999959945678711,True,chunked rerun; not bit-exact
+13,d=2,dsr_unsorted,mass_mean,1.0,1.0,True,chunked rerun; not bit-exact
+13,d=3,dsr_unsorted,mass_mean,1.0,0.9999969959259033,True,chunked rerun; not bit-exact
+13,d=5,dsr_unsorted,mass_mean,1.0,1.0,True,chunked rerun; not bit-exact
+13,d=10,dsr_unsorted,mass_mean,1.0,1.0,True,chunked rerun; not bit-exact
+15,d=2,Hard SR,bias,2.324,2.324,True,"upstream script, unmodified"
+15,d=2,Hard SR,variance,0.308,0.308,True,"upstream script, unmodified"
+15,d=2,Hard SR,mse,5.707,5.707,True,"upstream script, unmodified"
+15,d=2,DSR (tau=1.0),bias,1.256,1.256,True,"upstream script, unmodified"
+15,d=2,DSR (tau=1.0),variance,0.241,0.241,True,"upstream script, unmodified"
+15,d=2,DSR (tau=1.0),mse,1.818,1.818,True,"upstream script, unmodified"
+15,d=2,DSR (tau=0.5),bias,1.257,1.257,True,"upstream script, unmodified"
+15,d=2,DSR (tau=0.5),variance,0.245,0.245,True,"upstream script, unmodified"
+15,d=2,DSR (tau=0.5),mse,1.825,1.825,True,"upstream script, unmodified"
+15,d=2,DSR (tau=0.1),bias,0.764,0.764,True,"upstream script, unmodified"
+15,d=2,DSR (tau=0.1),variance,0.389,0.389,True,"upstream script, unmodified"
+15,d=2,DSR (tau=0.1),mse,0.973,0.973,True,"upstream script, unmodified"
+15,d=2,DSR (tau=0.05),bias,0.37,0.37,True,"upstream script, unmodified"
+15,d=2,DSR (tau=0.05),variance,0.723,0.723,True,"upstream script, unmodified"
+15,d=2,DSR (tau=0.05),mse,0.86,0.86,True,"upstream script, unmodified"
+15,d=2,DSR (tau=0.01),bias,0.343,0.343,True,"upstream script, unmodified"
+15,d=2,DSR (tau=0.01),variance,13.409,13.409,True,"upstream script, unmodified"
+15,d=2,DSR (tau=0.01),mse,13.526,13.526,True,"upstream script, unmodified"
+15,d=4,Hard SR,bias,3.627,3.627,True,"upstream script, unmodified"
+15,d=4,Hard SR,variance,2.092,2.092,True,"upstream script, unmodified"
+15,d=4,Hard SR,mse,15.248,15.248,True,"upstream script, unmodified"
+15,d=4,DSR (tau=1.0),bias,2.869,2.869,True,"upstream script, unmodified"
+15,d=4,DSR (tau=1.0),variance,2.073,2.073,True,"upstream script, unmodified"
+15,d=4,DSR (tau=1.0),mse,10.304,10.304,True,"upstream script, unmodified"
+15,d=4,DSR (tau=0.5),bias,2.914,2.914,True,"upstream script, unmodified"
+15,d=4,DSR (tau=0.5),variance,2.127,2.127,True,"upstream script, unmodified"
+15,d=4,DSR (tau=0.5),mse,10.615,10.615,True,"upstream script, unmodified"
+15,d=4,DSR (tau=0.1),bias,2.131,2.131,True,"upstream script, unmodified"
+15,d=4,DSR (tau=0.1),variance,4.895,4.895,True,"upstream script, unmodified"
+15,d=4,DSR (tau=0.1),mse,9.437,9.437,True,"upstream script, unmodified"
+15,d=4,DSR (tau=0.05),bias,1.72,1.72,True,"upstream script, unmodified"
+15,d=4,DSR (tau=0.05),variance,16.382,16.382,True,"upstream script, unmodified"
+15,d=4,DSR (tau=0.05),mse,19.34,19.34,True,"upstream script, unmodified"
+15,d=4,DSR (tau=0.01),bias,1.412,1.412,True,"upstream script, unmodified"
+15,d=4,DSR (tau=0.01),variance,384.805,384.805,True,"upstream script, unmodified"
+15,d=4,DSR (tau=0.01),mse,386.799,386.799,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=0.01,morton,eff_ancestors,1.7031,1.7030563712120057,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=0.01,morton,l2,0.1022,0.10217384005081839,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=0.01,unsorted,l2,0.1209,0.12087827320564246,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=0.05,morton,eff_ancestors,4.1745,4.174484720110892,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=0.05,morton,l2,0.2774,0.2774410240428988,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=0.05,unsorted,l2,0.3084,0.30839686282281764,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=0.1,morton,eff_ancestors,6.5352,6.535219507813454,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=0.1,morton,l2,0.3558,0.35585679522799907,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=0.1,unsorted,l2,0.3894,0.38939318874134915,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=0.5,morton,eff_ancestors,11.244,11.243991814136507,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=0.5,morton,l2,0.5054,0.5054331087634201,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=0.5,unsorted,l2,0.5141,0.5140695687638945,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=1.0,morton,eff_ancestors,10.5806,10.580554731726647,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=1.0,morton,l2,0.4785,0.4785131116001682,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=25 tau=1.0,unsorted,l2,0.4798,0.47979129557129074,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=0.01,morton,eff_ancestors,2.507,2.5070076369047163,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=0.01,morton,l2,0.1568,0.1567668868203182,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=0.01,unsorted,l2,0.2008,0.20083247152715922,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=0.05,morton,eff_ancestors,7.64,7.639958097100258,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=0.05,morton,l2,0.3341,0.33410268195345993,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=0.05,unsorted,l2,0.394,0.3940428733676672,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=0.1,morton,eff_ancestors,12.2501,12.250067535758019,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=0.1,morton,l2,0.4072,0.4071669540132862,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=0.1,unsorted,l2,0.4546,0.4545734496812802,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=0.5,morton,eff_ancestors,20.9592,20.959200469613073,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=0.5,morton,l2,0.5336,0.5335793063770979,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=0.5,unsorted,l2,0.5443,0.5442579992320389,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=1.0,morton,eff_ancestors,21.5717,21.571710513472556,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=1.0,morton,l2,0.5418,0.5418292091861368,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=50 tau=1.0,unsorted,l2,0.545,0.5449590849392116,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=0.01,morton,eff_ancestors,4.1288,4.128816067337989,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=0.01,morton,l2,0.2047,0.20468576866060903,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=0.01,unsorted,l2,0.2863,0.2863127472142187,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=0.05,morton,eff_ancestors,14.4717,14.471901057004928,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=0.05,morton,l2,0.3771,0.37712995303422214,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=0.05,unsorted,l2,0.4634,0.46342596561834215,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=0.1,morton,eff_ancestors,23.11,23.11001940476894,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=0.1,morton,l2,0.4361,0.4361076295936946,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=0.1,unsorted,l2,0.5059,0.5058573013360146,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=0.5,morton,eff_ancestors,41.5552,41.55519958519936,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=0.5,morton,l2,0.5572,0.5571769849658013,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=0.5,unsorted,l2,0.5719,0.5719272977747023,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=1.0,morton,eff_ancestors,42.9981,42.99812433564664,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=1.0,morton,l2,0.5864,0.5864116691872477,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=100 tau=1.0,unsorted,l2,0.591,0.5910141703262924,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=0.01,morton,eff_ancestors,7.581,7.580996052742006,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=0.01,morton,l2,0.2454,0.24543069472163914,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=0.01,unsorted,l2,0.3759,0.3759374666847289,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=0.05,morton,eff_ancestors,28.3245,28.324477245807646,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=0.05,morton,l2,0.4065,0.4064560278970749,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=0.05,unsorted,l2,0.52,0.5199510209858418,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=0.1,morton,eff_ancestors,48.3111,48.3110685827732,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=0.1,morton,l2,0.4781,0.47808461590111256,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=0.1,unsorted,l2,0.5623,0.5622624123245479,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=0.5,morton,eff_ancestors,81.6782,81.6297168905735,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=0.5,morton,l2,0.5852,0.5838802920728923,False,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=0.5,unsorted,l2,0.602,0.6007918887883424,False,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=1.0,morton,eff_ancestors,82.3432,82.34321361041069,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=1.0,morton,l2,0.5927,0.5926932892352342,True,"upstream script, unmodified"
+relaxation (Fig. 6/Table 8 L2),N=200 tau=1.0,unsorted,l2,0.5974,0.5973574785143138,True,"upstream script, unmodified"

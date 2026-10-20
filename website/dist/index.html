@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="Learn differentiable particle resampling from first principles. Explore visual lessons, the affine eigen method, benchmark metrics, and measured results.">
+  <title>Resampler Lab · An interactive research guide</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="vendor/katex/katex.min.js"></script>
+  <script defer src="vendor/katex/auto-render.min.js"></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to lesson</a>
+  <header class="topbar">
+    <button id="menu-toggle" class="icon-button mobile-menu" aria-label="Open lesson menu" aria-expanded="false">☰</button>
+    <a href="#/start" class="brand"><img src="favicon.svg" width="29" height="29" alt=""><span>Resampler<span class="brand-light"> Lab</span></span></a>
+    <span class="top-divider"></span><span class="top-caption">AN INTERACTIVE RESEARCH GUIDE</span>
+    <div class="search-wrap"><label class="sr-only" for="search">Search lessons and terms</label><input id="search" type="search" placeholder="Search lessons…" autocomplete="off"><kbd>/</kbd><div id="search-results" class="search-results" hidden></div></div>
+    <a class="top-source" href="#/resources">Sources <span aria-hidden="true">↗</span></a>
+  </header>
+  <aside id="sidebar" class="sidebar" aria-label="Lesson navigation"><div class="sidebar-intro">LEARN BY EXPLORING<span>From first principles to evidence</span></div><nav id="lesson-nav"></nav><div class="sidebar-bottom"><div class="progress-caption"><span>Your progress</span><span id="progress-label">0 / 12</span></div><progress id="progress" max="12" value="0" aria-label="Lessons marked complete"></progress><button id="reset-progress" class="text-button">Reset progress</button><p>Progress stays in this browser.</p></div></aside>
+  <div id="menu-shade" hidden></div>
+  <main id="main" tabindex="-1"><div id="content"><p>Loading the learning guide…</p></div></main>
+  <aside id="page-outline" class="outline" aria-label="On this page"></aside>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript>This tutorial needs JavaScript for its lessons and interactive calculations. Download the project README at downloads/PROJECT-README.md for a text reference.</noscript>
+</body>
+</html>

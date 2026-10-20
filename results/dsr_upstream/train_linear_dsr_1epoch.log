@@ -1,0 +1,18 @@
+INFO:root:Device: cpu
+INFO:root:Epoch=1, Average loss train=1360.3057861328125
+INFO:root:Train NMSE (states)=-3.4357655334472654.
+INFO:root:Train mean ESS=1.61 / 25
+INFO:root:Train mean KL(particles||Kalman) after resample=39.4175
+INFO:root:Mean gradient norm=534.129644 (std=105.566925)
+INFO:root:Validation NMSE: -9.19399642944336
+INFO:root:Validation ELBO: 12026.9765625
+INFO:root:Validation mean KL(particles||Kalman) after resample=11.6215
+INFO:root:----------------------------
+INFO:root:Test MSE: 0.9402494430541992
+INFO:root:Test 5-step MSE: 1.2995846748352051
+INFO:root:Test log likelihood: -3.607562255859375
+INFO:root:Test A matrix distance (Frobenius): 1.8628180027008057
+INFO:root:Test KL divergence: 11.755545043945313
+INFO:root:Test Wasserstein distance: 1.3289306640625
+INFO:root:----------------------------
+INFO:root:Training completed in 88.48640441894531 seconds.

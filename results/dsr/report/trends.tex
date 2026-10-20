@@ -1,0 +1,176 @@
+% Hand-written discussion of the tables above; appended to tables.tex by scripts/dsr_latex_tables.py.
+% Numbers refer to the run in results/dsr and results/standard; update this text if the runs change.
+\clearpage
+\section*{Discussion: trends in $N$ and across tasks}
+
+Unless stated otherwise, a log--log slope is the least-squares slope of $\log(\text{error})$ against $\log N$ over the available particle counts. A Monte Carlo resampler that copies ancestors should give a slope near $-0.5$ for distribution errors (rate $N^{-1/2}$). A slope near $0$ means the error has a floor that more particles do not remove.
+
+\subsection*{Trends in $N$, method by method}
+
+\paragraph{DSR, paper setting ($\tau{=}0.1$, Morton; with or without gradient clamp).}
+The clamp only acts in the backward pass, so the two variants are identical in every forward table. Their error does not decrease with $N$ on any fixed cloud: the sliced-W1 slope is $-0.02$ (Gaussian), $+0.02$ (mixture), $-0.03$ (skewed) and $-0.05$ (fixed grid) (Tables~\ref{tab:static-gaussian-sliced_w1}, \ref{tab:static-mixture-sliced_w1}, \ref{tab:static-skewed-sliced_w1}, \ref{tab:static-fixed-sliced_w1}). The covariance error stays between 0.92 and 1.16 on the Gaussian cloud (Table~\ref{tab:static-gaussian-covariance_error}). The cause is that $\tau$ is measured in CDF units while the comb spacing is $1/N$. A fixed $\tau$ therefore averages over a number of ancestors that grows like $\tau N$, and the resampled cloud is contracted by a fixed amount whatever $N$ is.
+
+In the filters, the floor appears whenever the task is sensitive to the posterior spread:
+\begin{itemize}
+\item Linear Gaussian: the posterior-mean error against the Kalman filter goes $0.138\to0.034$, which is twice systematic's $0.017$ at $N{=}2048$ (Table~\ref{tab:linear-posterior_mean_rmse}).
+\item UNGM: the RMSE stops improving after $N{=}512$ ($4.79\to4.78$, Table~\ref{tab:ungm-rmse}).
+\item Bearing tracking: the RMSE gets \emph{worse} from $N{=}128$ to $N{=}2048$ ($4.83\to5.19$), and coverage stays at 0.06--0.09 (Tables~\ref{tab:bearing-rmse}, \ref{tab:bearing-coverage95}).
+\end{itemize}
+The likelihood-gradient bias in the differentiable PF falls from 19.3 to 7.1 and then plateaus, so its MSE settles at about 51 from $N{=}512$ on (Tables~\ref{tab:linear-native-gradient_bias}, \ref{tab:linear-native-gradient_mse}).
+
+The gradient clamp matters only at small $N$. Without it, the gradient MSE is $124$ instead of $433$ at $N{=}32$; from $N{=}512$ the two coincide. The log-likelihood variance falls at the normal $1/N$ rate ($3.6\to0.064$, Table~\ref{tab:linear-native-loglik_variance}). So the problem is bias, not noise.
+
+\paragraph{DSR without Morton sorting, and DSR with $\tau{=}0.5$.}
+Both average over spatially unrelated ancestors and behave alike. They are the worst methods in almost every column and do not improve with $N$:
+\begin{itemize}
+\item On the mixture cloud every draw loses both modes (mode coverage $0$, Table~\ref{tab:static-mixture-mode_coverage}), and the covariance error stays at about 8.4.
+\item The UNGM RMSE \emph{increases} with $N$ ($7.5\to8.7$).
+\item The likelihood-gradient MSE plateaus near 400--440.
+\end{itemize}
+Morton sorting is therefore what keeps the paper-setting DSR usable.
+
+\paragraph{DSR with $\tau{=}2.5/N$ (diagnostic, not from the paper).}
+Holding $\tau N$ constant restores consistency, and the rate is if anything slightly better than Monte Carlo:
+\begin{itemize}
+\item The sliced-W1 slopes are $-0.56$, $-0.64$, $-0.59$ and $-0.62$ on the four clouds.
+\item On the mixture cloud the covariance error falls with slope $-0.79$, and mode coverage stays at $1$.
+\item The likelihood-gradient bias falls from 17.1 to 0.064 and the MSE from 351 to 0.31. From $N{=}512$ it beats stop-gradient systematic, whose MSE at $N{=}2048$ is 8.9.
+\item In the filters it tracks systematic resampling closely (UNGM RMSE 4.52 vs.\ 4.48 at $N{=}2048$).
+\end{itemize}
+The exception is bearing tracking, where coverage rises steadily ($0.08\to0.68$) but stays below the copy-based methods ($\approx0.90$). Smoothing over about 2.5 CDF neighbours still under-disperses a 4-D cloud.
+
+\paragraph{Systematic, multinomial and stop-gradient systematic.}
+These are the textbook Monte Carlo rates. Sliced-W1 slopes are $-0.47$ to $-0.54$ (systematic) and $-0.44$ to $-0.49$ (multinomial). Systematic has a lower constant than multinomial: half or less of its W1 at equal $N$.
+
+The single exception is the mixture cloud. There, systematic resampling (and every systematic implementation) has a flat W1 of about 0.89, and only 84--87\% of draws keep both modes, at every $N$. The weights of that cloud alternate between two values in index order, and a single uniform comb aliases with that period. Multinomial and soft resampling, which draw independently, do not have this failure.
+
+For gradients, stop-gradient systematic is close to unbiased in the local tests: its bias is at most 0.16 and is below 0.05 in most cells. On the Gaussian cloud its MSE falls steadily with $N$. In the PF-likelihood task it is unbiased but high-variance: the MSE falls from 561 to 8.9, driven by variance. Plain systematic resampling with no gradient path has a constant bias of about 12, because it misses the whole score term.
+
+\paragraph{Soft resampling ($\alpha{=}0.5$).}
+Its distribution errors follow the Monte Carlo rate (slopes $-0.44$ to $-0.48$), with a constant similar to multinomial. In the filters it is close to systematic for $N\ge512$. Its gradient is biased, and the bias does not vanish with $N$:
+\begin{itemize}
+\item The local gradient bias on the Gaussian cloud with $f=\|x\|^2$ is 0.58, 0.41 and 1.02 at $N=32$, 128 and 512.
+\item The PF-likelihood gradient bias plateaus at about 5.5--6.0.
+\end{itemize}
+
+\paragraph{Entropic OT (PyDPF, PFJAX, FilterFlow).}
+These run only to $N{=}128$, so the trends are short. Their distribution errors fall more slowly than Monte Carlo (sliced-W1 slopes $-0.15$ to $-0.25$ on the Gaussian cloud, about $0$ on the mixture), the signature of entropic blur at fixed $\varepsilon$. As with fixed-$\tau$ DSR, the blur contracts the cloud: bearing coverage falls to 0.04--0.05 at $N{=}128$ and the bearing RMSE gets worse from $N{=}32$ to $N{=}128$. They have the largest log-likelihood error at small $N$ on the linear model ($-1.3$ at $N{=}32$). The three implementations differ: PFJAX gives the most accurate local gradients on the Gaussian cloud (MSE $8\times10^{-4}$), while PyDPF and FilterFlow are biased by 0.4--0.55.
+
+\paragraph{Eigen and Gaussian moment matching.}
+These match the weighted mean and covariance by construction. Eigen matches them exactly (covariance error about $10^{-15}$), and its local gradients for $f=\|x\|^2$ are exact. On Gaussian-shaped clouds their W1 falls at about the Monte Carlo rate (slopes $-0.45$ and $-0.50$). On the mixture and fixed-grid clouds W1 is nearly flat (slopes between $-0.15$ and $+0.02$), because a Gaussian map cannot reproduce non-Gaussian shape.
+
+In the filters this trade-off pays off. They give the best-calibrated bearing filters at small $N$ (coverage 0.51 and 0.36 at $N{=}32$, against 0.27 for systematic) and the most accurate PF-likelihood gradients at every $N$ (eigen MSE $44\to0.27$, bias $3.7\to0.08$). On UNGM, whose posterior is bimodal, their RMSE improves more slowly than the copy-based methods (eigen 4.83 vs.\ systematic 4.48 at $N{=}2048$).
+
+\paragraph{Gumbel-softmax.}
+Like fixed-$\tau$ DSR this is a relaxation with a fixed temperature, and its static errors are flat in $N$ (slopes about $0$). It runs only to $N{=}128$, where its bearing coverage is 0.22 and its local and PF gradients are biased (PF gradient MSE 85).
+
+\paragraph{Variational (KL) resampling.}
+This is deterministic offspring allocation, so it has zero variance between draws but a rounding bias. On the skewed cloud it converges at the Monte Carlo rate (W1 slope $-0.56$) and is among the two most accurate methods at $N{=}512$ and $2048$. On the Gaussian and fixed-grid clouds its W1 is almost flat (slopes $-0.06$ and $-0.04$): the deterministic rounding error does not average out over repeated draws. In the filters, the fresh propagation noise removes this effect, and it matches systematic resampling on every model.
+
+\subsection*{Trends across tasks}
+
+\paragraph{Linear Gaussian SSM: least discriminative.}
+The state RMSE is set by the observation noise. Every method lies between 0.519 and 0.530 at $N{=}32$ and between 0.503 and 0.507 at $N{=}2048$, inside each other's confidence intervals at every $N$ (Table~\ref{tab:linear-rmse}). Differences appear only in the comparisons with the exact Kalman filter: the posterior-mean RMSE and the log-likelihood error. These separate consistent methods (floor $\to0.017$) from fixed-temperature relaxations (DSR 0.034, unsorted DSR 0.074).
+
+\paragraph{Stochastic volatility: insensitive to resampling.}
+All RMSEs lie within 0.41--0.43. Here the paper-setting DSR has the lowest RMSE for $N\ge128$, and its coverage (0.95) is the one closest to nominal. The copy-based methods over-cover for $N\ge512$ (0.97--0.98), so the slight contraction from DSR happens to help on this heavy-tailed, weakly observed model. Parameter learning shows the same flatness: estimated scale errors of 0.20--0.28 for every method, all within the confidence intervals (Table~\ref{tab:volatility-learning}).
+
+\paragraph{UNGM: tests multimodality.}
+The posterior is often bimodal, and methods that average particles pay for it. Fixed-$\tau$ DSR plateaus, unsorted DSR and $\tau{=}0.5$ degrade with $N$, and eigen/Gaussian moment matching converge more slowly. Copy-based methods and scaled DSR keep improving down to RMSE $\approx4.5$.
+
+\paragraph{Bearing-only tracking: the most discriminative task.}
+The state is 4-D, the observations are sharp (0.05 rad), and there is a ten-step observation gap. Under-dispersion is punished hard. All methods that move particles towards local averages have very low coverage at every $N$ where they ran: fixed-$\tau$ DSR (0.06--0.09), entropic OT (0.04--0.09) and Gumbel (0.20--0.22). The copy-based methods improve to $\approx0.90$, and moment matching is best calibrated at small $N$.
+
+\paragraph{Fixed clouds: shape versus moments.}
+The Gaussian, skewed and fixed-grid clouds rank methods mainly by Monte Carlo constant and rate. The mixture cloud separates methods that copy particles from methods that move them:
+\begin{itemize}
+\item Copy-based multinomial and soft resampling keep both modes.
+\item Systematic resampling suffers the periodic-weight aliasing described above.
+\item Moving methods either keep both modes (Morton-sorted DSR, OT, moment matching) or place all their mass between the modes (unsorted DSR, DSR with $\tau{=}0.5$).
+\end{itemize}
+
+\paragraph{Gradients: bias is the axis that separates methods.}
+\begin{itemize}
+\item Local expectation gradients reward exact moment maps: eigen is exact for $f=\|x\|^2$ but biased for $f=\sin$ on the mixture.
+\item Stop-gradient estimators are close to unbiased.
+\item In the PF-likelihood task, which accumulates resampling over 50 steps, only methods whose bias vanishes with $N$ reach small MSE: eigen, Gaussian moment matching, scaled DSR and stop-gradient systematic.
+\item Methods whose bias does not vanish stay at large MSE: about 51 for paper-setting DSR and 38 for soft resampling at $N{=}2048$. Gumbel (85) and PyDPF OT (845) are also high at $N{=}128$, the largest $N$ they ran.
+\end{itemize}
+
+\paragraph{Runtime.}
+Classical copy-based resamplers, soft resampling and moment matching cost about 1\,ms per call or less at every $N$ (Tables~\ref{tab:runtime-forward}, \ref{tab:runtime-forward-mixture}). Variational KL grows to about 42\,ms at $N{=}2048$ (its allocation is $O(N^2)$). DSR and Gumbel build an $N\times N$ matrix. Their cost grows by about $7\times$ from $N{=}128$ to 512 and $26\times$ from 512 to 2048, reaching about 200 and 250\,ms at $N{=}2048$. Entropic OT is a further 10--100$\times$ slower than DSR at large $N$ (PFJAX about 2.3\,s and PyDPF about 23\,s at $N{=}2048$).
+
+\subsection*{Stochastic Lorenz models (all methods)}
+
+These two tasks were run for every method of every repository (Tables~\ref{tab:lorenz63-rmse}--\ref{tab:lorenz96-mean_ess_fraction}).
+
+\paragraph{Lorenz-63 (camera observation, as in the DSR paper).}
+The task is low-dimensional and well observed, so every copy-based method converges to the same answer. At $N{=}2048$, all classical resamplers, soft resampling, variational allocation and moment matching lie between 0.429 and 0.432 in RMSE, with coverage 0.945--0.953. The differences at $N{=}32$ (0.531--0.666) shrink steadily with $N$, and moment matching (PFJAX MVN 0.531, eigen 0.533) is best at small $N$.
+
+The paper-setting DSR shows the same floor as on the earlier tasks:
+\begin{itemize}
+\item RMSE goes $0.708\to0.491\to0.486$ from $N{=}32$ to 512 to 2048.
+\item Coverage reaches only 0.68.
+\item Unsorted DSR and $\tau{=}0.5$ are worse (0.514 and 0.520, coverage about 0.59).
+\end{itemize}
+With $\tau{=}2.5/N$, DSR reaches 0.433 and coverage 0.93, close to the copy-based methods. At $N{=}128$, entropic OT (0.468--0.491) and Gumbel-softmax (0.484) trail the copy-based methods (0.456--0.469), and their coverage is lower (0.70--0.81 vs.\ 0.81--0.86).
+
+\paragraph{Lorenz-96 ($d{=}10$, full observation).}
+This is the hardest task in the suite: the mean ESS is only about 10\% of $N$, and no method has converged by $N{=}2048$. The copy-based RMSE is still falling ($\approx2.8\to1.06$--$1.13$) and their coverage is only 0.52--0.56.
+
+Moment matching is clearly best at every $N$:
+\begin{itemize}
+\item PFJAX MVN reaches RMSE 0.735 (coverage 0.75), eigen 0.849 and Gaussian moment matching 0.865 (coverage about 0.71) at $N{=}2048$.
+\item In 10 dimensions, moving all particles to match the weighted mean and covariance fights weight degeneracy better than copying a few heavy particles.
+\item PFJAX MVN pays with numerical failures at small $N$: 9\% of runs at $N{=}32$ and 3\% at $N{=}128$, which are excluded from its means.
+\end{itemize}
+
+The paper-setting DSR fails here: RMSE 1.90 and coverage 0.01 at $N{=}2048$. It is indistinguishable from unsorted DSR (1.90), because Morton locality is diluted in 10 dimensions. Scaled DSR recovers the copy-based RMSE (1.08) but remains under-dispersed (coverage 0.27 vs.\ about 0.55). At $N{=}128$, entropic OT and Gumbel-softmax are again below the copy-based methods (RMSE 2.19--2.52 vs.\ 1.99--2.14, coverage at most 0.034).
+
+\paragraph{What the Lorenz runs add.}
+They confirm the earlier conclusions on two standard chaotic benchmarks:
+\begin{itemize}
+\item Fixed-$\tau$ DSR hits a floor, and $\tau\propto1/N$ removes most of it.
+\item Methods that average particles under-cover.
+\item Copy-based resamplers are interchangeable once $N$ is large.
+\end{itemize}
+They also show the one setting where moving particles helps: in higher-dimensional, degenerate filtering (Lorenz-96), \emph{moment matching} beats every copy-based method. DSR does not share that benefit, because its CDF ordering loses locality as the dimension grows.
+
+\subsection*{Conclusions}
+
+The main conclusion is that DSR as published fails at large $N$ because its temperature $\tau$ is fixed, not because of the relaxation idea itself. The points below run roughly from strongest to most tentative.
+
+\paragraph{About DSR.}
+\begin{enumerate}
+\item \emph{At the paper's $\tau{=}0.1$, DSR is not a consistent resampler.} Its error has a floor that more particles do not remove. This shows up in the fixed clouds, in the filters' posterior error against the Kalman filter, in bearing calibration, and in a likelihood-gradient bias stuck at about 7. The cause is structural: a fixed $\tau$ averages over about $\tau N$ ancestors, so the larger $N$ is, the more particles are blended. The paper says DSR ``scales gracefully'' with $\tau$ fixed at 0.1. That claim concerns training NMSE up to $N{=}200$; these accuracy results do not support extending it.
+\item \emph{The relaxation itself works if $\tau$ shrinks with $N$.} With $\tau{=}2.5/N$:
+  \begin{itemize}
+  \item errors fall at or slightly faster than the Monte Carlo rate $N^{-1/2}$;
+  \item the likelihood-gradient bias goes to about 0 (MSE 0.31 at $N{=}2048$);
+  \item filtering matches systematic resampling.
+  \end{itemize}
+  The published method therefore needs an $N$-dependent temperature, roughly $\tau\propto1/N$. The constant 2.5 was set from the paper's $N{=}25$ operating point, not tuned, and bearing calibration still lags (0.68 vs.\ 0.90).
+\item \emph{Morton sorting is essential, and the gradient clamp is not useful.} Without sorting, DSR places all mass between the modes and gets worse with $N$. The clamp changes nothing at large $N$ and raises the gradient MSE at small $N$ (433 vs.\ 124 at $N{=}32$).
+\item \emph{The paper's bias-for-variance argument holds, but only at small $N$.} DSR's gradients have very low variance. That helps at $N\approx25$--100, where unbiased estimators such as stop-gradient systematic are very noisy (MSE 561 at $N{=}32$). As $N$ grows that variance disappears anyway and DSR's fixed bias dominates; stop-gradient systematic is already better from $N{=}512$. This fits the paper's own settings ($N{=}25$--200) and explains why its gains need not carry over to larger $N$.
+\end{enumerate}
+
+\paragraph{Across methods.}
+\begin{enumerate}\setcounter{enumi}{4}
+\item \emph{Moving particles systematically under-disperses them.} Fixed-$\tau$ DSR, entropic OT and Gumbel-softmax build each new particle from a weighted average of several ancestors. This shrinks the cloud, which is harmless on easy tasks but collapses calibration on sharp, higher-dimensional problems: in bearing tracking their coverage is at most 0.22, against about 0.90 for copy-based methods. Calibration, not RMSE, is the main risk of differentiable resamplers.
+\item \emph{Moment matching is the strongest differentiable baseline in this benchmark.} Eigen and Gaussian moment matching give the best likelihood gradients at every $N$, the best calibration at small $N$, and cost about 1\,ms per call. Their weakness is shape: they cannot represent multimodal or non-Gaussian clouds, and they converge more slowly on UNGM. At large $N$, eigen matching beats paper-setting DSR on both cost and gradient accuracy.
+\item \emph{Bias, not variance, decides PF-likelihood gradients as $N$ grows.} Only methods whose bias vanishes with $N$ reach small MSE: moment matching, scaled DSR and stop-gradient systematic. Soft resampling, fixed-$\tau$ DSR, Gumbel-softmax and OT stay at MSE of about 40 or more.
+\item \emph{Classical resamplers remain the accuracy reference for forward filtering,} with one exception. Systematic resampling fails on the periodic-weight mixture cloud, where 13--16\% of draws lose a mode; multinomial and soft resampling do not.
+\item \emph{Cost.} DSR is about 10--100$\times$ cheaper than entropic OT but is $O(N^2)$: about 1\,ms at $N\le128$ and about 200\,ms at $N{=}2048$, against about 1\,ms for copy-based methods and moment matching.
+\end{enumerate}
+
+\paragraph{About the benchmark.}
+\begin{enumerate}\setcounter{enumi}{9}
+\item \emph{Linear-Gaussian RMSE and stochastic volatility barely separate resamplers.} Methods fall within each other's confidence intervals, and even SV parameter learning shows no significant differences with 10 datasets. The tasks that separate methods are bearing tracking, the bimodal cloud, UNGM, and the PF-gradient task against the exact Kalman gradient; future resampler evaluations should weight those.
+\end{enumerate}
+
+\paragraph{Limits on these conclusions.}
+\begin{itemize}
+\item Everything ran on CPU. OT and Gumbel-softmax only ran to $N{=}128$, so their large-$N$ trends are extrapolated.
+\item The paper's training experiments were not reproduced, and that is where DSR's low-variance gradients are claimed to matter most. These results therefore do not refute its training results. They show that the method does not extend to accurate filtering or unbiased gradients at large $N$ without rescaling $\tau$.
+\item The scaled variant is a single, untuned diagnostic. A proper $\tau(N)$ study, for example $\tau{=}c/N$ over several values of $c$, is needed before recommending it.
+\end{itemize}

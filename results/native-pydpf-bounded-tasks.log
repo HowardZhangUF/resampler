@@ -1,0 +1,96 @@
+PyDPF: PyTorch was unable to find a CUDA-enabled GPU. The package will run on CPU, but performance will be significantly degraded. If you have a CUDA-capable GPU, install a CUDA build of PyTorch from https://pytorch.org/get-started/locally/.
+Device: cpu
+Data folder:    /home/user/resampler/results/upstream_tasks/pydpf-bounded-data
+Results folder: /home/user/resampler/results/upstream_tasks/pydpf
+Experiments:    kalman, sv_filtering
+Restricted to methods: 25, 100, DPF, Soft, Stop-Gradient, Optimal Transport
+** SMOKE MODE: reduced epochs/repeats/particles -- results are NOT paper-accurate **
+
+=== Linear Gaussian: comparison with the Kalman filter on cpu===
+  generating linear-Gaussian data -> dx=25-dy=1.csv
+Generating data: Generating batch 1/4Generating data: Generating batch 2/4Generating data: Generating batch 3/4Generating data: Generating batch 4/4Generating data: Done                                       
+
+  (note: 'DPF' is not a method of this experiment, skipping)
+  (note: 'Soft' is not a method of this experiment, skipping)
+  (note: 'Stop-Gradient' is not a method of this experiment, skipping)
+  (note: 'Optimal Transport' is not a method of this experiment, skipping)
+
+Running Kalman Filter on Kalman Comparison
+  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 110.95it/s]
+
+Running PF K = 25 on Kalman Comparison
+  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 76.08it/s]
+
+Running PF K = 100 on Kalman Comparison
+  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 49.88it/s]
+               Time CPU (s)  Time GPU (s)  epsilon x  epsilon y
+method                                                         
+Kalman Filter      0.006283           NaN   0.000000   0.000000
+PF K = 25          0.007176           NaN   3.366649   0.149973
+PF K = 100         0.016098           NaN   0.969041   0.069615
+PF K = 1000             NaN           NaN        NaN        NaN
+PF K = 10000            NaN           NaN        NaN        NaN
+
+=== Stochastic Volatility: filtering given a fully specified model ===
+  generating stochastic-volatility data -> alpha=0.91-beta=0.5-sigma=1.0.csv
+Generating data: Generating batch 1/4Generating data: Generating batch 2/4Generating data: Generating batch 3/4Generating data: Generating batch 4/4Generating data: Done                                       
+
+  (note: '25' is not a method of this experiment, skipping)
+  (note: '100' is not a method of this experiment, skipping)
+
+Running DPF on sv_filtering
+  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 40.07it/s]
+                             e_x       e_l      time
+method                                              
+DPF                     0.039275  0.077947  0.005648
+Soft                         NaN       NaN       NaN
+Stop-Gradient                NaN       NaN       NaN
+Marginal Stop-Gradient       NaN       NaN       NaN
+Optimal Transport            NaN       NaN       NaN
+Kernel                       NaN       NaN       NaN
+Diffusion                    NaN       NaN       NaN
+
+Running Soft on sv_filtering
+  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 55.13it/s]
+                             e_x       e_l      time
+method                                              
+DPF                     0.039275  0.077947  0.005648
+Soft                    0.036909  0.074873  0.006948
+Stop-Gradient                NaN       NaN       NaN
+Marginal Stop-Gradient       NaN       NaN       NaN
+Optimal Transport            NaN       NaN       NaN
+Kernel                       NaN       NaN       NaN
+Diffusion                    NaN       NaN       NaN
+
+Running Stop-Gradient on sv_filtering
+  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 58.99it/s]
+                             e_x       e_l      time
+method                                              
+DPF                     0.039275  0.077947  0.005648
+Soft                    0.036909  0.074873  0.006948
+Stop-Gradient           0.039275  0.077947  0.005964
+Marginal Stop-Gradient       NaN       NaN       NaN
+Optimal Transport            NaN       NaN       NaN
+Kernel                       NaN       NaN       NaN
+Diffusion                    NaN       NaN       NaN
+
+Running Optimal Transport on sv_filtering
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  2.34it/s] 50%|█████     | 2/4 [00:00<00:00,  2.27it/s] 75%|███████▌  | 3/4 [00:01<00:00,  2.19it/s]100%|██████████| 4/4 [00:01<00:00,  3.10it/s]100%|██████████| 4/4 [00:01<00:00,  2.72it/s]
+                             e_x       e_l      time
+method                                              
+DPF                     0.039275  0.077947  0.005648
+Soft                    0.036909  0.074873  0.006948
+Stop-Gradient           0.039275  0.077947  0.005964
+Marginal Stop-Gradient       NaN       NaN       NaN
+Optimal Transport       0.061112  0.089410  0.449287
+Kernel                       NaN       NaN       NaN
+Diffusion                    NaN       NaN       NaN
+
+All requested experiments finished.
+{
+  "passed": true,
+  "source": "vendor/pydpf/replication_materials/run_experiments.py",
+  "result_rows": 7,
+  "settings": "bounded native replication smoke; 50 trajectories x 21 states; batch=16; time_extent=10; reference PF=512; candidate SV PF=100; linear PF=25,100",
+  "notes": "runtime wrappers bound sizes missing from upstream smoke handling; no paper-scale or GPU reproduction"
+}

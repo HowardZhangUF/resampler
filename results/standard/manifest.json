@@ -1,0 +1,56 @@
+{
+  "profile": "standard",
+  "providers": [
+    "particles",
+    "stonesoup",
+    "cuthbert",
+    "pfjax",
+    "pydpf",
+    "torchfilter",
+    "filterflow",
+    "julia",
+    "custom",
+    "variational"
+  ],
+  "stages": [
+    "static",
+    "filter",
+    "gradient"
+  ],
+  "jobs": 1,
+  "isolate_methods": false,
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+  "cpu": "x86_64",
+  "start_utc": "2026-10-19T01:08:30Z",
+  "settings": {
+    "particle_counts": [
+      32,
+      128,
+      512,
+      2048
+    ],
+    "dimensions": [
+      1,
+      2,
+      4
+    ],
+    "fast_repeats": 100,
+    "expensive_repeats": 10,
+    "expensive_scaling_repeats": 3,
+    "filter_steps": 50,
+    "ess_threshold": 0.5,
+    "ot_epsilon": 0.1,
+    "ot_max_iterations": 100,
+    "gumbel_temperature": 0.5,
+    "soft_alpha": 0.5,
+    "expensive_filter_max_n": 128,
+    "corrected_ot_max_n": 128,
+    "gradient_max_n": 512,
+    "expensive_gradient_max_n": 128,
+    "device": "cpu",
+    "timing_includes_adapter": true,
+    "slow_cpu_ot_scaling": "pydpf/filterflow OT at N=2048: Gaussian D=2 only; full static grid through N=512"
+  },
+  "finished_utc": "2026-10-19T01:19:05Z"
+}

@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Linear Gaussian filter ($N=128$): conditional log-likelihood variance. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:linear-gaussian-filter-conditional-loglik-variance}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & conditional log-likelihood variance \\
+\midrule
+1 & julia & \textbf{killing} & 100/100 & $\mathbf{0.2993}$ \\
+2 & variational & tv & 100/100 & $0.3037$ \\
+3 & stonesoup & systematic & 100/100 & $0.3047$ \\
+4 & custom & eigen & 100/100 & $0.3199$ \\
+5 & cuthbert & systematic & 100/100 & $0.321$ \\
+5 & cuthbert & systematic\_stop & 100/100 & $0.321$ \\
+7 & stonesoup & stratified & 100/100 & $0.3259$ \\
+8 & pydpf & systematic & 100/100 & $0.327$ \\
+8 & pydpf & systematic\_stop & 100/100 & $0.327$ \\
+10 & particles & stratified & 100/100 & $0.348$ \\
+11 & julia & ssp & 100/100 & $0.3498$ \\
+12 & particles & ssp & 100/100 & $0.3507$ \\
+13 & filterflow & stratified & 100/100 & $0.3512$ \\
+14 & particles & systematic & 100/100 & $0.3526$ \\
+15 & variational & kl & 100/100 & $0.358$ \\
+16 & filterflow & multinomial & 100/100 & $0.3587$ \\
+17 & stonesoup & multinomial & 100/100 & $0.3589$ \\
+18 & pfjax & multinomial & 100/100 & $0.3605$ \\
+19 & stonesoup & residual & 100/100 & $0.3605$ \\
+20 & julia & systematic & 100/100 & $0.3609$ \\
+21 & filterflow & systematic & 100/100 & $0.3659$ \\
+22 & particles & residual & 100/100 & $0.3669$ \\
+23 & pydpf & multinomial & 100/100 & $0.374$ \\
+23 & torchfilter & multinomial & 100/100 & $0.374$ \\
+25 & cuthbert & multinomial & 100/100 & $0.3784$ \\
+26 & julia & multinomial & 100/100 & $0.3786$ \\
+27 & particles & multinomial & 100/100 & $0.4062$ \\
+28 & pfjax & mvn & 100/100 & $0.4128$ \\
+29 & julia & stratified & 100/100 & $0.4132$ \\
+30 & custom & gaussian & 100/100 & $0.4173$ \\
+31 & pydpf & soft & 100/100 & $0.4185$ \\
+31 & torchfilter & soft & 100/100 & $0.4185$ \\
+33 & julia & residual & 100/100 & $0.435$ \\
+-- & custom & gumbel & 10/10 & $\text{--}$ \\
+-- & filterflow & corrected\_ot & 10/10 & $\text{--}$ \\
+-- & filterflow & ot & 10/10 & $\text{--}$ \\
+-- & pfjax & ot & 10/10 & $\text{--}$ \\
+-- & pydpf & ot & 10/10 & $\text{--}$ \\
+\bottomrule
+\end{tabular}
+\end{table}

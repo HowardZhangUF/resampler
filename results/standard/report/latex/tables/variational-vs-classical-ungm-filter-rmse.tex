@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Variational vs classical · UNGM filter ($N=128$): RMSE. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:variational-vs-classical-ungm-filter-rmse}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & RMSE \\
+\midrule
+1 & variational & \textbf{kl} & 100/100 & $\mathbf{4.831 \pm 0.8575}$ \\
+2 & particles & ssp & 100/100 & $4.854 \pm 0.792$ \\
+3 & particles & systematic & 100/100 & $4.906 \pm 0.9289$ \\
+4 & variational & tv & 100/100 & $4.906 \pm 0.794$ \\
+5 & particles & multinomial & 100/100 & $4.916 \pm 0.8803$ \\
+\bottomrule
+\end{tabular}
+\end{table}

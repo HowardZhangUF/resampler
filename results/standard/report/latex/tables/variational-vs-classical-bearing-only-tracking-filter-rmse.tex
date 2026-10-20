@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Variational vs classical · Bearing-only tracking filter ($N=128$): RMSE. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:variational-vs-classical-bearing-only-tracking-filter-rmse}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & RMSE \\
+\midrule
+1 & particles & \textbf{systematic} & 100/100 & $\mathbf{4.548 \pm 1.657}$ \\
+2 & particles & ssp & 100/100 & $4.649 \pm 1.688$ \\
+3 & variational & kl & 100/100 & $4.662 \pm 1.626$ \\
+4 & particles & multinomial & 100/100 & $4.787 \pm 1.635$ \\
+5 & variational & tv & 100/100 & $4.869 \pm 1.788$ \\
+\bottomrule
+\end{tabular}
+\end{table}

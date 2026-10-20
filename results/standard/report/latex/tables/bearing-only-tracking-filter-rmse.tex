@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Bearing-only tracking filter ($N=128$): RMSE. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:bearing-only-tracking-filter-rmse}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & RMSE \\
+\midrule
+1 & filterflow & \textbf{corrected\_ot} & 10/10 & $\mathbf{3.25 \pm 1.011}$ \\
+2 & julia & killing & 100/100 & $4.442 \pm 1.488$ \\
+3 & julia & ssp & 100/100 & $4.478 \pm 1.728$ \\
+4 & filterflow & systematic & 100/100 & $4.487 \pm 1.609$ \\
+5 & custom & gaussian & 100/100 & $4.508 \pm 1.737$ \\
+6 & custom & eigen & 100/100 & $4.51 \pm 1.71$ \\
+7 & julia & systematic & 100/100 & $4.529 \pm 1.732$ \\
+8 & particles & systematic & 100/100 & $4.548 \pm 1.657$ \\
+9 & cuthbert & systematic & 100/100 & $4.553 \pm 1.764$ \\
+9 & cuthbert & systematic\_stop & 100/100 & $4.553 \pm 1.764$ \\
+11 & julia & stratified & 100/100 & $4.561 \pm 1.735$ \\
+12 & stonesoup & systematic & 100/100 & $4.6 \pm 1.616$ \\
+13 & particles & ssp & 100/100 & $4.649 \pm 1.688$ \\
+14 & stonesoup & multinomial & 100/100 & $4.649 \pm 1.548$ \\
+15 & variational & kl & 100/100 & $4.662 \pm 1.626$ \\
+16 & stonesoup & stratified & 100/100 & $4.698 \pm 1.65$ \\
+17 & filterflow & stratified & 100/100 & $4.705 \pm 1.677$ \\
+18 & pfjax & mvn & 100/100 & $4.721 \pm 1.71$ \\
+19 & stonesoup & residual & 100/100 & $4.733 \pm 1.612$ \\
+20 & particles & residual & 100/100 & $4.746 \pm 1.683$ \\
+21 & pydpf & systematic & 100/100 & $4.763 \pm 1.746$ \\
+21 & pydpf & systematic\_stop & 100/100 & $4.763 \pm 1.746$ \\
+23 & julia & residual & 100/100 & $4.763 \pm 1.596$ \\
+24 & cuthbert & multinomial & 100/100 & $4.773 \pm 1.757$ \\
+25 & particles & stratified & 100/100 & $4.775 \pm 1.675$ \\
+26 & pydpf & multinomial & 100/100 & $4.776 \pm 1.538$ \\
+26 & torchfilter & multinomial & 100/100 & $4.776 \pm 1.538$ \\
+28 & pfjax & multinomial & 100/100 & $4.777 \pm 1.758$ \\
+29 & particles & multinomial & 100/100 & $4.787 \pm 1.635$ \\
+30 & filterflow & multinomial & 100/100 & $4.791 \pm 1.673$ \\
+31 & torchfilter & soft & 100/100 & $4.799 \pm 1.711$ \\
+31 & pydpf & soft & 100/100 & $4.799 \pm 1.711$ \\
+33 & julia & multinomial & 100/100 & $4.807 \pm 1.856$ \\
+34 & variational & tv & 100/100 & $4.869 \pm 1.788$ \\
+35 & custom & gumbel & 10/10 & $5.188 \pm 2.52$ \\
+36 & filterflow & ot & 10/10 & $5.296 \pm 1.728$ \\
+37 & pfjax & ot & 10/10 & $5.559 \pm 2.289$ \\
+38 & pydpf & ot & 10/10 & $5.648 \pm 2.284$ \\
+\bottomrule
+\end{tabular}
+\end{table}

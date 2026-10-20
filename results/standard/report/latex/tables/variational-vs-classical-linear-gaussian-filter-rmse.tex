@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Variational vs classical · Linear Gaussian filter ($N=128$): RMSE. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:variational-vs-classical-linear-gaussian-filter-rmse}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & RMSE \\
+\midrule
+1 & particles & \textbf{systematic} & 100/100 & $\mathbf{0.5061 \pm 0.04637}$ \\
+2 & particles & multinomial & 100/100 & $0.5065 \pm 0.04512$ \\
+3 & particles & ssp & 100/100 & $0.5068 \pm 0.04587$ \\
+4 & variational & kl & 100/100 & $0.507 \pm 0.04685$ \\
+5 & variational & tv & 100/100 & $0.5081 \pm 0.04693$ \\
+\bottomrule
+\end{tabular}
+\end{table}

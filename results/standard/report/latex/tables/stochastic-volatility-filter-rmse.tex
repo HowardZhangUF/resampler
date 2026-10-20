@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Stochastic volatility filter ($N=128$): RMSE. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:stochastic-volatility-filter-rmse}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & RMSE \\
+\midrule
+1 & custom & \textbf{gumbel} & 10/10 & $\mathbf{0.4148 \pm 0.06775}$ \\
+2 & stonesoup & stratified & 100/100 & $0.4151 \pm 0.06275$ \\
+3 & stonesoup & systematic & 100/100 & $0.4153 \pm 0.06295$ \\
+4 & filterflow & multinomial & 100/100 & $0.4158 \pm 0.06228$ \\
+5 & custom & gaussian & 100/100 & $0.4158 \pm 0.06298$ \\
+6 & filterflow & stratified & 100/100 & $0.4163 \pm 0.06335$ \\
+7 & pfjax & mvn & 100/100 & $0.4163 \pm 0.06235$ \\
+8 & julia & multinomial & 100/100 & $0.4163 \pm 0.06232$ \\
+9 & custom & eigen & 100/100 & $0.4164 \pm 0.06297$ \\
+10 & particles & ssp & 100/100 & $0.4164 \pm 0.06348$ \\
+11 & pydpf & systematic & 100/100 & $0.4165 \pm 0.06394$ \\
+11 & pydpf & systematic\_stop & 100/100 & $0.4165 \pm 0.06394$ \\
+13 & julia & ssp & 100/100 & $0.4165 \pm 0.06392$ \\
+14 & pydpf & multinomial & 100/100 & $0.4167 \pm 0.06288$ \\
+14 & torchfilter & multinomial & 100/100 & $0.4167 \pm 0.06288$ \\
+16 & filterflow & systematic & 100/100 & $0.4168 \pm 0.06332$ \\
+17 & cuthbert & systematic & 100/100 & $0.4171 \pm 0.06367$ \\
+17 & cuthbert & systematic\_stop & 100/100 & $0.4171 \pm 0.06367$ \\
+19 & stonesoup & residual & 100/100 & $0.4171 \pm 0.06352$ \\
+20 & julia & stratified & 100/100 & $0.4173 \pm 0.06348$ \\
+21 & particles & stratified & 100/100 & $0.4173 \pm 0.06379$ \\
+22 & particles & systematic & 100/100 & $0.4173 \pm 0.0634$ \\
+23 & filterflow & ot & 10/10 & $0.4173 \pm 0.065$ \\
+24 & particles & multinomial & 100/100 & $0.4174 \pm 0.06486$ \\
+25 & variational & kl & 100/100 & $0.4174 \pm 0.06379$ \\
+26 & julia & systematic & 100/100 & $0.4174 \pm 0.0627$ \\
+27 & julia & residual & 100/100 & $0.4174 \pm 0.06273$ \\
+28 & filterflow & corrected\_ot & 10/10 & $0.4176 \pm 0.06451$ \\
+29 & cuthbert & multinomial & 100/100 & $0.4176 \pm 0.06238$ \\
+30 & pydpf & ot & 10/10 & $0.4181 \pm 0.06481$ \\
+31 & variational & tv & 100/100 & $0.4181 \pm 0.06438$ \\
+32 & pfjax & ot & 10/10 & $0.4183 \pm 0.06485$ \\
+33 & particles & residual & 100/100 & $0.4183 \pm 0.06283$ \\
+34 & pfjax & multinomial & 100/100 & $0.4186 \pm 0.06349$ \\
+35 & stonesoup & multinomial & 100/100 & $0.4189 \pm 0.06357$ \\
+36 & pydpf & soft & 100/100 & $0.419 \pm 0.06346$ \\
+36 & torchfilter & soft & 100/100 & $0.419 \pm 0.06346$ \\
+38 & julia & killing & 100/100 & $0.4191 \pm 0.06314$ \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,6 @@
+{
+  "reason": "Upstream --smoke left full 2000-trajectory/1001-state generation enabled; stopped and replaced with documented bounded native run.",
+  "log": "../native-pydpf-tasks.log",
+  "discarded_file": "pydpf-data/dx=25-dy=1.csv",
+  "replacement": "pydpf.json"
+}

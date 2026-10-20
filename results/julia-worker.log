@@ -1,0 +1,664 @@
+
+[41513] signal (15): Terminated
+in expression starting at /home/user/resampler/scripts/julia_worker.jl:5
+jl_to_typeof at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:766 [inlined]
+set_nth_field at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/datatype.c:1673
+jl_decode_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/ircode.c:754
+jl_decode_value_array at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/ircode.c:501
+jl_decode_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/ircode.c:680
+ijl_uncompress_ir at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/ircode.c:902
+retrieve_ir_for_inlining at ./compiler/ssair/inlining.jl:985 [inlined]
+#resolve_todo#467 at ./compiler/ssair/inlining.jl:908
+resolve_todo at ./compiler/ssair/inlining.jl:871 [inlined]
+#analyze_method!#468 at ./compiler/ssair/inlining.jl:981
+analyze_method! at ./compiler/ssair/inlining.jl:950 [inlined]
+#handle_match!#472 at ./compiler/ssair/inlining.jl:1468
+handle_match! at ./compiler/ssair/inlining.jl:1458 [inlined]
+#handle_any_const_result!#469 at ./compiler/ssair/inlining.jl:1329
+handle_any_const_result! at ./compiler/ssair/inlining.jl:1312 [inlined]
+compute_inlining_cases at ./compiler/ssair/inlining.jl:1404
+handle_call! at ./compiler/ssair/inlining.jl:1450 [inlined]
+assemble_inline_todo! at ./compiler/ssair/inlining.jl:1699
+ssa_inlining_pass! at ./compiler/ssair/inlining.jl:78 [inlined]
+run_passes at ./compiler/optimize.jl:489
+run_passes at ./compiler/optimize.jl:504 [inlined]
+optimize at ./compiler/optimize.jl:453 [inlined]
+_typeinf at ./compiler/typeinfer.jl:272
+typeinf at ./compiler/typeinfer.jl:216
+typeinf_ext at ./compiler/typeinfer.jl:1051
+typeinf_ext_toplevel at ./compiler/typeinfer.jl:1082
+typeinf_ext_toplevel at ./compiler/typeinfer.jl:1078
+jfptr_typeinf_ext_toplevel_35730.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+jl_type_infer at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:394
+jl_generate_fptr_impl at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jitlayers.cpp:512
+jl_compile_method_internal at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2481 [inlined]
+jl_compile_method_internal at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2368
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2887 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+do_call at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:126
+eval_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:223
+eval_stmt_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:174 [inlined]
+eval_body at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:617
+jl_interpret_toplevel_thunk at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:775
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:877
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+include_string at ./loading.jl:2146
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+_include at ./loading.jl:2206
+include at ./Base.jl:495
+jfptr_include_46653.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+exec_options at ./client.jl:323
+_start at ./client.jl:557
+jfptr__start_83114.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+true_main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:582
+jl_repl_entrypoint at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:731
+main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/cli/loader_exe.c:58
+unknown function (ip: 0x79d011a2a1c9)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 625852 (Pool: 625292; Big: 560); GC: 1
+
+[41525] signal (15): Terminated
+in expression starting at /home/user/resampler/scripts/julia_worker.jl:5
+_count_added_node! at ./compiler/ssair/ir.jl:785
+setindex! at ./compiler/ssair/ir.jl:957
+setindex! at ./compiler/ssair/ir.jl:986 [inlined]
+ir_inline_item! at ./compiler/ssair/inlining.jl:432
+batch_inline! at ./compiler/ssair/inlining.jl:710
+ssa_inlining_pass! at ./compiler/ssair/inlining.jl:81 [inlined]
+run_passes at ./compiler/optimize.jl:489
+run_passes at ./compiler/optimize.jl:504 [inlined]
+optimize at ./compiler/optimize.jl:453 [inlined]
+_typeinf at ./compiler/typeinfer.jl:272
+typeinf at ./compiler/typeinfer.jl:216
+typeinf_ext at ./compiler/typeinfer.jl:1051
+typeinf_ext_toplevel at ./compiler/typeinfer.jl:1082
+typeinf_ext_toplevel at ./compiler/typeinfer.jl:1078
+jfptr_typeinf_ext_toplevel_35730.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+jl_type_infer at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:394
+jl_generate_fptr_impl at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jitlayers.cpp:512
+jl_compile_method_internal at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2481 [inlined]
+jl_compile_method_internal at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2368
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2887 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+do_call at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:126
+eval_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:223
+eval_stmt_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:174 [inlined]
+eval_body at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:617
+jl_interpret_toplevel_thunk at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:775
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:877
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+include_string at ./loading.jl:2146
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+_include at ./loading.jl:2206
+include at ./Base.jl:495
+jfptr_include_46653.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+exec_options at ./client.jl:323
+_start at ./client.jl:557
+jfptr__start_83114.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+true_main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:582
+jl_repl_entrypoint at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:731
+main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/cli/loader_exe.c:58
+unknown function (ip: 0x7ac96ba2a1c9)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 625943 (Pool: 625369; Big: 574); GC: 1
+
+[41528] signal (15): Terminated
+in expression starting at /home/user/resampler/scripts/julia_worker.jl:5
+unknown function (ip: 0x75417baac348)
+malloc at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+_Znwm at /lib/x86_64-linux-gnu/libstdc++.so.6 (unknown line)
+_ZN4llvm6MDNodenwEmmNS_8Metadata11StorageTypeE at /home/user/resampler/.tools/julia-1.10.10/bin/../lib/julia/libLLVM-15jl.so (unknown line)
+_ZN4llvm10DILocation7getImplERNS_11LLVMContextEjjPNS_8MetadataES4_bNS3_11StorageTypeEb at /home/user/resampler/.tools/julia-1.10.10/bin/../lib/julia/libLLVM-15jl.so (unknown line)
+getImpl at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/usr/include/llvm/IR/DebugInfoMetadata.h:1573 [inlined]
+get at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/usr/include/llvm/IR/DebugInfoMetadata.h:1593 [inlined]
+emit_function at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/codegen.cpp:7987
+jl_emit_code at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/codegen.cpp:8719
+jl_emit_codeinst at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/codegen.cpp:8793
+_jl_compile_codeinst at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jitlayers.cpp:221
+jl_generate_fptr_impl at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jitlayers.cpp:528
+jl_compile_method_internal at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2481 [inlined]
+jl_compile_method_internal at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2368
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2887 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+do_call at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:126
+eval_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:223
+eval_stmt_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:174 [inlined]
+eval_body at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:617
+jl_interpret_toplevel_thunk at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:775
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:877
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+include_string at ./loading.jl:2146
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+_include at ./loading.jl:2206
+include at ./Base.jl:495
+jfptr_include_46653.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+exec_options at ./client.jl:323
+_start at ./client.jl:557
+jfptr__start_83114.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+true_main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:582
+jl_repl_entrypoint at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:731
+main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/cli/loader_exe.c:58
+unknown function (ip: 0x75417ba2a1c9)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 625749 (Pool: 625175; Big: 574); GC: 1
+
+[41531] signal (15): Terminated
+in expression starting at /home/user/resampler/scripts/julia_worker.jl:5
+jl_f_isdefined at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/builtins.c:1170
+fixemup! at ./compiler/ssair/slot2ssa.jl:160
+rename_uses! at ./compiler/ssair/slot2ssa.jl:183 [inlined]
+construct_ssa! at ./compiler/ssair/slot2ssa.jl:808
+slot2reg at ./compiler/optimize.jl:626
+run_passes at ./compiler/optimize.jl:489
+run_passes at ./compiler/optimize.jl:504 [inlined]
+optimize at ./compiler/optimize.jl:453 [inlined]
+_typeinf at ./compiler/typeinfer.jl:272
+typeinf at ./compiler/typeinfer.jl:216
+typeinf_ext at ./compiler/typeinfer.jl:1051
+typeinf_ext_toplevel at ./compiler/typeinfer.jl:1082
+typeinf_ext_toplevel at ./compiler/typeinfer.jl:1078
+jfptr_typeinf_ext_toplevel_35730.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+jl_type_infer at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:394
+jl_generate_fptr_impl at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jitlayers.cpp:512
+jl_compile_method_internal at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2481 [inlined]
+jl_compile_method_internal at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2368
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2887 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+do_call at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:126
+eval_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:223
+eval_stmt_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:174 [inlined]
+eval_body at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:617
+jl_interpret_toplevel_thunk at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:775
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:877
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+include_string at ./loading.jl:2146
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+_include at ./loading.jl:2206
+include at ./Base.jl:495
+jfptr_include_46653.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+exec_options at ./client.jl:323
+_start at ./client.jl:557
+jfptr__start_83114.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+true_main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:582
+jl_repl_entrypoint at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:731
+main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/cli/loader_exe.c:58
+unknown function (ip: 0x7744a842a1c9)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 620947 (Pool: 620413; Big: 534); GC: 1
+
+[41534] signal (15): Terminated
+in expression starting at /home/user/resampler/scripts/julia_worker.jl:5
+lookup_type_setvalue at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jltypes.c:990 [inlined]
+lookup_typevalue at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jltypes.c:1062
+lookup_arg_type_tuple at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2237 [inlined]
+jl_lookup_generic_ at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3011 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3073
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+do_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/builtins.c:768
+most_general_argtypes at ./compiler/inferenceresult.jl:111
+most_general_argtypes at ./compiler/inferenceresult.jl:109 [inlined]
+matching_cache_argtypes at ./compiler/inferenceresult.jl:27 [inlined]
+inflate_ir! at ./compiler/ssair/legacy.jl:13
+retrieve_ir_for_inlining at ./compiler/ssair/inlining.jl:986 [inlined]
+#resolve_todo#467 at ./compiler/ssair/inlining.jl:908
+resolve_todo at ./compiler/ssair/inlining.jl:871 [inlined]
+#analyze_method!#468 at ./compiler/ssair/inlining.jl:981
+analyze_method! at ./compiler/ssair/inlining.jl:950 [inlined]
+#handle_match!#472 at ./compiler/ssair/inlining.jl:1468
+handle_match! at ./compiler/ssair/inlining.jl:1458 [inlined]
+#handle_any_const_result!#469 at ./compiler/ssair/inlining.jl:1329
+handle_any_const_result! at ./compiler/ssair/inlining.jl:1312 [inlined]
+compute_inlining_cases at ./compiler/ssair/inlining.jl:1404
+handle_call! at ./compiler/ssair/inlining.jl:1450 [inlined]
+assemble_inline_todo! at ./compiler/ssair/inlining.jl:1699
+ssa_inlining_pass! at ./compiler/ssair/inlining.jl:78 [inlined]
+run_passes at ./compiler/optimize.jl:489
+run_passes at ./compiler/optimize.jl:504 [inlined]
+optimize at ./compiler/optimize.jl:453 [inlined]
+_typeinf at ./compiler/typeinfer.jl:272
+typeinf at ./compiler/typeinfer.jl:216
+typeinf_ext at ./compiler/typeinfer.jl:1051
+typeinf_ext_toplevel at ./compiler/typeinfer.jl:1082
+typeinf_ext_toplevel at ./compiler/typeinfer.jl:1078
+jfptr_typeinf_ext_toplevel_35730.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+jl_type_infer at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:394
+jl_generate_fptr_impl at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jitlayers.cpp:512
+jl_compile_method_internal at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2481 [inlined]
+jl_compile_method_internal at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2368
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2887 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+do_call at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:126
+eval_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:223
+eval_stmt_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:174 [inlined]
+eval_body at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:617
+jl_interpret_toplevel_thunk at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:775
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:877
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+include_string at ./loading.jl:2146
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+_include at ./loading.jl:2206
+include at ./Base.jl:495
+jfptr_include_46653.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+exec_options at ./client.jl:323
+_start at ./client.jl:557
+jfptr__start_83114.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+true_main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:582
+jl_repl_entrypoint at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:731
+main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/cli/loader_exe.c:58
+unknown function (ip: 0x7da7ef22a1c9)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 620947 (Pool: 620413; Big: 534); GC: 1
+
+[41537] signal (15): Terminated
+in expression starting at /home/user/resampler/scripts/julia_worker.jl:5
+_matched_map! at ./bitset.jl:192
+_matched_map! at ./bitset.jl:174 [inlined]
+setdiff! at ./bitset.jl:296 [inlined]
+setdiff at ./abstractset.jl:216 [inlined]
+construct_ssa! at ./compiler/ssair/slot2ssa.jl:860
+slot2reg at ./compiler/optimize.jl:626
+run_passes at ./compiler/optimize.jl:489
+run_passes at ./compiler/optimize.jl:504 [inlined]
+optimize at ./compiler/optimize.jl:453 [inlined]
+_typeinf at ./compiler/typeinfer.jl:272
+typeinf at ./compiler/typeinfer.jl:216
+typeinf_ext at ./compiler/typeinfer.jl:1051
+typeinf_ext_toplevel at ./compiler/typeinfer.jl:1082
+typeinf_ext_toplevel at ./compiler/typeinfer.jl:1078
+jfptr_typeinf_ext_toplevel_35730.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+jl_type_infer at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:394
+jl_generate_fptr_impl at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jitlayers.cpp:512
+jl_compile_method_internal at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2481 [inlined]
+jl_compile_method_internal at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2368
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2887 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+do_call at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:126
+eval_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:223
+eval_stmt_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:174 [inlined]
+eval_body at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:617
+jl_interpret_toplevel_thunk at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:775
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:877
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+include_string at ./loading.jl:2146
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+_include at ./loading.jl:2206
+include at ./Base.jl:495
+jfptr_include_46653.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+exec_options at ./client.jl:323
+_start at ./client.jl:557
+jfptr__start_83114.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+true_main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:582
+jl_repl_entrypoint at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:731
+main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/cli/loader_exe.c:58
+unknown function (ip: 0x7afecbe2a1c9)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 625685 (Pool: 625096; Big: 589); GC: 1
+
+[42580] signal (15): Terminated
+in expression starting at /home/user/resampler/scripts/julia_worker.jl:5
+epoll_wait at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+uv__io_poll at /workspace/srcdir/libuv/src/unix/epoll.c:236
+uv_run at /workspace/srcdir/libuv/src/unix/core.c:400
+ijl_task_get_next at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/partr.c:478
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+#wait#647 at ./condition.jl:130
+wait at ./condition.jl:125 [inlined]
+wait_readnb at ./stream.jl:416
+eof at ./stream.jl:106
+iterate at ./io.jl:1072
+unknown function (ip: 0x726f27287145)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+do_call at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:126
+eval_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:223
+eval_body at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:489
+jl_interpret_toplevel_thunk at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:775
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:877
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+include_string at ./loading.jl:2146
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+_include at ./loading.jl:2206
+include at ./Base.jl:495
+jfptr_include_46653.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+exec_options at ./client.jl:323
+_start at ./client.jl:557
+jfptr__start_83114.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+true_main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:582
+jl_repl_entrypoint at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:731
+main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/cli/loader_exe.c:58
+unknown function (ip: 0x726f2e42a1c9)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 625810 (Pool: 625249; Big: 561); GC: 1
+
+[42601] signal (15): Terminated
+in expression starting at /home/user/resampler/scripts/julia_worker.jl:5
+epoll_wait at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+uv__io_poll at /workspace/srcdir/libuv/src/unix/epoll.c:236
+uv_run at /workspace/srcdir/libuv/src/unix/core.c:400
+ijl_task_get_next at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/partr.c:478
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+#wait#647 at ./condition.jl:130
+wait at ./condition.jl:125 [inlined]
+wait_readnb at ./stream.jl:416
+eof at ./stream.jl:106
+iterate at ./io.jl:1072
+unknown function (ip: 0x7aa9fb4fd145)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+do_call at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:126
+eval_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:223
+eval_body at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:489
+jl_interpret_toplevel_thunk at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:775
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:877
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+include_string at ./loading.jl:2146
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+_include at ./loading.jl:2206
+include at ./Base.jl:495
+jfptr_include_46653.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+exec_options at ./client.jl:323
+_start at ./client.jl:557
+jfptr__start_83114.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+true_main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:582
+jl_repl_entrypoint at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:731
+main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/cli/loader_exe.c:58
+unknown function (ip: 0x7aaa06a2a1c9)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 625893 (Pool: 625318; Big: 575); GC: 1
+
+[42607] signal (15): Terminated
+in expression starting at /home/user/resampler/scripts/julia_worker.jl:5
+epoll_wait at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+uv__io_poll at /workspace/srcdir/libuv/src/unix/epoll.c:236
+uv_run at /workspace/srcdir/libuv/src/unix/core.c:400
+ijl_task_get_next at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/partr.c:478
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+#wait#647 at ./condition.jl:130
+wait at ./condition.jl:125 [inlined]
+wait_readnb at ./stream.jl:416
+eof at ./stream.jl:106
+iterate at ./io.jl:1072
+unknown function (ip: 0x7ff7548fd145)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+do_call at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:126
+eval_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:223
+eval_body at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:489
+jl_interpret_toplevel_thunk at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:775
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:877
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+include_string at ./loading.jl:2146
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+_include at ./loading.jl:2206
+include at ./Base.jl:495
+jfptr_include_46653.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+exec_options at ./client.jl:323
+_start at ./client.jl:557
+jfptr__start_83114.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+true_main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:582
+jl_repl_entrypoint at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:731
+main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/cli/loader_exe.c:58
+unknown function (ip: 0x7ff75fe2a1c9)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 625735 (Pool: 625160; Big: 575); GC: 1
+
+[42610] signal (15): Terminated
+in expression starting at /home/user/resampler/scripts/julia_worker.jl:5
+epoll_wait at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+uv__io_poll at /workspace/srcdir/libuv/src/unix/epoll.c:236
+uv_run at /workspace/srcdir/libuv/src/unix/core.c:400
+ijl_task_get_next at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/partr.c:478
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+#wait#647 at ./condition.jl:130
+wait at ./condition.jl:125 [inlined]
+wait_readnb at ./stream.jl:416
+eof at ./stream.jl:106
+iterate at ./io.jl:1072
+unknown function (ip: 0x778082a06145)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+do_call at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:126
+eval_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:223
+eval_body at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:489
+jl_interpret_toplevel_thunk at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:775
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:877
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+include_string at ./loading.jl:2146
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+_include at ./loading.jl:2206
+include at ./Base.jl:495
+jfptr_include_46653.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+exec_options at ./client.jl:323
+_start at ./client.jl:557
+jfptr__start_83114.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+true_main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:582
+jl_repl_entrypoint at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:731
+main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/cli/loader_exe.c:58
+unknown function (ip: 0x778089c2a1c9)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 1269293 (Pool: 1268356; Big: 937); GC: 2
+
+[42643] signal (15): Terminated
+in expression starting at /home/user/resampler/scripts/julia_worker.jl:5
+epoll_wait at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+uv__io_poll at /workspace/srcdir/libuv/src/unix/epoll.c:236
+uv_run at /workspace/srcdir/libuv/src/unix/core.c:400
+ijl_task_get_next at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/partr.c:478
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+#wait#647 at ./condition.jl:130
+wait at ./condition.jl:125 [inlined]
+wait_readnb at ./stream.jl:416
+eof at ./stream.jl:106
+iterate at ./io.jl:1072
+unknown function (ip: 0x7f4ba4efd145)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+do_call at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:126
+eval_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:223
+eval_body at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:489
+jl_interpret_toplevel_thunk at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:775
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:877
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+include_string at ./loading.jl:2146
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+_include at ./loading.jl:2206
+include at ./Base.jl:495
+jfptr_include_46653.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+exec_options at ./client.jl:323
+_start at ./client.jl:557
+jfptr__start_83114.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+true_main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:582
+jl_repl_entrypoint at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:731
+main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/cli/loader_exe.c:58
+unknown function (ip: 0x7f4bb042a1c9)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 620933 (Pool: 620398; Big: 535); GC: 1
+
+[42652] signal (15): Terminated
+in expression starting at /home/user/resampler/scripts/julia_worker.jl:5
+epoll_wait at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+uv__io_poll at /workspace/srcdir/libuv/src/unix/epoll.c:236
+uv_run at /workspace/srcdir/libuv/src/unix/core.c:400
+ijl_task_get_next at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/partr.c:478
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+#wait#647 at ./condition.jl:130
+wait at ./condition.jl:125 [inlined]
+wait_readnb at ./stream.jl:416
+eof at ./stream.jl:106
+iterate at ./io.jl:1072
+unknown function (ip: 0x75f726406145)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+do_call at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:126
+eval_value at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:223
+eval_body at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:489
+jl_interpret_toplevel_thunk at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/interpreter.c:775
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:877
+ijl_toplevel_eval_in at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+include_string at ./loading.jl:2146
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+_include at ./loading.jl:2206
+include at ./Base.jl:495
+jfptr_include_46653.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+exec_options at ./client.jl:323
+_start at ./client.jl:557
+jfptr__start_83114.1 at /home/user/resampler/.tools/julia-1.10.10/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/julia.h:1982 [inlined]
+true_main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:582
+jl_repl_entrypoint at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/src/jlapi.c:731
+main at /cache/build/builder-amdci5-7/julialang/julia-release-1-dot-10/cli/loader_exe.c:58
+unknown function (ip: 0x75f72d62a1c9)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 1235509 (Pool: 1234134; Big: 1375); GC: 2

@@ -1,0 +1,4 @@
+{"provider": "variational", "method": "kl", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "variational", "method": "kl", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "variational", "method": "tv", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "variational", "method": "tv", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}

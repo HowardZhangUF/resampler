@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Variational vs classical · Stochastic volatility filter ($N=128$): conditional log-likelihood variance. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:variational-vs-classical-stochastic-volatility-filter-conditional-loglik-variance}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & conditional log-likelihood variance \\
+\midrule
+1 & particles & \textbf{systematic} & 100/100 & $\mathbf{0.08285}$ \\
+2 & particles & ssp & 100/100 & $0.08356$ \\
+3 & variational & tv & 100/100 & $0.08647$ \\
+4 & variational & kl & 100/100 & $0.09313$ \\
+5 & particles & multinomial & 100/100 & $0.107$ \\
+\bottomrule
+\end{tabular}
+\end{table}

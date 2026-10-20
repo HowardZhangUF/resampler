@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "problems": [],
+  "raw_counts": {
+    "particles/static": 24000,
+    "particles/filter": 8000,
+    "stonesoup/static": 19200,
+    "stonesoup/filter": 6400,
+    "cuthbert/static": 14400,
+    "cuthbert/filter": 4800,
+    "cuthbert/gradient": 3600,
+    "pfjax/static": 9912,
+    "pfjax/filter": 3280,
+    "pfjax/gradient": 2480,
+    "pydpf/static": 19485,
+    "pydpf/filter": 6480,
+    "pydpf/gradient": 4880,
+    "torchfilter/static": 9600,
+    "torchfilter/filter": 3200,
+    "torchfilter/gradient": 2400,
+    "filterflow/static": 14952,
+    "filterflow/filter": 4960,
+    "filterflow/gradient": 3760,
+    "julia/static": 28800,
+    "julia/filter": 9600,
+    "custom/static": 9912,
+    "custom/filter": 3280,
+    "custom/gradient": 2480
+  }
+}

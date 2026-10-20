@@ -1,0 +1,18 @@
+PyDPF: PyTorch was unable to find a CUDA-enabled GPU. The package will run on CPU, but performance will be significantly degraded. If you have a CUDA-capable GPU, install a CUDA build of PyTorch from https://pytorch.org/get-started/locally/.
+{"provider": "pydpf", "method": "ot", "stage": "static", "case": "gaussian/N2048/D2", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "filter", "case": "linear/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "filter", "case": "ungm/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "filter", "case": "volatility/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "filter", "case": "bearing/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "filter", "case": "linear/N128", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "filter", "case": "ungm/N128", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "filter", "case": "volatility/N128", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "filter", "case": "bearing/N128", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "gradient", "case": "gaussian/x2/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "gradient", "case": "gaussian/sin/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "gradient", "case": "mixture/x2/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "gradient", "case": "mixture/sin/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "gradient", "case": "gaussian/x2/N128", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "gradient", "case": "gaussian/sin/N128", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "gradient", "case": "mixture/x2/N128", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "gradient", "case": "mixture/sin/N128", "status": "complete", "error": ""}

@@ -1,0 +1,10 @@
+exact log p(y_1:T)    -231.423 ± 11.800 
+
+     N       E[log p_hat]                gap     gap/T
+    25 -343.232 ± 41.783   111.809 ± 35.935     1.1181
+   100 -268.570 ± 17.119    37.147 ± 9.163      0.3715
+  1000 -235.888 ± 13.811     4.465 ± 3.685      0.0447
+
+The gap is the Jensen slack: it must be POSITIVE and shrink with N.
+Negative or non-shrinking means the weights were normalised before
+being accumulated into the evidence.

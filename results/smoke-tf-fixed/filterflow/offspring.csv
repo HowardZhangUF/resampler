@@ -1,0 +1,25 @@
+provider,method,cloud,n,dim,repetitions,mean_count_variance,count_bias_rmse,target
+filterflow,multinomial,fixed,32,1,3,0.96875,0.5218797799096031,input weights
+filterflow,multinomial,gaussian,32,1,3,0.6770833333333333,0.6610981725299687,input weights
+filterflow,multinomial,mixture,32,1,3,0.6875,0.5346338310781814,input weights
+filterflow,multinomial,skewed,32,1,3,0.8229166666666666,0.4489288016778764,input weights
+filterflow,multinomial,fixed,32,2,3,0.96875,0.5218797799096031,input weights
+filterflow,multinomial,gaussian,32,2,3,0.8020833333333333,0.5852516783181632,input weights
+filterflow,multinomial,mixture,32,2,3,0.6875,0.5346338310781814,input weights
+filterflow,multinomial,skewed,32,2,3,0.8229166666666666,0.4489288016778764,input weights
+filterflow,systematic,fixed,32,1,3,0.15625,0.17597262457275398,input weights
+filterflow,systematic,gaussian,32,1,3,0.25,0.2136104660226686,input weights
+filterflow,systematic,mixture,32,1,3,0.33333333333333337,0.3666666666666666,input weights
+filterflow,systematic,skewed,32,1,3,0.09375,0.14240028552402687,input weights
+filterflow,systematic,fixed,32,2,3,0.15625,0.17597262457275398,input weights
+filterflow,systematic,gaussian,32,2,3,0.19791666666666669,0.21651851573916367,input weights
+filterflow,systematic,mixture,32,2,3,0.33333333333333337,0.3666666666666666,input weights
+filterflow,systematic,skewed,32,2,3,0.09375,0.14240028552402687,input weights
+filterflow,stratified,fixed,32,1,3,0.21875,0.29306073902168883,input weights
+filterflow,stratified,gaussian,32,1,3,0.27083333333333337,0.30082442739026827,input weights
+filterflow,stratified,mixture,32,1,3,0.20833333333333337,0.2603416558635552,input weights
+filterflow,stratified,skewed,32,1,3,0.12500000000000003,0.2146285432036655,input weights
+filterflow,stratified,fixed,32,2,3,0.21875,0.29306073902168883,input weights
+filterflow,stratified,gaussian,32,2,3,0.19791666666666669,0.34813271619983965,input weights
+filterflow,stratified,mixture,32,2,3,0.20833333333333337,0.2603416558635552,input weights
+filterflow,stratified,skewed,32,2,3,0.12500000000000003,0.2146285432036655,input weights

@@ -1,0 +1,8 @@
+                      bias      variance
+hard SR          1.410e-04     1.151e-03
+multinomial      3.482e-04     5.473e-03
+
+variance ratio multinomial / systematic: 4.76
+Expected: both biases at Monte-Carlo level, ratio > 1 (systematic has
+the lower variance). If the ratio is near 1 or below, the harness is
+wrong -- most likely the particle set is varying across draws.

@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{UNGM filter ($N=128$): RMSE. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:ungm-filter-rmse}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & RMSE \\
+\midrule
+1 & julia & \textbf{killing} & 100/100 & $\mathbf{4.762 \pm 0.8073}$ \\
+2 & filterflow & multinomial & 100/100 & $4.79 \pm 0.8229$ \\
+3 & filterflow & systematic & 100/100 & $4.792 \pm 0.8378$ \\
+4 & particles & stratified & 100/100 & $4.824 \pm 0.8784$ \\
+5 & pydpf & soft & 100/100 & $4.825 \pm 0.7488$ \\
+5 & torchfilter & soft & 100/100 & $4.825 \pm 0.7488$ \\
+7 & pydpf & multinomial & 100/100 & $4.827 \pm 0.8482$ \\
+7 & torchfilter & multinomial & 100/100 & $4.827 \pm 0.8482$ \\
+9 & variational & kl & 100/100 & $4.831 \pm 0.8575$ \\
+10 & stonesoup & multinomial & 100/100 & $4.843 \pm 0.8865$ \\
+11 & filterflow & stratified & 100/100 & $4.853 \pm 0.8544$ \\
+12 & particles & ssp & 100/100 & $4.854 \pm 0.792$ \\
+13 & julia & ssp & 100/100 & $4.86 \pm 0.9073$ \\
+14 & cuthbert & systematic & 100/100 & $4.87 \pm 0.9592$ \\
+14 & cuthbert & systematic\_stop & 100/100 & $4.87 \pm 0.9592$ \\
+16 & julia & multinomial & 100/100 & $4.871 \pm 0.7691$ \\
+17 & pydpf & systematic & 100/100 & $4.881 \pm 0.8893$ \\
+17 & pydpf & systematic\_stop & 100/100 & $4.881 \pm 0.8893$ \\
+19 & julia & residual & 100/100 & $4.888 \pm 0.9887$ \\
+20 & particles & systematic & 100/100 & $4.906 \pm 0.9289$ \\
+21 & variational & tv & 100/100 & $4.906 \pm 0.794$ \\
+22 & julia & stratified & 100/100 & $4.906 \pm 0.9287$ \\
+23 & particles & multinomial & 100/100 & $4.916 \pm 0.8803$ \\
+24 & julia & systematic & 100/100 & $4.921 \pm 0.9203$ \\
+25 & stonesoup & residual & 100/100 & $4.935 \pm 0.9515$ \\
+26 & stonesoup & systematic & 100/100 & $4.935 \pm 0.8928$ \\
+27 & custom & gaussian & 100/100 & $4.936 \pm 0.8551$ \\
+28 & particles & residual & 100/100 & $4.942 \pm 1.015$ \\
+29 & cuthbert & multinomial & 100/100 & $4.972 \pm 0.9957$ \\
+30 & pfjax & mvn & 93/100 & $5.027 \pm 0.9052$ \\
+31 & pfjax & multinomial & 100/100 & $5.038 \pm 0.8834$ \\
+32 & stonesoup & stratified & 100/100 & $5.039 \pm 0.9313$ \\
+33 & custom & eigen & 100/100 & $5.17 \pm 1.039$ \\
+34 & custom & gumbel & 10/10 & $5.271 \pm 1.41$ \\
+35 & pfjax & ot & 10/10 & $5.328 \pm 1.421$ \\
+36 & filterflow & corrected\_ot & 10/10 & $5.335 \pm 1.44$ \\
+37 & pydpf & ot & 10/10 & $5.416 \pm 1.463$ \\
+38 & filterflow & ot & 10/10 & $5.48 \pm 1.493$ \\
+\bottomrule
+\end{tabular}
+\end{table}

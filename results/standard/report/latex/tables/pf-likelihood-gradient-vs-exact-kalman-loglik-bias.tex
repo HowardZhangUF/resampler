@@ -1,0 +1,22 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{PF likelihood gradient vs exact Kalman ($N=128$): log-likelihood bias. Best = closest to 0 is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:pf-likelihood-gradient-vs-exact-kalman-loglik-bias}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & log-likelihood bias \\
+\midrule
+1 & custom & \textbf{eigen} & 100 & $\mathbf{-0.1536}$ \\
+2 & cuthbert & systematic & 100 & $-0.2671$ \\
+2 & cuthbert & systematic\_stop & 100 & $-0.2671$ \\
+4 & custom & gaussian & 100 & $-0.2781$ \\
+5 & pydpf & systematic & 100 & $-0.2953$ \\
+5 & pydpf & systematic\_stop & 100 & $-0.2953$ \\
+7 & pydpf & soft & 100 & $-0.3859$ \\
+7 & torchfilter & soft & 100 & $-0.3859$ \\
+9 & pydpf & ot & 10 & $-0.4472$ \\
+10 & custom & gumbel & 10 & $-2.662$ \\
+\bottomrule
+\end{tabular}
+\end{table}

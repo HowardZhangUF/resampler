@@ -1,0 +1,5 @@
+{
+  "trials": 1200,
+  "maximum_gradient_difference": 1.1102230246251565e-16,
+  "all_finite": true
+}

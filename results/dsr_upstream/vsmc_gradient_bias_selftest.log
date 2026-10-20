@@ -1,0 +1,27 @@
+
+==============================================================================
+[0] SYSTEMATIC-RESAMPLING PMF UNIT TEST
+==============================================================================
+  max |sum_a P(a) - 1|        : 2.220e-16
+  max |sum_a grad P(a)|       : 5.551e-16   (exactly 0 <=> score is mean-zero)
+  grad log P vs FD (relative) : 3.564e-10
+
+==============================================================================
+[1] EXACT ENUMERATION   d=2  N=4  T=4   (8 eps-paths x 256 resampling outcomes)
+==============================================================================
+  exact ||g_rep||   = 11.067442
+  exact ||g_score|| = 9.546563
+  exact ||sum||     = 2.554650   (large cancellation: |sum| << |parts|)
+  MC chunk 1/40  MC chunk 2/40  MC chunk 3/40  MC chunk 4/40  MC chunk 5/40  MC chunk 6/40  MC chunk 7/40  MC chunk 8/40  MC chunk 9/40  MC chunk 10/40  MC chunk 11/40  MC chunk 12/40  MC chunk 13/40  MC chunk 14/40  MC chunk 15/40  MC chunk 16/40  MC chunk 17/40  MC chunk 18/40  MC chunk 19/40  MC chunk 20/40  MC chunk 21/40  MC chunk 22/40  MC chunk 23/40  MC chunk 24/40  MC chunk 25/40  MC chunk 26/40  MC chunk 27/40  MC chunk 28/40  MC chunk 29/40  MC chunk 30/40  MC chunk 31/40  MC chunk 32/40  MC chunk 33/40  MC chunk 34/40  MC chunk 35/40  MC chunk 36/40  MC chunk 37/40  MC chunk 38/40  MC chunk 39/40  MC chunk 40/40                                        
+  Monte Carlo estimator, 1,280,000 paths (12s), same eps (CRN):
+  g_rep      vs exact       ||g||= 1.1067e+01  rel.err=5.139e-04  cos= 1.000000  max|z|=   1.50
+  g_score    vs exact       ||g||= 9.4601e+00  rel.err=3.457e-02  cos= 0.999438  max|z|=   1.82
+  g_rep+g_score vs exact    ||g||= 2.6600e+00  rel.err=1.277e-01  cos= 0.992989  max|z|=   1.88
+
+  one batch of 32,000 paths, g_score error:
+  Rao-Blackwell + RLOO      ||g||= 8.6839e+00  rel.err=3.251e-01  cos= 0.946379
+  vanilla  (no RB, no CV)   ||g||= 1.1575e+01  rel.err=7.187e-01  cos= 0.805598
+
+  central differences, h=0.01, same eps:
+  FD vs exact g_rep+g_score ||g||= 2.5148e+00  rel.err=1.364e-01  cos= 0.990673  max|z|=   1.18
+  FD vs exact g_rep alone   ||g||= 2.5148e+00  rel.err=8.453e-01  cos= 0.741614

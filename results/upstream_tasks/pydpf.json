@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "source": "vendor/pydpf/replication_materials/run_experiments.py",
+  "result_rows": 7,
+  "settings": "bounded native replication smoke; 50 trajectories x 21 states; batch=16; time_extent=10; reference PF=512; candidate SV PF=100; linear PF=25,100",
+  "notes": "runtime wrappers bound sizes missing from upstream smoke handling; no paper-scale or GPU reproduction"
+}

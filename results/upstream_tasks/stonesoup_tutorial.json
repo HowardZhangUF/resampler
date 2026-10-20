@@ -1,0 +1,5 @@
+{
+  "source": "vendor/Stone-Soup/docs/tutorials/sampling/ResamplingTutorial.py",
+  "passed": true,
+  "assertions": "native multinomial sizes/weights/support and ESS retention"
+}

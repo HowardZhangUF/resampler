@@ -1,0 +1,16 @@
+Running stonesoup -> /home/user/resampler/results/standard/stonesoup.log
+Running cuthbert -> /home/user/resampler/results/standard/cuthbert.log
+stonesoup exit 0
+Running pfjax -> /home/user/resampler/results/standard/pfjax.log
+cuthbert exit 0
+Running pydpf -> /home/user/resampler/results/standard/pydpf.log
+pfjax exit 0
+Running torchfilter -> /home/user/resampler/results/standard/torchfilter.log
+torchfilter exit 0
+Running filterflow -> /home/user/resampler/results/standard/filterflow.log
+pydpf exit -15
+Running julia -> /home/user/resampler/results/standard/julia.log
+julia exit -15
+Running custom -> /home/user/resampler/results/standard/custom.log
+filterflow exit 0
+custom exit 0

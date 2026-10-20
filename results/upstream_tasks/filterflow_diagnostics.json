@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "matching_cost_plan_max_error": 2.623791057473901e-05,
+  "row_marginal_max_error": 0.0005506277084350586,
+  "column_marginal_max_error": 5.960464477539062e-07,
+  "weight_gradient_step_sweep": [
+    {
+      "objective_scale": 1.0,
+      "step": 1e-05,
+      "max_absolute_error": 0.9569549560546875,
+      "rmse": 0.21281957626342773,
+      "passes_upstream_tolerance": false
+    },
+    {
+      "objective_scale": 1.0,
+      "step": 0.0001,
+      "max_absolute_error": 0.9426498413085938,
+      "rmse": 0.2042662650346756,
+      "passes_upstream_tolerance": false
+    },
+    {
+      "objective_scale": 1.0,
+      "step": 0.001,
+      "max_absolute_error": 0.947418212890625,
+      "rmse": 0.2049121856689453,
+      "passes_upstream_tolerance": false
+    },
+    {
+      "objective_scale": 1.0,
+      "step": 0.01,
+      "max_absolute_error": 0.9473705291748047,
+      "rmse": 0.2049454301595688,
+      "passes_upstream_tolerance": false
+    },
+    {
+      "objective_scale": 0.1,
+      "step": 1e-05,
+      "max_absolute_error": 0.01307827327400446,
+      "rmse": 0.005430735182017088,
+      "passes_upstream_tolerance": false
+    },
+    {
+      "objective_scale": 0.1,
+      "step": 0.0001,
+      "max_absolute_error": 0.001556944102048874,
+      "rmse": 0.0005480258259922266,
+      "passes_upstream_tolerance": true
+    },
+    {
+      "objective_scale": 0.1,
+      "step": 0.001,
+      "max_absolute_error": 0.00012914836406707764,
+      "rmse": 5.695169966202229e-05,
+      "passes_upstream_tolerance": true
+    },
+    {
+      "objective_scale": 0.1,
+      "step": 0.01,
+      "max_absolute_error": 1.2755393981933594e-05,
+      "rmse": 5.881277047592448e-06,
+      "passes_upstream_tolerance": true
+    }
+  ],
+  "notes": "upstream tests remain unchanged and failing; POT comparison here uses native cost, dimension scaling, and epsilon"
+}

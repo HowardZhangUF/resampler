@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Linear Gaussian filter ($N=128$): RMSE. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:linear-gaussian-filter-rmse}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & RMSE \\
+\midrule
+1 & julia & \textbf{multinomial} & 100/100 & $\mathbf{0.505 \pm 0.04559}$ \\
+2 & particles & residual & 100/100 & $0.5054 \pm 0.04552$ \\
+3 & stonesoup & residual & 100/100 & $0.5056 \pm 0.0462$ \\
+4 & pfjax & multinomial & 100/100 & $0.5056 \pm 0.04498$ \\
+5 & pfjax & mvn & 100/100 & $0.5058 \pm 0.04612$ \\
+6 & pydpf & multinomial & 100/100 & $0.5058 \pm 0.04658$ \\
+6 & torchfilter & multinomial & 100/100 & $0.5058 \pm 0.04658$ \\
+8 & stonesoup & multinomial & 100/100 & $0.5058 \pm 0.04639$ \\
+9 & cuthbert & multinomial & 100/100 & $0.5058 \pm 0.04598$ \\
+10 & filterflow & multinomial & 100/100 & $0.506 \pm 0.0471$ \\
+11 & particles & systematic & 100/100 & $0.5061 \pm 0.04637$ \\
+12 & julia & residual & 100/100 & $0.5061 \pm 0.0458$ \\
+13 & pydpf & systematic & 100/100 & $0.5064 \pm 0.0469$ \\
+13 & pydpf & systematic\_stop & 100/100 & $0.5064 \pm 0.0469$ \\
+15 & stonesoup & systematic & 100/100 & $0.5064 \pm 0.04698$ \\
+16 & cuthbert & systematic & 100/100 & $0.5065 \pm 0.04593$ \\
+16 & cuthbert & systematic\_stop & 100/100 & $0.5065 \pm 0.04593$ \\
+18 & particles & multinomial & 100/100 & $0.5065 \pm 0.04512$ \\
+19 & julia & stratified & 100/100 & $0.5066 \pm 0.04604$ \\
+20 & julia & killing & 100/100 & $0.5066 \pm 0.04645$ \\
+21 & particles & stratified & 100/100 & $0.5066 \pm 0.04543$ \\
+22 & filterflow & stratified & 100/100 & $0.5066 \pm 0.04594$ \\
+23 & filterflow & systematic & 100/100 & $0.5067 \pm 0.04571$ \\
+24 & julia & systematic & 100/100 & $0.5067 \pm 0.04616$ \\
+25 & particles & ssp & 100/100 & $0.5068 \pm 0.04587$ \\
+26 & custom & eigen & 100/100 & $0.5069 \pm 0.0455$ \\
+27 & julia & ssp & 100/100 & $0.507 \pm 0.04575$ \\
+28 & variational & kl & 100/100 & $0.507 \pm 0.04685$ \\
+29 & stonesoup & stratified & 100/100 & $0.5072 \pm 0.04628$ \\
+30 & custom & gaussian & 100/100 & $0.5072 \pm 0.04556$ \\
+31 & variational & tv & 100/100 & $0.5081 \pm 0.04693$ \\
+32 & pydpf & soft & 100/100 & $0.5082 \pm 0.04603$ \\
+32 & torchfilter & soft & 100/100 & $0.5082 \pm 0.04603$ \\
+34 & filterflow & corrected\_ot & 10/10 & $0.5144 \pm 0.04365$ \\
+35 & custom & gumbel & 10/10 & $0.5144 \pm 0.04802$ \\
+36 & filterflow & ot & 10/10 & $0.5145 \pm 0.04393$ \\
+37 & pydpf & ot & 10/10 & $0.5145 \pm 0.04344$ \\
+38 & pfjax & ot & 10/10 & $0.5146 \pm 0.04344$ \\
+\bottomrule
+\end{tabular}
+\end{table}

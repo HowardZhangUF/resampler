@@ -1,0 +1,14 @@
+Using Python 3.11.14 environment at: .venv-tf
+WARN Skipping file for tabulate: tabulate-0.8.10-py3.8.egg
+Resolved 14 packages in 782ms
+Downloading pot (1.4MiB)
+ Downloading pot
+Prepared 3 packages in 287ms
+Installed 7 packages in 37ms
+ + dm-sonnet==2.0.2
+ + iniconfig==2.3.1
+ + pluggy==1.6.0
+ + pot==0.9.6.post1
+ + pygments==2.21.0
+ + pytest==9.1.1
+ + tabulate==0.10.0

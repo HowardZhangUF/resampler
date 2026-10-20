@@ -1,0 +1,6 @@
+{"provider": "cuthbert", "method": "multinomial", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "cuthbert", "method": "multinomial", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "cuthbert", "method": "systematic", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "cuthbert", "method": "systematic", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "cuthbert", "method": "systematic_stop", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "cuthbert", "method": "systematic_stop", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}

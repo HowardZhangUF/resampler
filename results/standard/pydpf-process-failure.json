@@ -1,0 +1,6 @@
+{
+  "returncode": -15,
+  "resolved": true,
+  "reason": "Worker restarted to cap the slow N=2048 OT distribution grid at the Gaussian D=2 scaling case.",
+  "resolution": "All remaining OT cells completed by the resume command; see results/resume-pydpf-ot.log."
+}

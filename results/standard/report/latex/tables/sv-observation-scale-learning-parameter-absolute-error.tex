@@ -1,0 +1,24 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{SV observation-scale learning ($N=128$): $|\hat{s}-1|$. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:sv-observation-scale-learning-parameter-absolute-error}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & $|\hat{s}-1|$ \\
+\midrule
+1 & torchfilter & \textbf{soft} & 10/10 & $\mathbf{0.2 \pm 0.09538}$ \\
+2 & custom & gaussian & 10/10 & $0.22 \pm 0.1056$ \\
+2 & cuthbert & systematic\_stop & 10/10 & $0.22 \pm 0.1253$ \\
+2 & particles & systematic & 10/10 & $0.22 \pm 0.1253$ \\
+5 & stonesoup & systematic & 10/10 & $0.24 \pm 0.1129$ \\
+5 & variational & kl & 10/10 & $0.24 \pm 0.1129$ \\
+7 & custom & eigen & 10/10 & $0.26 \pm 0.09657$ \\
+7 & custom & gumbel & 10/10 & $0.26 \pm 0.09657$ \\
+7 & pfjax & ot & 10/10 & $0.26 \pm 0.09657$ \\
+7 & pydpf & ot & 10/10 & $0.26 \pm 0.09657$ \\
+11 & filterflow & ot & 10/10 & $0.28 \pm 0.1$ \\
+11 & julia & systematic & 10/10 & $0.28 \pm 0.07388$ \\
+\bottomrule
+\end{tabular}
+\end{table}

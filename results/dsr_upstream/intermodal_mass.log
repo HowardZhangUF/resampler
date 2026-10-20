@@ -1,0 +1,5 @@
+d=1: hard 0.000±0.000  dsr_sorted 0.287±0.005  dsr_unsorted 1.000±0.000  erot 0.000±0.000  soft 0.000±0.000
+d=2: hard 0.000±0.000  dsr_sorted 0.283±0.005  dsr_unsorted 1.000±0.000  erot 0.000±0.000  soft 0.000±0.000
+d=3: hard 0.000±0.000  dsr_sorted 0.282±0.005  dsr_unsorted 1.000±0.000  erot 0.747±0.052  soft 0.000±0.000
+d=5: hard 0.000±0.000  dsr_sorted 0.282±0.005  dsr_unsorted 1.000±0.000  erot 1.000±0.000  soft 0.000±0.000
+d=10: hard 0.000±0.000  dsr_sorted 0.282±0.005  dsr_unsorted 1.000±0.000  erot 1.000±0.000  soft 0.000±0.000

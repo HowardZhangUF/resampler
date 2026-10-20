@@ -1,0 +1,20 @@
+Running particles -> /home/user/resampler/results/lorenz/particles.log
+Running stonesoup -> /home/user/resampler/results/lorenz/stonesoup.log
+stonesoup exit 0
+Running cuthbert -> /home/user/resampler/results/lorenz/cuthbert.log
+particles exit 0
+Running pfjax -> /home/user/resampler/results/lorenz/pfjax.log
+pfjax exit 0
+Running pydpf -> /home/user/resampler/results/lorenz/pydpf.log
+cuthbert exit 0
+Running torchfilter -> /home/user/resampler/results/lorenz/torchfilter.log
+torchfilter exit 0
+Running filterflow -> /home/user/resampler/results/lorenz/filterflow.log
+pydpf exit 0
+Running julia -> /home/user/resampler/results/lorenz/julia.log
+filterflow exit 0
+Running custom -> /home/user/resampler/results/lorenz/custom.log
+custom exit 0
+Running variational -> /home/user/resampler/results/lorenz/variational.log
+julia exit 0
+variational exit 0

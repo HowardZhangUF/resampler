@@ -1,0 +1,685 @@
+what are the popular benchmark for the resampler in the particle filter ? and what are the metrice? give me some github repos as reference . 
+Explanation preferences:
+- Target 80% ASD-STE100-inspired simplified technical English.
+- Use the remaining 20% for necessary formal technical language.
+- Visual preference: Select diagrams and interactive demonstrations when useful.
+- Preserve mathematical rigor and define technical terms.
+- Adapt explanation depth to the task.
+
+Worked for 37s
+There is no single universally accepted benchmark suite specifically for particle-filter resamplers. Instead, researchers normally use two types of tests:
+
+Resampler-only benchmarks: Test whether resampling preserves the original probability distribution and runs efficiently.
+
+Particle-filter benchmarks: Replace the resampler inside a fixed particle filter and measure tracking accuracy, posterior uncertainty, and computational cost.
+
+For your goal of developing a closed-form, differentiable resampler, I would use both. The classical comparison by Douc, Cappé, and Moulines and the differentiable optimal-transport work by Corenflos et al. are good methodological starting points. 
+
+arXiv
++1
+
+1. Popular benchmark problems
+Benchmark
+
+What you test
+
+Important metrics
+
+Difficulty
+
+1. Fixed weighted particle cloud
+
+Whether resampling preserves a distribution
+
+Sampling variance, Wasserstein distance, mean error
+
+Easy
+
+2. Gaussian / Gaussian mixture
+
+Whether the method preserves one or multiple modes
+
+Wasserstein, MMD, covariance error, mode coverage
+
+Easy
+
+3. Linear Gaussian state-space model
+
+PF results against an exact Kalman-filter reference
+
+RMSE, posterior error, likelihood-gradient error
+
+Easy
+
+4. Univariate Nonlinear Growth Model (UNGM)
+
+Strongly nonlinear, sometimes multimodal filtering
+
+RMSE, likelihood estimates, posterior quality
+
+Medium
+
+5. Stochastic volatility model
+
+Sequential inference and parameter learning
+
+Log-likelihood variance, parameter error, gradient quality
+
+Medium
+
+6. Bearing-only target tracking
+
+Ambiguous target positions, nonlinear measurements
+
+Tracking RMSE, recovery rate, distribution calibration
+
+Medium
+
+UNGM is a classic particle-filter stress test, while linear Gaussian models are especially useful because the Kalman filter supplies an exact reference. 
+
+GitHub
++2
+
+For your first experiment, I would start with benchmarks 1–3, then use UNGM and bearing-only tracking as the next stage.
+
+2. Popular benchmark metrics
+The key is to measure what happens before and after resampling, not only the final target position.
+
+Suppose your weighted distribution is
+
+p
+N
+(
+x
+)
+=
+∑
+i
+=
+1
+N
+w
+i
+δ
+(
+x
+−
+x
+i
+)
+p 
+N
+​
+ (x)= 
+i=1
+∑
+N
+​
+ w 
+i
+​
+ δ(x−x 
+i
+​
+ )
+and your resampler produces
+
+p
+~
+N
+(
+x
+)
+=
+1
+N
+∑
+j
+=
+1
+N
+δ
+(
+x
+−
+x
+~
+j
+)
+.
+p
+​
+  
+N
+​
+ (x)= 
+N
+1
+​
+  
+j=1
+∑
+N
+​
+ δ(x− 
+x
+  
+j
+​
+ ).
+A. Distribution-preservation metrics
+Metric
+
+What it measures
+
+Better
+
+Wasserstein distance (W1 or W2)
+
+How far the resampled distribution moves from the original
+
+Lower
+
+Maximum Mean Discrepancy (MMD)
+
+Difference between distributions using a kernel
+
+Lower
+
+Weighted-mean error
+
+Change in distribution center
+
+Lower
+
+Covariance error
+
+Change in estimated uncertainty
+
+Lower
+
+Mode coverage
+
+How many important distribution modes survive
+
+Higher
+
+Resampling estimator MSE
+
+Error when estimating expectations
+
+Lower
+
+One of the most useful direct tests is
+
+M
+S
+E
+f
+=
+E
+[
+(
+1
+N
+∑
+j
+=
+1
+N
+f
+(
+x
+~
+j
+)
+−
+∑
+i
+=
+1
+N
+w
+i
+f
+(
+x
+i
+)
+)
+2
+]
+.
+MSE 
+f
+​
+ =E 
+​
+ ( 
+N
+1
+​
+  
+j=1
+∑
+N
+​
+ f( 
+x
+  
+j
+​
+ )− 
+i=1
+∑
+N
+​
+ w 
+i
+​
+ f(x 
+i
+​
+ )) 
+2
+  
+​
+ .
+​
+ 
+Here, 
+f
+(
+x
+)
+f(x) is a test function, such as 
+x
+x, 
+x
+2
+x 
+2
+ , or a nonlinear function. This measures how much error the resampler adds when estimating a quantity.
+
+For classical ancestor-based resampling, you should also measure offspring-count variance:
+
+V
+a
+r
+(
+n
+i
+)
+,
+Var(n 
+i
+​
+ ),
+where 
+n
+i
+n 
+i
+​
+  is the number of copies of particle 
+i
+i. Unbiased classical resamplers satisfy
+
+E
+[
+n
+i
+]
+=
+N
+w
+i
+.
+E[n 
+i
+​
+ ]=Nw 
+i
+​
+ .
+This is a central metric in classical resampling comparisons. It does not apply directly to methods that generate new particle positions instead of copying ancestors. 
+
+arXiv
+
+B. Differentiability and efficiency metrics
+Metric
+
+What it measures
+
+Better
+
+Gradient bias
+
+Difference between mean estimated and true gradient
+
+Lower
+
+Gradient variance
+
+Variation of the gradient across runs
+
+Lower
+
+Forward runtime
+
+Time to produce resampled particles
+
+Lower
+
+Backward runtime
+
+Time to compute gradients
+
+Lower
+
+Peak memory
+
+Memory used during resampling
+
+Lower
+
+Scaling with 
+N
+N
+
+How execution cost grows with particle count
+
+Slower growth
+
+For your research, I would particularly measure
+
+E
+g
+r
+a
+d
+=
+∥
+∇
+θ
+log
+⁡
+p
+(
+y
+1
+:
+T
+)
+^
+−
+∇
+θ
+log
+⁡
+p
+(
+y
+1
+:
+T
+)
+∥
+2
+.
+E 
+grad
+​
+ = 
+​
+  
+∇ 
+θ
+​
+ logp(y 
+1:T
+​
+ )
+​
+ −∇ 
+θ
+​
+ logp(y 
+1:T
+​
+ ) 
+​
+  
+2
+​
+ .
+​
+ 
+A linear Gaussian model lets you obtain the reference gradient from a Kalman filter. This is already demonstrated in the 
+Cuthbert differentiable-resampling benchmark
+. 
+
+cuthbert
+
+Important: A resampler that supports automatic differentiation does not necessarily give an accurate gradient of the true filtering objective. That is why gradient bias and variance are necessary.
+
+C. Full particle-filter metrics
+Use RMSE for target accuracy, negative log-likelihood for probabilistic prediction, empirical credible-region coverage for calibration, and the number of steps needed to recover after occlusion.
+
+For your eigenvalue-based idea, add covariance eigenvalue error:
+
+E
+λ
+=
+∥
+λ
+(
+Σ
+~
+)
+−
+λ
+(
+Σ
+)
+∥
+2
+.
+E 
+λ
+​
+ = 
+​
+ λ( 
+Σ
+ )−λ(Σ) 
+​
+  
+2
+​
+ .
+Also report calibration. A smaller covariance is not automatically better: it might simply mean that your resampler is overconfident.
+
+3. GitHub repositories worth studying
+These are existing repositories with different strengths. I verified their project descriptions and documented features.
+
+Particle Filter Python Implementation: Comparing Resampling Methods | tomato blog
+1. 
+nchopin/particles
+
+Best classical baseline
+Python SMC package with multinomial, systematic, stratified, residual, and SSP resampling. Useful for reference implementations and classical PF models. 
+
+GitHub
+
+粒子フィルタのPython実装：リサンプリング手法の比較 | tomato blog
+2. 
+dstl/Stone-Soup
+
+Strong choice for tracking experiments. Its 
+resampling tutorial
+ directly compares classical methods, including ESS-based triggering. 
+
+Stone Soup 1.4 documentation
++1
+
+3. 
+JTT94/filterflow
+
+Best OT reference
+TensorFlow implementation connected to the ICML 2021 differentiable optimal-transport PF. Includes ensemble-transform and covariance-corrected variants. Very relevant for comparing your analytic method against iterative transport. 
+
+GitHub
+
+4. 
+state-space-models/cuthbert
+
+Best gradient reference
+JAX code with a particularly useful experiment comparing PF likelihood gradients against exact Kalman-filter gradients. Also demonstrates stop-gradient resampling. 
+
+GitHub
++1
+
+5. 
+mlysy/pfjax
+
+JAX particle filtering with automatic differentiation and parameter-estimation comparisons. Its documentation discusses Gaussian moment-matching and optimal-transport resampling—very close to your closed-form objective. 
+
+GitHub
++1
+
+6. 
+John-JoB/pydpf
+
+Extensible PyTorch framework focused on differentiable particle filtering. Good for incorporating a custom resampler into a learnable PF pipeline. 
+
+GitHub
+
+7. 
+stanford-iprl-lab/torchfilter
+
+PyTorch framework with a standard and soft-resampling particle filter. Useful when you want to test end-to-end differentiable models without implementing the complete filter framework yourself. 
+
+GitHub
+
+A further specialized reference is 
+Resamplings.jl
+, which implements classical resampling algorithms in Julia, including conditional resampling. 
+
+skarppinen/Resamplings.jl · GitHub
+
+4. Suggested benchmark for your research
+I would use the following evaluation pipeline:
+
+Input
+
+{
+x
+i
+,
+w
+i
+}
+i
+=
+1
+N
+{x 
+i
+​
+ ,w 
+i
+​
+ } 
+i=1
+N
+​
+ 
+Use identical weighted particles for each method
+Classical methods
+
+Systematic, stratified, residual
+
+Differentiable methods
+
+Gaussian, Gumbel, OT, your eigen method
+
+Resampler-only tests
+
+Distribution error · Sampling variance · Gradient error · Runtime
+
+Tracking and filtering tests
+
+RMSE · Likelihood quality · Calibration · Occlusion recovery
+
+Use the following simple experiment settings to start:
+
+Setting
+
+Suggested values
+
+Number of particles
+
+32, 128, 512, 2,048
+
+State dimensions
+
+1D, 2D, 4D
+
+Static distributions
+
+Gaussian, bimodal Gaussian mixture, skewed weights
+
+Repeated trials
+
+100 initially; 500 for stronger results
+
+Resampling trigger
+
+Fixed at every test for isolation; ESS-triggered for full PF
+
+Devices
+
+CPU and GPU separately
+
+Primary plots
+
+W1 vs runtime; gradient error vs runtime; RMSE vs particle count
+
+Each method should receive the same initial particles, observation sequence, and model parameters. Use multiple random seeds, report confidence intervals, and measure forward and backward runtime separately.
+
+5. Which metrics matter most for a closed-form eigen-resampler?
+I would define three main claims and assign metrics to each:
+
+Research claim
+
+Primary metric
+
+Why
+
+More efficient
+
+Runtime and memory vs 
+N
+N
+
+Tests the computational advantage of an explicit formulation
+
+Differentiable and accurate
+
+Gradient bias and variance
+
+Tests whether gradients are useful for learning
+
+Preserves meaningful uncertainty
+
+W1, covariance calibration, mode coverage
+
+Prevents artificial uncertainty reduction
+
+Then use tracking RMSE and occlusion recovery as downstream evidence.
+
+My recommended starting point is to reproduce the gradient experiment from Cuthbert and the classical resampling comparison from Stone Soup. Those provide two clear, independently testable references. After that, add FilterFlow's transport baseline and your own eigen-resampler.
+
+If your proposed resampler is both faster and provides accurate gradients without damaging the posterior distribution, you will have a stronger contribution than simply showing that it produces a smaller covariance matrix.
+

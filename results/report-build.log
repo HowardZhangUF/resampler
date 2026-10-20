@@ -1,0 +1,9 @@
+{
+  "raw_static": 18200,
+  "raw_filter": 4800,
+  "raw_gradient": 0,
+  "raw_learning": 0,
+  "completed": 230,
+  "failed": 0,
+  "output": "/home/user/resampler/results/standard/report"
+}

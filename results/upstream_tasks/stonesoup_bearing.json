@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "source": "vendor/Stone-Soup/docs/examples/filters/bearing_only_example.py",
+  "ground_truth_steps": 100,
+  "tracked_states": 100,
+  "notes": "unmodified moving-sensor bearing-only EKF example; task execution check, not a particle-resampler comparison"
+}

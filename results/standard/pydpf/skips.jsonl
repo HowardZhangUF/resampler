@@ -1,0 +1,9 @@
+{"provider": "pydpf", "method": "ot", "stage": "static", "case": "mixture/N2048/D1", "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."}
+{"provider": "pydpf", "method": "ot", "stage": "static", "case": "skewed/N2048/D1", "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."}
+{"provider": "pydpf", "method": "ot", "stage": "static", "case": "fixed/N2048/D2", "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."}
+{"provider": "pydpf", "method": "ot", "stage": "static", "case": "mixture/N2048/D2", "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."}
+{"provider": "pydpf", "method": "ot", "stage": "static", "case": "skewed/N2048/D2", "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."}
+{"provider": "pydpf", "method": "ot", "stage": "static", "case": "fixed/N2048/D4", "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."}
+{"provider": "pydpf", "method": "ot", "stage": "static", "case": "gaussian/N2048/D4", "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."}
+{"provider": "pydpf", "method": "ot", "stage": "static", "case": "mixture/N2048/D4", "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."}
+{"provider": "pydpf", "method": "ot", "stage": "static", "case": "skewed/N2048/D4", "reason": "Dense CPU OT at N=2048 uses Gaussian D=2 as a scaling case; full distribution grid stops at N=512."}

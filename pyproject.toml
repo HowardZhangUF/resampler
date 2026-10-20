@@ -1,0 +1,9 @@
+[project]
+name = "resampler-bench"
+version = "0.1.0"
+description = "Particle-resampler benchmark suite with upstream repository adapters"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

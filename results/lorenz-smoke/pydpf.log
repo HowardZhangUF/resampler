@@ -1,0 +1,11 @@
+PyDPF: PyTorch was unable to find a CUDA-enabled GPU. The package will run on CPU, but performance will be significantly degraded. If you have a CUDA-capable GPU, install a CUDA build of PyTorch from https://pytorch.org/get-started/locally/.
+{"provider": "pydpf", "method": "multinomial", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "multinomial", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "systematic", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "systematic", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "systematic_stop", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "systematic_stop", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "soft", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "soft", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}

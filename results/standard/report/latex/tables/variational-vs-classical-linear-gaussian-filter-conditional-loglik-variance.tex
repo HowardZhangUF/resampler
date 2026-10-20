@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Variational vs classical · Linear Gaussian filter ($N=128$): conditional log-likelihood variance. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:variational-vs-classical-linear-gaussian-filter-conditional-loglik-variance}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & conditional log-likelihood variance \\
+\midrule
+1 & variational & \textbf{tv} & 100/100 & $\mathbf{0.3037}$ \\
+2 & particles & ssp & 100/100 & $0.3507$ \\
+3 & particles & systematic & 100/100 & $0.3526$ \\
+4 & variational & kl & 100/100 & $0.358$ \\
+5 & particles & multinomial & 100/100 & $0.4062$ \\
+\bottomrule
+\end{tabular}
+\end{table}

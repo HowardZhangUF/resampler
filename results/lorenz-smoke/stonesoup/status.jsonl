@@ -1,0 +1,8 @@
+{"provider": "stonesoup", "method": "multinomial", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "stonesoup", "method": "multinomial", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "stonesoup", "method": "systematic", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "stonesoup", "method": "systematic", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "stonesoup", "method": "stratified", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "stonesoup", "method": "stratified", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "stonesoup", "method": "residual", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "stonesoup", "method": "residual", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}

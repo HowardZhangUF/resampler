@@ -1,0 +1,58 @@
+[
+  {
+    "repository": "nchopin/particles",
+    "path": "vendor/particles",
+    "returncode": 0,
+    "error": "",
+    "commit": "3388c4bd30ab9acc5a27c970089230f93610b627"
+  },
+  {
+    "repository": "dstl/Stone-Soup",
+    "path": "vendor/Stone-Soup",
+    "returncode": 0,
+    "error": "",
+    "commit": "d6c2d5713b5fdc0bc0c5c0226898bc1c598a882a"
+  },
+  {
+    "repository": "JTT94/filterflow",
+    "path": "vendor/filterflow",
+    "returncode": 0,
+    "error": "",
+    "commit": "5d8300ba247c4c17e1a301a22560c24fd0670bfe"
+  },
+  {
+    "repository": "state-space-models/cuthbert",
+    "path": "vendor/cuthbert",
+    "returncode": 0,
+    "error": "",
+    "commit": "c737efe3098b2b5ecaa7d8b976e7cea246998b17"
+  },
+  {
+    "repository": "mlysy/pfjax",
+    "path": "vendor/pfjax",
+    "returncode": 0,
+    "error": "",
+    "commit": "97652aa1bdff73a92c0286549b010e99cc6f7264"
+  },
+  {
+    "repository": "John-JoB/pydpf",
+    "path": "vendor/pydpf",
+    "returncode": 0,
+    "error": "",
+    "commit": "a7487ce1c344c70e1a244e75725b950deb15e146"
+  },
+  {
+    "repository": "stanford-iprl-lab/torchfilter",
+    "path": "vendor/torchfilter",
+    "returncode": 0,
+    "error": "",
+    "commit": "4a8a085f6406ec07ce6a701e7d8cb4c62c97a390"
+  },
+  {
+    "repository": "skarppinen/Resamplings.jl",
+    "path": "vendor/Resamplings.jl",
+    "returncode": 0,
+    "error": "",
+    "commit": "5cc4dd050c568abd8aedc45c6dbe318b0bc6ec7f"
+  }
+]

@@ -1,0 +1,12 @@
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "lorenz96/N32", "seed": 1, "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "lorenz96/N32", "seed": 3, "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "lorenz96/N32", "seed": 7, "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "lorenz96/N32", "seed": 9, "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "lorenz96/N32", "seed": 22, "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "lorenz96/N32", "seed": 23, "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "lorenz96/N32", "seed": 72, "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "lorenz96/N32", "seed": 80, "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "lorenz96/N32", "seed": 89, "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "lorenz96/N128", "seed": 1, "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "lorenz96/N128", "seed": 6, "error": "Non-finite resampler output"}
+{"provider": "pfjax", "method": "mvn", "stage": "filter", "case": "lorenz96/N128", "seed": 9, "error": "Non-finite resampler output"}

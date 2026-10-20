@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\small
+\caption{UNGM filter ($N=128$): conditional log-likelihood variance. Best = lower is better. Best method in bold; $\pm$ gives the 95\% confidence-interval half-width where available.}
+\label{tab:ungm-filter-conditional-loglik-variance}
+\begin{tabular}{rllrr}
+\toprule
+Rank & Provider & Method & Trials & conditional log-likelihood variance \\
+\midrule
+1 & pydpf & \textbf{soft} & 100/100 & $\mathbf{438.4}$ \\
+1 & torchfilter & \textbf{soft} & 100/100 & $\mathbf{438.4}$ \\
+3 & pfjax & mvn & 93/100 & $529.8$ \\
+4 & particles & stratified & 100/100 & $617.1$ \\
+5 & particles & ssp & 100/100 & $633.7$ \\
+6 & filterflow & systematic & 100/100 & $635.8$ \\
+7 & particles & systematic & 100/100 & $653.3$ \\
+8 & particles & residual & 100/100 & $662.5$ \\
+9 & pydpf & systematic & 100/100 & $669.5$ \\
+9 & pydpf & systematic\_stop & 100/100 & $669.5$ \\
+11 & filterflow & stratified & 100/100 & $672.7$ \\
+12 & julia & ssp & 100/100 & $685.2$ \\
+13 & julia & stratified & 100/100 & $719.2$ \\
+14 & filterflow & multinomial & 100/100 & $729.7$ \\
+15 & variational & kl & 100/100 & $756$ \\
+16 & julia & killing & 100/100 & $760.2$ \\
+17 & julia & multinomial & 100/100 & $761.1$ \\
+18 & cuthbert & systematic & 100/100 & $769.7$ \\
+18 & cuthbert & systematic\_stop & 100/100 & $769.7$ \\
+20 & custom & eigen & 100/100 & $809.7$ \\
+21 & julia & residual & 100/100 & $836.5$ \\
+22 & stonesoup & residual & 100/100 & $843.9$ \\
+23 & custom & gaussian & 100/100 & $845.1$ \\
+24 & stonesoup & systematic & 100/100 & $953.5$ \\
+25 & stonesoup & multinomial & 100/100 & $969.2$ \\
+26 & pydpf & multinomial & 100/100 & $974.5$ \\
+26 & torchfilter & multinomial & 100/100 & $974.5$ \\
+28 & julia & systematic & 100/100 & $1081$ \\
+29 & cuthbert & multinomial & 100/100 & $1181$ \\
+30 & variational & tv & 100/100 & $2923$ \\
+31 & stonesoup & stratified & 100/100 & $3469$ \\
+32 & particles & multinomial & 100/100 & $4174$ \\
+33 & pfjax & multinomial & 100/100 & $6550$ \\
+-- & custom & gumbel & 10/10 & $\text{--}$ \\
+-- & filterflow & corrected\_ot & 10/10 & $\text{--}$ \\
+-- & filterflow & ot & 10/10 & $\text{--}$ \\
+-- & pfjax & ot & 10/10 & $\text{--}$ \\
+-- & pydpf & ot & 10/10 & $\text{--}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
