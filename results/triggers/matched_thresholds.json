@@ -1,0 +1,52 @@
+{
+  "reference": "particles/systematic",
+  "ns": [
+    128,
+    512
+  ],
+  "seeds": 30,
+  "target": {
+    "linear": 17.233333333333334,
+    "ungm": 37.21666666666667,
+    "volatility": 4.35,
+    "bearing": 9.266666666666667,
+    "lorenz63": 44.21666666666667,
+    "lorenz96": 49.983333333333334
+  },
+  "thresholds": {
+    "entropy": {
+      "linear": 0.6153,
+      "ungm": 0.5674,
+      "volatility": 0.5865,
+      "bearing": 0.5957,
+      "lorenz63": 0.5987,
+      "lorenz96": 0.6204
+    },
+    "maxweight": {
+      "linear": 0.2228,
+      "ungm": 0.3509,
+      "volatility": 0.1938,
+      "bearing": 0.285,
+      "lorenz63": 0.2548,
+      "lorenz96": 0.1872
+    }
+  },
+  "achieved": {
+    "entropy": {
+      "linear": 17.266666666666666,
+      "ungm": 37.2,
+      "volatility": 4.333333333333333,
+      "bearing": 9.266666666666667,
+      "lorenz63": 44.2,
+      "lorenz96": 49.96666666666667
+    },
+    "maxweight": {
+      "linear": 17.216666666666665,
+      "ungm": 37.21666666666667,
+      "volatility": 4.333333333333333,
+      "bearing": 9.25,
+      "lorenz63": 44.21666666666667,
+      "lorenz96": 49.983333333333334
+    }
+  }
+}

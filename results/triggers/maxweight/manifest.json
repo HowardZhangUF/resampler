@@ -1,0 +1,6 @@
+{
+  "trigger": "maxweight",
+  "rule": "E_inf = 1/max w < 0.5 N",
+  "profile": "standard",
+  "start_utc": "2026-10-20T20:36:45Z"
+}

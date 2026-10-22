@@ -14,6 +14,7 @@ from scipy.stats import chi2
 from .adapters import Adapter, METHODS, ROOT
 from .data import cloud, initial, propagate, log_observation, sequence, kalman
 from .metrics import distribution
+from .triggers import parse, should_resample
 
 MODELS=['linear','ungm','volatility','bearing','lorenz63','lorenz96']
 STATE_DIM={'bearing':4,'lorenz63':3,'lorenz96':10}
@@ -98,7 +99,7 @@ def static(adapter, args, out):
                     traceback.print_exc(); status(out, adapter.provider, adapter.method, 'static', case, e)
 
 
-def filter_once(adapter, kind, n, seed, steps):
+def filter_once(adapter, kind, n, seed, steps, trigger='ess'):
     # 10 distinct observation sequences, repeated filter random seeds per sequence.
     data_seed = seed//10
     truth, ys, mask=sequence(kind, data_seed, steps)
@@ -120,7 +121,7 @@ def filter_once(adapter, kind, n, seed, steps):
         covered.append(e@np.linalg.solve(cov+1e-8*np.eye(len(m)),e)<=chi2.ppf(.95,len(m)))
         step_errors.append(np.linalg.norm(e[[0, 2]]) if kind=='bearing' else abs(e[0]))
         neff=1/np.sum(w*w); ess.append(neff)
-        if neff < .5*n:
+        if should_resample(trigger, w):
             x,w=adapter(x,w,seed*10000+i+900); resamples+=1
     elapsed=time.perf_counter()-start
     means=np.asarray(means); variances=np.asarray(variances)
@@ -156,7 +157,7 @@ def filtering(adapter,args,out):
                     seed=raw_seed*10 if adapter.expensive and args.profile!='smoke' else raw_seed
                     steps=12 if args.profile=='smoke' else 50
                     start=time.perf_counter()
-                    try:row=filter_once(adapter,kind,n,seed,steps)
+                    try:row=filter_once(adapter,kind,n,seed,steps,args.trigger)
                     except FloatingPointError as e:
                         numerical_failure(out,adapter,'filter',case,seed,e)
                         row=dict(provider=adapter.provider,method=adapter.method,model=kind,n=n,seed=seed,data_seed=seed//10,steps=steps,
@@ -264,8 +265,10 @@ def main():
     parser.add_argument('--methods',nargs='+')
     parser.add_argument('--models',nargs='+',choices=MODELS,default=MODELS,help='Filtering models of the filter stage')
     parser.add_argument('--output',default='results/standard')
+    parser.add_argument('--trigger',default='ess',help='Adaptive resampling rule of the filter stage: name or name:threshold (resampler_bench/triggers.py)')
     parser.add_argument('--resume',action='store_true',help='Skip cells with a final complete status in the output folder')
     args=parser.parse_args(); out=Path(args.output); out.mkdir(parents=True,exist_ok=True)
+    parse(args.trigger)
     args.done=set()
     if args.resume and (out/'status.jsonl').exists():
         states={}

@@ -1,0 +1,12 @@
+linear entropy target 17.233333333333334 tau 0.6153 achieved 17.266666666666666
+linear maxweight target 17.233333333333334 tau 0.2228 achieved 17.216666666666665
+ungm entropy target 37.21666666666667 tau 0.5674 achieved 37.2
+ungm maxweight target 37.21666666666667 tau 0.3509 achieved 37.21666666666667
+volatility entropy target 4.35 tau 0.5865 achieved 4.333333333333333
+volatility maxweight target 4.35 tau 0.1938 achieved 4.333333333333333
+bearing entropy target 9.266666666666667 tau 0.5957 achieved 9.266666666666667
+bearing maxweight target 9.266666666666667 tau 0.285 achieved 9.25
+lorenz63 entropy target 44.21666666666667 tau 0.5987 achieved 44.2
+lorenz63 maxweight target 44.21666666666667 tau 0.2548 achieved 44.21666666666667
+lorenz96 entropy target 49.983333333333334 tau 0.6204 achieved 49.96666666666667
+lorenz96 maxweight target 49.983333333333334 tau 0.1872 achieved 49.983333333333334

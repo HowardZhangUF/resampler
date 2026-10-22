@@ -1,0 +1,6 @@
+{
+  "trigger": "entropy",
+  "rule": "E_H = exp(-sum w log w) < tau N, tau per model: {\"linear\": 0.6153, \"ungm\": 0.5674, \"volatility\": 0.5865, \"bearing\": 0.5957, \"lorenz63\": 0.5987, \"lorenz96\": 0.6204}",
+  "profile": "standard",
+  "start_utc": "2026-10-21T14:11:12Z"
+}

@@ -1,0 +1,6 @@
+{
+  "trigger": "entropy",
+  "rule": "E_H = exp(-sum w log w) < 0.5 N",
+  "profile": "standard",
+  "start_utc": "2026-10-20T20:36:45Z"
+}

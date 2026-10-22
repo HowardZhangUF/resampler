@@ -1,0 +1,4 @@
+{"provider": "dsr", "method": "dsr", "stage": "filter", "case": "bearing/N32", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr", "stage": "filter", "case": "bearing/N128", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr", "stage": "filter", "case": "bearing/N512", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr", "stage": "filter", "case": "bearing/N2048", "status": "complete", "error": ""}
