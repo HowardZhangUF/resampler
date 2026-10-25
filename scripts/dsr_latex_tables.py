@@ -7,6 +7,10 @@ one; the best value per column is bold. Reads results/dsr/report/dsr_*_summary.c
 Requires booktabs, amsmath, amssymb and adjustbox.
 
     .venv/bin/python scripts/dsr_latex_tables.py --input results/dsr
+
+Each table is followed by a figure (report/figures/<label>.pdf, drawn by dsr_table_figures.py); tables and
+figures then use [H] placement so they stay together (needs float and graphicx). --no-figures restores the
+plain tables with [ht] placement.
 """
 import argparse
 import glob
@@ -19,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT)); sys.path.insert(0, str(ROOT / 'scripts'))
 from resampler_bench.adapters import METHODS  # noqa: E402
 BASE = ROOT / 'results/standard/report'
+PLACE = 'ht'  # float placement; main() switches to H when figures follow the tables
 
 NAMES = {
     'dsr/dsr': r'DSR ($\tau{=}0.1$, paper)', 'dsr/dsr_noclip': r'DSR ($\tau{=}0.1$, no clamp)',
@@ -81,7 +86,7 @@ def tex_table(df, methods, metric, ci, rule, caption, label, ns, names=NAMES.get
     if half is not None: half = half.reindex(index=rows, columns=ns)
     score = {'lower': pivot, 'higher': -pivot, 'abs': pivot.abs(), 'target95': (pivot - .95).abs()}[rule]
     best = score.eq(score.min(axis=0), axis=1)
-    lines = [r'\begin{table}[ht]', r'\centering', r'\small', rf'\caption{{{caption}}}', rf'\label{{{label}}}',
+    lines = [rf'\begin{{table}}[{PLACE}]', r'\centering', r'\small', rf'\caption{{{caption}}}', rf'\label{{{label}}}',
              r'\begin{adjustbox}{max width=\linewidth}', r'\begin{tabular}{l' + 'c' * len(ns) + '}', r'\toprule', 'Method & ' + ' & '.join(f'$N{{=}}{n}$' for n in ns) + r' \\', r'\midrule']
     for i, m in enumerate(rows):
         if i == len([r for r in rows if r in DSR]) and i: lines.append(r'\midrule')
@@ -109,7 +114,7 @@ def learning_table(df):
         score = mean.abs() if rule == 'abs' else mean
         best = score.eq(score.min())
         cells[metric] = [cell(mean[m], None if half is None else half[m], bool(best[m])) for m in df.index]
-    lines = [r'\begin{table}[ht]', r'\centering', r'\small',
+    lines = [rf'\begin{{table}}[{PLACE}]', r'\centering', r'\small',
              r'\caption{Stochastic volatility, parameter learning: observation-scale fitting and likelihood score. '
              r'$N{=}128$; $y_t=s\exp(x_t/2)\eta_t$ with true scale $s^\star{=}1$; 50 steps, resampling when ESS $<0.5N$. '
              r'$\hat s$ maximizes the PF log-likelihood over the grid $\{0.6,0.8,1.0,1.2,1.4\}$ with common random numbers; '
@@ -137,8 +142,17 @@ DIRECTION = {'lower': 'lower is better', 'higher': 'higher is better', 'abs': 'c
 
 
 def main():
-    p = argparse.ArgumentParser(); p.add_argument('--input', default='results/dsr'); a = p.parse_args()
+    global PLACE
+    p = argparse.ArgumentParser(); p.add_argument('--input', default='results/dsr')
+    p.add_argument('--no-figures', action='store_true', help='tables only, without the figure after each table'); a = p.parse_args()
     rep = ROOT / a.input / 'report'
+    figures = not a.no_figures
+    if figures:
+        import dsr_table_figures as tfig
+        PLACE = 'H'; figdir = rep / 'figures'; figdir.mkdir(exist_ok=True); tfig.setup()
+    # Per-run filter results, for the paired comparisons in the figures (same files the summaries were built from).
+    raw = label(pd.concat([pd.read_csv(ROOT / a.input / 'dsr/filter.csv')] + [pd.read_csv(x) for x in sorted((ROOT / 'results/standard').glob('*/filter.csv'))],
+                          ignore_index=True))
     both = lambda name, base: label(pd.concat([pd.read_csv(rep / f'dsr_{name}_summary.csv'), pd.read_csv(BASE / f'{base}_summary.csv')], ignore_index=True))
     fs, ss, gs, ns_ = both('filter', 'filter'), both('static', 'static'), both('gradient', 'gradient'), both('torch_native', 'torch_native')
     N4, N3 = [32, 128, 512, 2048], [32, 128, 512]
@@ -146,9 +160,14 @@ def main():
 
     def section(title): out.append(f'% {"=" * 70}\n% {title}\n% {"=" * 70}\n\\clearpage\n\\section*{{{title}}}\n')
 
-    def add(df, methods, metric, ci, rule, task, metric_name, setting, label_key, ns=N4, names=NAMES.get):
+    def add(df, methods, metric, ci, rule, task, metric_name, setting, label_key, ns=N4, names=NAMES.get, runs=None):
         caption = f'{task}: {metric_name} ({DIRECTION[rule]}). {setting}'
         out.append(tex_table(df, methods, metric, ci, rule, caption, f'tab:{label_key}', ns, names))
+        if figures:
+            # Paired panel only where the table has a CI over observation sequences and per-run values exist.
+            raw_metric = metric[:-len('_mean')] if runs is not None and ci and metric.endswith('_mean') else None
+            out.append(tfig.table_figure(df, methods, metric, ci, rule, f'{metric_name} ({DIRECTION[rule]})', label_key, ns, names, figdir,
+                                         runs, raw_metric))
 
     filt = '50 steps, resampling when ESS $<0.5N$; mean $\\pm$ 95\\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).'
     section('Linear Gaussian state-space model')
@@ -159,7 +178,7 @@ def main():
                                ('conditional_loglik_variance', 'lower', 'log-likelihood variance given the data')]:
         ci = None if metric == 'conditional_loglik_variance' else metric + '_ci95_half'
         add(lin, FORWARD, metric + ('' if metric == 'conditional_loglik_variance' else '_mean'), ci, rule, 'Linear Gaussian SSM', name,
-            '$x_t=0.8x_{t-1}+0.5\\varepsilon_t$, $y_t=x_t+0.8\\eta_t$. ' + filt, f'linear-{metric}')
+            '$x_t=0.8x_{t-1}+0.5\\varepsilon_t$, $y_t=x_t+0.8\\eta_t$. ' + filt, f'linear-{metric}', runs=raw[raw.model == 'linear'])
     native = '$x_t=x_{t-1}+0.4\\varepsilon_t$, $y_t=x_t+0.8\\eta_t$, 50 steps; gradient of the PF log-likelihood w.r.t.\\ $\\theta=\\log(q,r)$ against the exact Kalman gradient, 100 seeds (10 for OT and Gumbel).'
     for metric, rule, name in [('gradient_bias', 'lower', 'likelihood-gradient bias $\\|\\mathbb{E}\\hat g-\\nabla\\ell\\|$'),
                                ('gradient_variance', 'lower', 'likelihood-gradient variance'),
@@ -178,7 +197,8 @@ def main():
         if model == 'bearing': metrics.insert(1, ('post_occlusion_rmse', 'lower', 'RMSE after the observation gap'))
         for metric, rule, name in metrics:
             ci = None if metric == 'conditional_loglik_variance' else metric + '_ci95_half'
-            add(part, FORWARD, metric + ('' if metric == 'conditional_loglik_variance' else '_mean'), ci, rule, task, name, desc + filt, f'{model}-{metric}')
+            add(part, FORWARD, metric + ('' if metric == 'conditional_loglik_variance' else '_mean'), ci, rule, task, name, desc + filt, f'{model}-{metric}',
+                runs=raw[raw.model == model])
 
     # Stochastic Lorenz models: every method of every repository (results/lorenz, including DSR).
     lorenz_root = ROOT / 'results/lorenz'
@@ -204,10 +224,12 @@ def main():
                                        ('conditional_loglik_variance', 'lower', 'log-likelihood variance given the data'), ('mean_ess_fraction', 'higher', 'mean ESS$/N$')]:
                 ci = None if metric == 'conditional_loglik_variance' else metric + '_ci95_half'
                 add(part, everything, metric + ('' if metric == 'conditional_loglik_variance' else '_mean'), ci, rule, task, name, desc + filt + fail,
-                    f'{model}-{metric}', names=full_name)
+                    f'{model}-{metric}', names=full_name, runs=label(lf[lf.model == model]))
 
     section('Parameter learning (stochastic volatility)')
-    out.append(learning_table(both('learning', 'learning')))
+    learn = both('learning', 'learning')
+    out.append(learning_table(learn))
+    if figures: out.append(tfig.learning_figure(learn, [m for m in LEARNING if m in set(learn.method_id)], LEARNING_NAMES, figdir))
 
     section('Fixed weighted clouds (resampling only)')
     static = '$D{=}2$; mean $\\pm$ 95\\% CI over 100 resampling draws (10 for OT and Gumbel at $N\\le128$, 3 above).'
@@ -243,7 +265,7 @@ def main():
     trends = rep / 'trends.tex'
     if trends.exists(): out.append(trends.read_text())
     path = rep / 'tables.tex'; path.write_text('\n'.join(out))
-    (rep / 'tables_preview.tex').write_text('\\documentclass{article}\n\\usepackage[margin=2cm]{geometry}\n\\usepackage{booktabs,amsmath,amssymb,adjustbox}\n'
+    (rep / 'tables_preview.tex').write_text('\\documentclass{article}\n\\usepackage[margin=2cm]{geometry}\n\\usepackage{booktabs,amsmath,amssymb,adjustbox,float,graphicx}\n'
                                             '\\begin{document}\n\\input{tables.tex}\n\\end{document}\n')
     print('Wrote', path, '-', sum(s.count('\\begin{table}') for s in out), 'tables')
 

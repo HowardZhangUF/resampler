@@ -4,7 +4,7 @@
 \clearpage
 \section*{Linear Gaussian state-space model}
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \small
 \caption{Linear Gaussian SSM: state RMSE (lower is better). $x_t=0.8x_{t-1}+0.5\varepsilon_t$, $y_t=x_t+0.8\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -37,7 +37,14 @@ Variational (KL) & $\mathbf{0.519\pm0.0446}$ & $0.507\pm0.0468$ & $0.504\pm0.048
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/linear-rmse.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:linear-rmse} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here. \textbf{(c)} Mean squared state error, split into the exact Kalman filter's error (gray; it depends only on the data) and the extra error from the particle filter (colour; the squared posterior-mean RMSE of Table~\ref{tab:linear-posterior_mean_rmse}). The particle filter contributes only 2--9\% of the MSE, and RMSE adds the two in quadrature, so the state RMSE cannot separate resamplers; compare methods with (b) or with Table~\ref{tab:linear-posterior_mean_rmse}.}
+\label{fig:linear-rmse}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Linear Gaussian SSM: posterior-mean RMSE vs.\ exact Kalman filter (lower is better). $x_t=0.8x_{t-1}+0.5\varepsilon_t$, $y_t=x_t+0.8\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -70,7 +77,14 @@ Variational (KL) & $0.132\pm0.00927$ & $0.067\pm0.00873$ & $0.0334\pm0.00282$ & 
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/linear-posterior_mean_rmse.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:linear-posterior_mean_rmse} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:linear-posterior_mean_rmse}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Linear Gaussian SSM: posterior-variance error vs.\ Kalman filter (lower is better). $x_t=0.8x_{t-1}+0.5\varepsilon_t$, $y_t=x_t+0.8\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -103,7 +117,14 @@ Variational (KL) & $0.0581\pm0.00263$ & $0.0293\pm0.00192$ & $0.015\pm0.00107$ &
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/linear-posterior_covariance_error.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:linear-posterior_covariance_error} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:linear-posterior_covariance_error}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Linear Gaussian SSM: log-likelihood error vs.\ Kalman filter (closer to 0 is better). $x_t=0.8x_{t-1}+0.5\varepsilon_t$, $y_t=x_t+0.8\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -136,7 +157,14 @@ Variational (KL) & $-0.827\pm0.316$ & $-0.145\pm0.125$ & $-0.041\pm0.0725$ & $0.
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/linear-loglik_error.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:linear-loglik_error} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:linear-loglik_error}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Linear Gaussian SSM: 95\% coverage (closer to 0.95 is better). $x_t=0.8x_{t-1}+0.5\varepsilon_t$, $y_t=x_t+0.8\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -169,7 +197,14 @@ Variational (KL) & $0.909\pm0.0262$ & $0.929\pm0.0199$ & $0.93\pm0.0249$ & $0.93
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/linear-coverage95.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:linear-coverage95} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Dashed line: nominal 0.95. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:linear-coverage95}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Linear Gaussian SSM: log-likelihood variance given the data (lower is better). $x_t=0.8x_{t-1}+0.5\varepsilon_t$, $y_t=x_t+0.8\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -198,7 +233,14 @@ Variational (KL) & $2.29$ & $0.358$ & $0.105$ & $0.0298$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/linear-conditional_loglik_variance.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:linear-conditional_loglik_variance} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:linear-conditional_loglik_variance}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Linear Gaussian random walk (differentiable PF): likelihood-gradient bias $\|\mathbb{E}\hat g-\nabla\ell\|$ (lower is better). $x_t=x_{t-1}+0.4\varepsilon_t$, $y_t=x_t+0.8\eta_t$, 50 steps; gradient of the PF log-likelihood w.r.t.\ $\theta=\log(q,r)$ against the exact Kalman gradient, 100 seeds (10 for OT and Gumbel).}
@@ -227,7 +269,14 @@ Gumbel-softmax & $15.2$ & $8.15$ & -- & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/linear-native-gradient_bias.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:linear-native-gradient_bias} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis.}
+\label{fig:linear-native-gradient_bias}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Linear Gaussian random walk (differentiable PF): likelihood-gradient variance (lower is better). $x_t=x_{t-1}+0.4\varepsilon_t$, $y_t=x_t+0.8\eta_t$, 50 steps; gradient of the PF log-likelihood w.r.t.\ $\theta=\log(q,r)$ against the exact Kalman gradient, 100 seeds (10 for OT and Gumbel).}
@@ -256,7 +305,14 @@ Gumbel-softmax & $195$ & $20.3$ & -- & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/linear-native-gradient_variance.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:linear-native-gradient_variance} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:linear-native-gradient_variance}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Linear Gaussian random walk (differentiable PF): likelihood-gradient MSE (lower is better). $x_t=x_{t-1}+0.4\varepsilon_t$, $y_t=x_t+0.8\eta_t$, 50 steps; gradient of the PF log-likelihood w.r.t.\ $\theta=\log(q,r)$ against the exact Kalman gradient, 100 seeds (10 for OT and Gumbel).}
@@ -285,7 +341,14 @@ Gumbel-softmax & $408$ & $84.6$ & -- & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/linear-native-gradient_mse.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:linear-native-gradient_mse} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:linear-native-gradient_mse}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Linear Gaussian random walk (differentiable PF): log-likelihood bias (closer to 0 is better). $x_t=x_{t-1}+0.4\varepsilon_t$, $y_t=x_t+0.8\eta_t$, 50 steps; gradient of the PF log-likelihood w.r.t.\ $\theta=\log(q,r)$ against the exact Kalman gradient, 100 seeds (10 for OT and Gumbel).}
@@ -314,7 +377,14 @@ Gumbel-softmax & $-3.33$ & $-2.66$ & -- & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/linear-native-loglik_bias.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:linear-native-loglik_bias} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family.}
+\label{fig:linear-native-loglik_bias}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Linear Gaussian random walk (differentiable PF): log-likelihood variance (lower is better). $x_t=x_{t-1}+0.4\varepsilon_t$, $y_t=x_t+0.8\eta_t$, 50 steps; gradient of the PF log-likelihood w.r.t.\ $\theta=\log(q,r)$ against the exact Kalman gradient, 100 seeds (10 for OT and Gumbel).}
@@ -343,13 +413,20 @@ Gumbel-softmax & $\mathbf{1.69}$ & $0.73$ & -- & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/linear-native-loglik_variance.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:linear-native-loglik_variance} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:linear-native-loglik_variance}
+\end{figure}
+
 % ======================================================================
 % Nonlinear state-space models
 % ======================================================================
 \clearpage
 \section*{Nonlinear state-space models}
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \small
 \caption{UNGM: state RMSE (lower is better). $x_t=0.5x_{t-1}+25x_{t-1}/(1+x_{t-1}^2)+8\cos(1.2t)+\sqrt{10}\varepsilon_t$, $y_t=x_t^2/20+\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -382,7 +459,14 @@ Variational (KL) & $5.79\pm0.947$ & $4.83\pm0.858$ & $4.56\pm0.633$ & $4.48\pm0.
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/ungm-rmse.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:ungm-rmse} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:ungm-rmse}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{UNGM: 95\% coverage (closer to 0.95 is better). $x_t=0.5x_{t-1}+25x_{t-1}/(1+x_{t-1}^2)+8\cos(1.2t)+\sqrt{10}\varepsilon_t$, $y_t=x_t^2/20+\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -415,7 +499,14 @@ Variational (KL) & $0.825\pm0.038$ & $0.93\pm0.0246$ & $0.963\pm0.0152$ & $0.971
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/ungm-coverage95.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:ungm-coverage95} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Dashed line: nominal 0.95. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:ungm-coverage95}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{UNGM: predictive NLL (lower is better). $x_t=0.5x_{t-1}+25x_{t-1}/(1+x_{t-1}^2)+8\cos(1.2t)+\sqrt{10}\varepsilon_t$, $y_t=x_t^2/20+\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -448,7 +539,14 @@ Variational (KL) & $4.98\pm1.16$ & $3.18\pm0.424$ & $2.83\pm0.171$ & $2.71\pm0.1
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/ungm-predictive_nll.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:ungm-predictive_nll} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:ungm-predictive_nll}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{UNGM: log-likelihood variance given the data (lower is better). $x_t=0.5x_{t-1}+25x_{t-1}/(1+x_{t-1}^2)+8\cos(1.2t)+\sqrt{10}\varepsilon_t$, $y_t=x_t^2/20+\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -477,7 +575,14 @@ Variational (KL) & $1.25\times10^{4}$ & $756$ & $240$ & $11.5$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/ungm-conditional_loglik_variance.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:ungm-conditional_loglik_variance} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:ungm-conditional_loglik_variance}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic volatility: state RMSE (lower is better). $x_t=0.95x_{t-1}+0.2\varepsilon_t$, $y_t=\exp(x_t/2)\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -510,7 +615,14 @@ Variational (KL) & $0.426\pm0.061$ & $0.417\pm0.0638$ & $0.413\pm0.0666$ & $0.41
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/volatility-rmse.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:volatility-rmse} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:volatility-rmse}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic volatility: 95\% coverage (closer to 0.95 is better). $x_t=0.95x_{t-1}+0.2\varepsilon_t$, $y_t=\exp(x_t/2)\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -543,7 +655,14 @@ Variational (KL) & $0.938\pm0.0296$ & $0.96\pm0.0207$ & $0.972\pm0.0189$ & $0.97
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/volatility-coverage95.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:volatility-coverage95} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Dashed line: nominal 0.95. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:volatility-coverage95}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic volatility: predictive NLL (lower is better). $x_t=0.95x_{t-1}+0.2\varepsilon_t$, $y_t=\exp(x_t/2)\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -576,7 +695,14 @@ Variational (KL) & $1.66\pm0.163$ & $1.66\pm0.163$ & $\mathbf{1.66\pm0.162}$ & $
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/volatility-predictive_nll.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:volatility-predictive_nll} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:volatility-predictive_nll}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic volatility: log-likelihood variance given the data (lower is better). $x_t=0.95x_{t-1}+0.2\varepsilon_t$, $y_t=\exp(x_t/2)\eta_t$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -605,7 +731,14 @@ Variational (KL) & $0.499$ & $0.0931$ & $0.0149$ & $0.00492$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/volatility-conditional_loglik_variance.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:volatility-conditional_loglik_variance} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:volatility-conditional_loglik_variance}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Bearing-only tracking: position RMSE (lower is better). 2-D constant velocity, bearing noise 0.05 rad, observations hidden at steps 21--30. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -638,7 +771,14 @@ Variational (KL) & $5.19\pm1.75$ & $4.66\pm1.63$ & $4.2\pm1.7$ & $4.27\pm1.71$ \
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/bearing-rmse.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:bearing-rmse} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:bearing-rmse}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Bearing-only tracking: RMSE after the observation gap (lower is better). 2-D constant velocity, bearing noise 0.05 rad, observations hidden at steps 21--30. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -671,7 +811,14 @@ Variational (KL) & $9.81\pm3.15$ & $8.76\pm3.03$ & $7.73\pm3.17$ & $7.9\pm3.25$ 
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/bearing-post_occlusion_rmse.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:bearing-post_occlusion_rmse} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:bearing-post_occlusion_rmse}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Bearing-only tracking: 95\% coverage (closer to 0.95 is better). 2-D constant velocity, bearing noise 0.05 rad, observations hidden at steps 21--30. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -704,7 +851,14 @@ Variational (KL) & $0.246\pm0.134$ & $0.633\pm0.191$ & $0.83\pm0.176$ & $0.873\p
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/bearing-coverage95.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:bearing-coverage95} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. Dashed line: nominal 0.95. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:bearing-coverage95}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Bearing-only tracking: predictive NLL (lower is better). 2-D constant velocity, bearing noise 0.05 rad, observations hidden at steps 21--30. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -737,7 +891,14 @@ Variational (KL) & $-1.2\pm0.115$ & $-1.31\pm0.0852$ & $-1.32\pm0.079$ & $-1.32\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/bearing-predictive_nll.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:bearing-predictive_nll} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:bearing-predictive_nll}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Bearing-only tracking: log-likelihood variance given the data (lower is better). 2-D constant velocity, bearing noise 0.05 rad, observations hidden at steps 21--30. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -766,13 +927,20 @@ Variational (KL) & $120$ & $7.52$ & $0.688$ & $0.265$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/bearing-conditional_loglik_variance.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:bearing-conditional_loglik_variance} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:bearing-conditional_loglik_variance}
+\end{figure}
+
 % ======================================================================
 % Stochastic Lorenz models (all methods)
 % ======================================================================
 \clearpage
 \section*{Stochastic Lorenz models (all methods)}
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic Lorenz-63: state RMSE (lower is better). $x_{t+1}=F(x_t)x_t+e_t$, $F$ the 5th-order Taylor series of $\exp(A(x_t)\,0.02)$, $e_t\sim\mathcal N(0,0.1I_3)$; 8$\times$8 camera observation (64 pixels) at SMNR 10\,dB, as in the DSR paper; $x_0\sim\mathcal N(0,I_3)$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -832,7 +1000,14 @@ Variational (TV) & $0.577\pm0.0864$ & $0.46\pm0.0357$ & $0.435\pm0.0304$ & $0.43
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/lorenz63-rmse.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:lorenz63-rmse} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:lorenz63-rmse}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic Lorenz-63: 95\% coverage (closer to 0.95 is better). $x_{t+1}=F(x_t)x_t+e_t$, $F$ the 5th-order Taylor series of $\exp(A(x_t)\,0.02)$, $e_t\sim\mathcal N(0,0.1I_3)$; 8$\times$8 camera observation (64 pixels) at SMNR 10\,dB, as in the DSR paper; $x_0\sim\mathcal N(0,I_3)$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -892,7 +1067,14 @@ Variational (TV) & $0.586\pm0.0704$ & $0.851\pm0.0419$ & $0.927\pm0.027$ & $0.94
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/lorenz63-coverage95.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:lorenz63-coverage95} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Dashed line: nominal 0.95. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:lorenz63-coverage95}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic Lorenz-63: predictive NLL (lower is better). $x_{t+1}=F(x_t)x_t+e_t$, $F$ the 5th-order Taylor series of $\exp(A(x_t)\,0.02)$, $e_t\sim\mathcal N(0,0.1I_3)$; 8$\times$8 camera observation (64 pixels) at SMNR 10\,dB, as in the DSR paper; $x_0\sim\mathcal N(0,I_3)$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -952,7 +1134,14 @@ Variational (TV) & $32.5\pm2.04$ & $31.2\pm0.574$ & $31.2\pm0.567$ & $31.2\pm0.5
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/lorenz63-predictive_nll.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:lorenz63-predictive_nll} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:lorenz63-predictive_nll}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic Lorenz-63: log-likelihood variance given the data (lower is better). $x_{t+1}=F(x_t)x_t+e_t$, $F$ the 5th-order Taylor series of $\exp(A(x_t)\,0.02)$, $e_t\sim\mathcal N(0,0.1I_3)$; 8$\times$8 camera observation (64 pixels) at SMNR 10\,dB, as in the DSR paper; $x_0\sim\mathcal N(0,I_3)$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -1007,7 +1196,14 @@ Variational (TV) & $1.98\times10^{5}$ & $\mathbf{6.78}$ & $1.57$ & $0.452$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/lorenz63-conditional_loglik_variance.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:lorenz63-conditional_loglik_variance} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:lorenz63-conditional_loglik_variance}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic Lorenz-63: mean ESS$/N$ (higher is better). $x_{t+1}=F(x_t)x_t+e_t$, $F$ the 5th-order Taylor series of $\exp(A(x_t)\,0.02)$, $e_t\sim\mathcal N(0,0.1I_3)$; 8$\times$8 camera observation (64 pixels) at SMNR 10\,dB, as in the DSR paper; $x_0\sim\mathcal N(0,I_3)$. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel).}
@@ -1067,7 +1263,14 @@ Variational (TV) & $0.318\pm0.0258$ & $0.308\pm0.0246$ & $0.303\pm0.0249$ & $0.3
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/lorenz63-mean_ess_fraction.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:lorenz63-mean_ess_fraction} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:lorenz63-mean_ess_fraction}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic Lorenz-96: state RMSE (lower is better). $d{=}10$, $F{=}8$, RK4 over $\Delta t{=}0.05$ per step plus $\mathcal N(0,0.1I)$; $y_t=x_t+\mathcal N(0,I)$; $x_0$ from the climatological Gaussian. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel). Numerical failures, excluded from the means: Gaussian moment matching, MVN (PFJAX) 9\% at $N{=}32$; Gaussian moment matching, MVN (PFJAX) 3\% at $N{=}128$.}
@@ -1127,7 +1330,14 @@ Variational (TV) & $2.79\pm0.638$ & $2.02\pm0.636$ & $1.44\pm0.464$ & $1.11\pm0.
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/lorenz96-rmse.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:lorenz96-rmse} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:lorenz96-rmse}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic Lorenz-96: 95\% coverage (closer to 0.95 is better). $d{=}10$, $F{=}8$, RK4 over $\Delta t{=}0.05$ per step plus $\mathcal N(0,0.1I)$; $y_t=x_t+\mathcal N(0,I)$; $x_0$ from the climatological Gaussian. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel). Numerical failures, excluded from the means: Gaussian moment matching, MVN (PFJAX) 9\% at $N{=}32$; Gaussian moment matching, MVN (PFJAX) 3\% at $N{=}128$.}
@@ -1187,7 +1397,14 @@ Variational (TV) & $0.0024\pm0.003$ & $0.0796\pm0.0416$ & $0.307\pm0.101$ & $0.5
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/lorenz96-coverage95.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:lorenz96-coverage95} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Dashed line: nominal 0.95. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:lorenz96-coverage95}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic Lorenz-96: predictive NLL (lower is better). $d{=}10$, $F{=}8$, RK4 over $\Delta t{=}0.05$ per step plus $\mathcal N(0,0.1I)$; $y_t=x_t+\mathcal N(0,I)$; $x_0$ from the climatological Gaussian. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel). Numerical failures, excluded from the means: Gaussian moment matching, MVN (PFJAX) 9\% at $N{=}32$; Gaussian moment matching, MVN (PFJAX) 3\% at $N{=}128$.}
@@ -1247,7 +1464,14 @@ Variational (TV) & $60.7\pm18.7$ & $41.9\pm14.6$ & $29.9\pm9.69$ & $23.5\pm5.48$
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/lorenz96-predictive_nll.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:lorenz96-predictive_nll} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:lorenz96-predictive_nll}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic Lorenz-96: log-likelihood variance given the data (lower is better). $d{=}10$, $F{=}8$, RK4 over $\Delta t{=}0.05$ per step plus $\mathcal N(0,0.1I)$; $y_t=x_t+\mathcal N(0,I)$; $x_0$ from the climatological Gaussian. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel). Numerical failures, excluded from the means: Gaussian moment matching, MVN (PFJAX) 9\% at $N{=}32$; Gaussian moment matching, MVN (PFJAX) 3\% at $N{=}128$.}
@@ -1302,7 +1526,14 @@ Variational (TV) & $1.23\times10^{6}$ & $9.23\times10^{5}$ & $7.81\times10^{5}$ 
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/lorenz96-conditional_loglik_variance.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:lorenz96-conditional_loglik_variance} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:lorenz96-conditional_loglik_variance}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic Lorenz-96: mean ESS$/N$ (higher is better). $d{=}10$, $F{=}8$, RK4 over $\Delta t{=}0.05$ per step plus $\mathcal N(0,0.1I)$; $y_t=x_t+\mathcal N(0,I)$; $x_0$ from the climatological Gaussian. 50 steps, resampling when ESS $<0.5N$; mean $\pm$ 95\% CI over 10 observation sequences (100 filter runs; 10 for OT and Gumbel). Numerical failures, excluded from the means: Gaussian moment matching, MVN (PFJAX) 9\% at $N{=}32$; Gaussian moment matching, MVN (PFJAX) 3\% at $N{=}128$.}
@@ -1362,13 +1593,20 @@ Variational (TV) & $0.135\pm0.0283$ & $0.112\pm0.0305$ & $0.107\pm0.0211$ & $0.1
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/lorenz96-mean_ess_fraction.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:lorenz96-mean_ess_fraction} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. \textbf{(b)} Each method minus systematic resampling, computed per observation sequence and then averaged (mean $\pm$ paired 95\% $t$ interval over the 10 sequences). Filled markers: the interval excludes 0. The table's $\pm$ for systematic, printed under each $N$, is dominated by how hard each sequence is, which every method shares; pairing removes that, so differences invisible in (a) can be resolved here.}
+\label{fig:lorenz96-mean_ess_fraction}
+\end{figure}
+
 % ======================================================================
 % Parameter learning (stochastic volatility)
 % ======================================================================
 \clearpage
 \section*{Parameter learning (stochastic volatility)}
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \small
 \caption{Stochastic volatility, parameter learning: observation-scale fitting and likelihood score. $N{=}128$; $y_t=s\exp(x_t/2)\eta_t$ with true scale $s^\star{=}1$; 50 steps, resampling when ESS $<0.5N$. $\hat s$ maximizes the PF log-likelihood over the grid $\{0.6,0.8,1.0,1.2,1.4\}$ with common random numbers; $\hat s_{\mathrm{grid}}$ is the maximizer for a 1001-point numerical grid filter. The score is a central difference in $\log s$ ($\delta{=}0.01$) at $s{=}1$, compared with the grid-filter score. Mean $\pm$ 95\% CI over 10 observation sequences.}
@@ -1398,13 +1636,20 @@ Variational (KL) & $0.24\pm0.113$ & $0.04\pm0.0603$ & $-1.55\pm4.81$ & $6.57$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize Lower is better for the two parameter errors and the score RMSE; closer to 0 is better for the mean score error. Parameter estimates lie on a 0.2-spaced grid, so errors are multiples of 0.2 per dataset. Only the paper-default DSR ($\tau{=}0.1$, Morton sorting) was run in this stage; baselines are the representative method of each other repository. Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/volatility-learning.pdf}
+\caption{Plot of Table~\ref{tab:volatility-learning}: mean $\pm$ 95\% CI over 10 observation sequences, one panel per column. Rows are in table order. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family.}
+\label{fig:volatility-learning}
+\end{figure}
+
 % ======================================================================
 % Fixed weighted clouds (resampling only)
 % ======================================================================
 \clearpage
 \section*{Fixed weighted clouds (resampling only)}
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \small
 \caption{Gaussian cloud: sliced Wasserstein-1 (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1437,7 +1682,14 @@ Variational (KL) & $0.151$ & $0.124$ & $0.118$ & $0.116$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-gaussian-sliced_w1.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-gaussian-sliced_w1} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-gaussian-sliced_w1}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Gaussian cloud: Gaussian-kernel MMD$^2$ (random features) (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1470,7 +1722,14 @@ Variational (KL) & $0.0104$ & $0.0081$ & $0.00535$ & $0.00582$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-gaussian-rff_mmd2.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-gaussian-rff_mmd2} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-gaussian-rff_mmd2}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Gaussian cloud: covariance error (Frobenius) (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1503,7 +1762,14 @@ Variational (KL) & $0.0867$ & $0.082$ & $0.119$ & $0.0861$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-gaussian-covariance_error.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-gaussian-covariance_error} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-gaussian-covariance_error}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Gaussian cloud: MSE of $\mathbb{E}[x^2]$ (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1536,7 +1802,14 @@ Variational (KL) & $0.0618$ & $0.0168$ & $0.0316$ & $0.0262$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-gaussian-estimator_mse_x2.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-gaussian-estimator_mse_x2} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-gaussian-estimator_mse_x2}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Bimodal mixture cloud: sliced Wasserstein-1 (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1569,7 +1842,14 @@ Variational (KL) & $0.614$ & $0.652$ & $0.636$ & $0.639$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-mixture-sliced_w1.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-mixture-sliced_w1} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-mixture-sliced_w1}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Bimodal mixture cloud: Gaussian-kernel MMD$^2$ (random features) (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1602,7 +1882,14 @@ Variational (KL) & $0.0388$ & $0.0398$ & $0.0386$ & $0.0386$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-mixture-rff_mmd2.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-mixture-rff_mmd2} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-mixture-rff_mmd2}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Bimodal mixture cloud: covariance error (Frobenius) (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1635,7 +1922,14 @@ Variational (KL) & $0.733$ & $0.833$ & $0.801$ & $0.809$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-mixture-covariance_error.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-mixture-covariance_error} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-mixture-covariance_error}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Bimodal mixture cloud: MSE of $\mathbb{E}[x^2]$ (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1668,7 +1962,14 @@ Variational (KL) & $0.00424$ & $0.00139$ & $4.21\times10^{-5}$ & $2.25\times10^{
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-mixture-estimator_mse_x2.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-mixture-estimator_mse_x2} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-mixture-estimator_mse_x2}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Bimodal mixture cloud: mode-mass error (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1701,7 +2002,14 @@ Variational (KL) & $0.15$ & $0.15$ & $0.15$ & $0.15$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-mixture-mode_mass_error.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-mixture-mode_mass_error} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-mixture-mode_mass_error}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Bimodal mixture cloud: fraction of draws keeping both modes (each mode $>1\%$ of the mass) (higher is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1734,7 +2042,14 @@ Variational (KL) & $\mathbf{1}$ & $\mathbf{1}$ & $\mathbf{1}$ & $\mathbf{1}$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-mixture-mode_coverage.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-mixture-mode_coverage} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap.}
+\label{fig:static-mixture-mode_coverage}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Skewed-weight cloud: sliced Wasserstein-1 (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1767,7 +2082,14 @@ Variational (KL) & $\mathbf{0.0586}$ & $0.0238$ & $\mathbf{0.0102}$ & $\mathbf{0
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-skewed-sliced_w1.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-skewed-sliced_w1} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-skewed-sliced_w1}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Skewed-weight cloud: Gaussian-kernel MMD$^2$ (random features) (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1800,7 +2122,14 @@ Variational (KL) & $0.00129$ & $2.7\times10^{-4}$ & $\mathbf{2.41\times10^{-5}}$
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-skewed-rff_mmd2.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-skewed-rff_mmd2} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-skewed-rff_mmd2}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Skewed-weight cloud: covariance error (Frobenius) (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1833,7 +2162,14 @@ Variational (KL) & $0.0725$ & $0.0184$ & $0.02$ & $0.00708$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-skewed-covariance_error.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-skewed-covariance_error} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-skewed-covariance_error}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Skewed-weight cloud: MSE of $\mathbb{E}[x^2]$ (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1866,7 +2202,14 @@ Variational (KL) & $2.73\times10^{-4}$ & $6.02\times10^{-5}$ & $1.53\times10^{-4
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-skewed-estimator_mse_x2.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-skewed-estimator_mse_x2} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-skewed-estimator_mse_x2}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Fixed-grid cloud: sliced Wasserstein-1 (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1899,7 +2242,14 @@ Variational (KL) & $0.102$ & $0.0957$ & $0.0882$ & $0.088$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-fixed-sliced_w1.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-fixed-sliced_w1} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-fixed-sliced_w1}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Fixed-grid cloud: Gaussian-kernel MMD$^2$ (random features) (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1932,7 +2282,14 @@ Variational (KL) & $0.00196$ & $0.00195$ & $0.00211$ & $0.00207$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-fixed-rff_mmd2.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-fixed-rff_mmd2} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-fixed-rff_mmd2}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Fixed-grid cloud: covariance error (Frobenius) (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1965,7 +2322,14 @@ Variational (KL) & $0.762$ & $0.807$ & $0.789$ & $0.789$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-fixed-covariance_error.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-fixed-covariance_error} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-fixed-covariance_error}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Fixed-grid cloud: MSE of $\mathbb{E}[x^2]$ (lower is better). $D{=}2$; mean $\pm$ 95\% CI over 100 resampling draws (10 for OT and Gumbel at $N\le128$, 3 above).}
@@ -1998,13 +2362,20 @@ Variational (KL) & $0.0243$ & $0.0144$ & $0.0248$ & $0.0229$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/static-fixed-estimator_mse_x2.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:static-fixed-estimator_mse_x2} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:static-fixed-estimator_mse_x2}
+\end{figure}
+
 % ======================================================================
 % Local gradients of a resampled expectation
 % ======================================================================
 \clearpage
 \section*{Local gradients of a resampled expectation}
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \small
 \caption{Local gradient, gaussian cloud, $f(x)=\|x\|^2$: gradient bias (lower is better). Gaussian cloud, $D{=}2$, $f(x)=\|x\|^2$; derivative of $\sum_j v_j f(y_j)$ w.r.t.\ a weight tilt, against the exact weighted-measure derivative; 100 seeds (10 for OT and Gumbel).}
@@ -2036,7 +2407,14 @@ Gumbel-softmax & $0.513$ & $0.174$ & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/grad-gaussian-x2-gradient_bias.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:grad-gaussian-x2-gradient_bias} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis.}
+\label{fig:grad-gaussian-x2-gradient_bias}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Local gradient, gaussian cloud, $f(x)=\|x\|^2$: gradient variance (lower is better). Gaussian cloud, $D{=}2$, $f(x)=\|x\|^2$; derivative of $\sum_j v_j f(y_j)$ w.r.t.\ a weight tilt, against the exact weighted-measure derivative; 100 seeds (10 for OT and Gumbel).}
@@ -2068,7 +2446,14 @@ Gumbel-softmax & $0.133$ & $0.00617$ & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/grad-gaussian-x2-gradient_variance.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:grad-gaussian-x2-gradient_variance} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family.}
+\label{fig:grad-gaussian-x2-gradient_variance}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Local gradient, gaussian cloud, $f(x)=\|x\|^2$: gradient MSE (lower is better). Gaussian cloud, $D{=}2$, $f(x)=\|x\|^2$; derivative of $\sum_j v_j f(y_j)$ w.r.t.\ a weight tilt, against the exact weighted-measure derivative; 100 seeds (10 for OT and Gumbel).}
@@ -2100,7 +2485,14 @@ Gumbel-softmax & $0.383\pm0.223$ & $0.0358\pm0.022$ & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/grad-gaussian-x2-squared_error_mean.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:grad-gaussian-x2-squared_error_mean} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:grad-gaussian-x2-squared_error_mean}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Local gradient, gaussian cloud, $f(x)=\sum_k\sin x_k$: gradient bias (lower is better). Gaussian cloud, $D{=}2$, $f(x)=\sum_k\sin x_k$; derivative of $\sum_j v_j f(y_j)$ w.r.t.\ a weight tilt, against the exact weighted-measure derivative; 100 seeds (10 for OT and Gumbel).}
@@ -2132,7 +2524,14 @@ Gumbel-softmax & $0.0097$ & $0.0989$ & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/grad-gaussian-sin-gradient_bias.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:grad-gaussian-sin-gradient_bias} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis.}
+\label{fig:grad-gaussian-sin-gradient_bias}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Local gradient, gaussian cloud, $f(x)=\sum_k\sin x_k$: gradient variance (lower is better). Gaussian cloud, $D{=}2$, $f(x)=\sum_k\sin x_k$; derivative of $\sum_j v_j f(y_j)$ w.r.t.\ a weight tilt, against the exact weighted-measure derivative; 100 seeds (10 for OT and Gumbel).}
@@ -2164,7 +2563,14 @@ Gumbel-softmax & $0.0554$ & $0.00884$ & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/grad-gaussian-sin-gradient_variance.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:grad-gaussian-sin-gradient_variance} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family.}
+\label{fig:grad-gaussian-sin-gradient_variance}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Local gradient, gaussian cloud, $f(x)=\sum_k\sin x_k$: gradient MSE (lower is better). Gaussian cloud, $D{=}2$, $f(x)=\sum_k\sin x_k$; derivative of $\sum_j v_j f(y_j)$ w.r.t.\ a weight tilt, against the exact weighted-measure derivative; 100 seeds (10 for OT and Gumbel).}
@@ -2196,7 +2602,14 @@ Gumbel-softmax & $0.0499\pm0.0473$ & $0.0177\pm0.0152$ & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/grad-gaussian-sin-squared_error_mean.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:grad-gaussian-sin-squared_error_mean} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:grad-gaussian-sin-squared_error_mean}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Local gradient, bimodal mixture cloud, $f(x)=\|x\|^2$: gradient bias (lower is better). Bimodal mixture cloud, $D{=}2$, $f(x)=\|x\|^2$; derivative of $\sum_j v_j f(y_j)$ w.r.t.\ a weight tilt, against the exact weighted-measure derivative; 100 seeds (10 for OT and Gumbel).}
@@ -2228,7 +2641,14 @@ Gumbel-softmax & $2.69$ & $7.48$ & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/grad-mixture-x2-gradient_bias.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:grad-mixture-x2-gradient_bias} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis.}
+\label{fig:grad-mixture-x2-gradient_bias}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Local gradient, bimodal mixture cloud, $f(x)=\|x\|^2$: gradient variance (lower is better). Bimodal mixture cloud, $D{=}2$, $f(x)=\|x\|^2$; derivative of $\sum_j v_j f(y_j)$ w.r.t.\ a weight tilt, against the exact weighted-measure derivative; 100 seeds (10 for OT and Gumbel).}
@@ -2260,7 +2680,14 @@ Gumbel-softmax & $10.4$ & $8.26$ & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/grad-mixture-x2-gradient_variance.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:grad-mixture-x2-gradient_variance} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family.}
+\label{fig:grad-mixture-x2-gradient_variance}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Local gradient, bimodal mixture cloud, $f(x)=\|x\|^2$: gradient MSE (lower is better). Bimodal mixture cloud, $D{=}2$, $f(x)=\|x\|^2$; derivative of $\sum_j v_j f(y_j)$ w.r.t.\ a weight tilt, against the exact weighted-measure derivative; 100 seeds (10 for OT and Gumbel).}
@@ -2292,7 +2719,14 @@ Gumbel-softmax & $16.6\pm12.4$ & $63.4\pm36.7$ & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/grad-mixture-x2-squared_error_mean.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:grad-mixture-x2-squared_error_mean} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:grad-mixture-x2-squared_error_mean}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Local gradient, bimodal mixture cloud, $f(x)=\sum_k\sin x_k$: gradient bias (lower is better). Bimodal mixture cloud, $D{=}2$, $f(x)=\sum_k\sin x_k$; derivative of $\sum_j v_j f(y_j)$ w.r.t.\ a weight tilt, against the exact weighted-measure derivative; 100 seeds (10 for OT and Gumbel).}
@@ -2324,7 +2758,14 @@ Gumbel-softmax & $0.58$ & $1.34$ & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/grad-mixture-sin-gradient_bias.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:grad-mixture-sin-gradient_bias} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis.}
+\label{fig:grad-mixture-sin-gradient_bias}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Local gradient, bimodal mixture cloud, $f(x)=\sum_k\sin x_k$: gradient variance (lower is better). Bimodal mixture cloud, $D{=}2$, $f(x)=\sum_k\sin x_k$; derivative of $\sum_j v_j f(y_j)$ w.r.t.\ a weight tilt, against the exact weighted-measure derivative; 100 seeds (10 for OT and Gumbel).}
@@ -2356,7 +2797,14 @@ Gumbel-softmax & $1.17$ & $0.204$ & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/grad-mixture-sin-gradient_variance.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:grad-mixture-sin-gradient_variance} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family.}
+\label{fig:grad-mixture-sin-gradient_variance}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Local gradient, bimodal mixture cloud, $f(x)=\sum_k\sin x_k$: gradient MSE (lower is better). Bimodal mixture cloud, $D{=}2$, $f(x)=\sum_k\sin x_k$; derivative of $\sum_j v_j f(y_j)$ w.r.t.\ a weight tilt, against the exact weighted-measure derivative; 100 seeds (10 for OT and Gumbel).}
@@ -2388,13 +2836,20 @@ Gumbel-softmax & $1.39\pm0.862$ & $1.97\pm1.02$ & -- \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/grad-mixture-sin-squared_error_mean.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:grad-mixture-sin-squared_error_mean} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Whiskers are the table's 95\% CIs; points are shifted sideways so whiskers do not overlap. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:grad-mixture-sin-squared_error_mean}
+\end{figure}
+
 % ======================================================================
 % Runtime
 % ======================================================================
 \clearpage
 \section*{Runtime}
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \small
 \caption{Gaussian cloud, $D{=}2$: forward time per resampling call in ms (lower is better). Median over 100 calls (3--10 for OT and Gumbel), serial pass on one CPU thread (i7-6700HQ), fresh process per method; includes adapter conversions.}
@@ -2424,7 +2879,14 @@ Variational (KL) & $0.825$ & $1.78$ & $11.6$ & $39.2$ \\
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
 
-\begin{table}[ht]
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/runtime-forward.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:runtime-forward} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:runtime-forward}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \small
 \caption{Bimodal mixture cloud, $D{=}2$: forward time per resampling call in ms (lower is better). Median over 100 calls (3--10 for OT and Gumbel), serial pass on one CPU thread (i7-6700HQ), fresh process per method; includes adapter conversions.}
@@ -2453,6 +2915,13 @@ Variational (KL) & $1.05$ & $1.8$ & $12.1$ & $42.5$ \\
 \end{adjustbox}
 \par\smallskip\parbox{0.95\linewidth}{\footnotesize $^\dagger$Local diagnostic, not from the paper: $\tau$ rescaled so that $\tau N$ equals the paper's value at $N{=}25$. DSR variants use Morton sorting unless marked unsorted. A dash means not run (dense methods stop at $N{=}128$). Bold marks the best mean per column, not a statistically significant difference.}
 \end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/runtime-forward-mixture.pdf}
+\caption{\textbf{(a)} The values of Table~\ref{tab:runtime-forward-mixture} against $N$ (log scale), one line per row. Colour is the method family: black DSR, gray classical, blue moment matching, orange soft/Gumbel, green optimal transport, purple variational; line style and marker separate rows within a family. Log $y$ axis. The dashed line is the Monte Carlo reference slope; a method whose line flattens has an error floor.}
+\label{fig:runtime-forward-mixture}
+\end{figure}
 
 % Hand-written discussion of the tables above; appended to tables.tex by scripts/dsr_latex_tables.py.
 % Numbers refer to the run in results/dsr and results/standard; update this text if the runs change.
