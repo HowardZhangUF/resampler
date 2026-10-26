@@ -1,0 +1,4 @@
+{"provider": "custom", "method": "gaussian", "stage": "filter", "case": "linear/N32", "status": "complete", "error": ""}
+{"provider": "custom", "method": "gaussian", "stage": "filter", "case": "linear/N128", "status": "complete", "error": ""}
+{"provider": "custom", "method": "gaussian", "stage": "filter", "case": "linear/N512", "status": "complete", "error": ""}
+{"provider": "custom", "method": "gaussian", "stage": "filter", "case": "linear/N2048", "status": "complete", "error": ""}

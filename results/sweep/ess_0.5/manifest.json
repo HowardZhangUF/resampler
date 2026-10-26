@@ -1,0 +1,6 @@
+{
+  "trigger": "ess:0.5",
+  "rule": "E_2 = 1/sum w^2 < 0.5 N",
+  "profile": "standard",
+  "start_utc": "2026-10-25T15:53:35Z"
+}

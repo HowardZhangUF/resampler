@@ -1,0 +1,4 @@
+{"provider": "dsr", "method": "dsr_tau0.5", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr_tau0.5", "stage": "filter", "case": "lorenz63/N128", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr_tau0.5", "stage": "filter", "case": "lorenz63/N512", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr_tau0.5", "stage": "filter", "case": "lorenz63/N2048", "status": "complete", "error": ""}
