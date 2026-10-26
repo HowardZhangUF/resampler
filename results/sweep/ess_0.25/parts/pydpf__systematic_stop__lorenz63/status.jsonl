@@ -1,0 +1,4 @@
+{"provider": "pydpf", "method": "systematic_stop", "stage": "filter", "case": "lorenz63/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "systematic_stop", "stage": "filter", "case": "lorenz63/N128", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "systematic_stop", "stage": "filter", "case": "lorenz63/N512", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "systematic_stop", "stage": "filter", "case": "lorenz63/N2048", "status": "complete", "error": ""}

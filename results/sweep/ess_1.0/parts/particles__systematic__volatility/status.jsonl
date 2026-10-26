@@ -1,0 +1,4 @@
+{"provider": "particles", "method": "systematic", "stage": "filter", "case": "volatility/N32", "status": "complete", "error": ""}
+{"provider": "particles", "method": "systematic", "stage": "filter", "case": "volatility/N128", "status": "complete", "error": ""}
+{"provider": "particles", "method": "systematic", "stage": "filter", "case": "volatility/N512", "status": "complete", "error": ""}
+{"provider": "particles", "method": "systematic", "stage": "filter", "case": "volatility/N2048", "status": "complete", "error": ""}

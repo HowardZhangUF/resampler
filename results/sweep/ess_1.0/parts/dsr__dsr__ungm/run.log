@@ -1,0 +1,4 @@
+{"provider": "dsr", "method": "dsr", "stage": "filter", "case": "ungm/N32", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr", "stage": "filter", "case": "ungm/N128", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr", "stage": "filter", "case": "ungm/N512", "status": "complete", "error": ""}
+{"provider": "dsr", "method": "dsr", "stage": "filter", "case": "ungm/N2048", "status": "complete", "error": ""}

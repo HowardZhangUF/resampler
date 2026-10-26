@@ -1,0 +1,5 @@
+PyDPF: PyTorch was unable to find a CUDA-enabled GPU. The package will run on CPU, but performance will be significantly degraded. If you have a CUDA-capable GPU, install a CUDA build of PyTorch from https://pytorch.org/get-started/locally/.
+{"provider": "pydpf", "method": "systematic_stop", "stage": "filter", "case": "bearing/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "systematic_stop", "stage": "filter", "case": "bearing/N128", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "systematic_stop", "stage": "filter", "case": "bearing/N512", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "systematic_stop", "stage": "filter", "case": "bearing/N2048", "status": "complete", "error": ""}

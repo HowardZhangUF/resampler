@@ -1,0 +1,4 @@
+{"provider": "custom", "method": "gaussian", "stage": "filter", "case": "lorenz96/N32", "status": "complete", "error": ""}
+{"provider": "custom", "method": "gaussian", "stage": "filter", "case": "lorenz96/N128", "status": "complete", "error": ""}
+{"provider": "custom", "method": "gaussian", "stage": "filter", "case": "lorenz96/N512", "status": "complete", "error": ""}
+{"provider": "custom", "method": "gaussian", "stage": "filter", "case": "lorenz96/N2048", "status": "complete", "error": ""}

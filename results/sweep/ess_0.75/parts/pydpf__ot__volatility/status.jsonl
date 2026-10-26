@@ -1,0 +1,2 @@
+{"provider": "pydpf", "method": "ot", "stage": "filter", "case": "volatility/N32", "status": "complete", "error": ""}
+{"provider": "pydpf", "method": "ot", "stage": "filter", "case": "volatility/N128", "status": "complete", "error": ""}
